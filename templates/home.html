@@ -74,7 +74,7 @@ body{
                         </div>
             <div class="modal-body">
                 {% for student in user.student_set.all %}
-                    <button id="student-button" onclick="window.location.href='/WeeklyReports/{{ student.username }}'">{{ student.name }}</button>
+                    <button id="student-button" onclick="window.location.href='/WeeklyReports/{{ student.username }}'">{{ student.name }}</button>&nbsp;
                 {% endfor %}
 
             </div>
