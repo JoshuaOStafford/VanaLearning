@@ -99,3 +99,14 @@ def progress_graph_view(request, student_username):
         return redirect('/home')
     master_drcs = MasterDRC.objects.filter(student=student)
     return render(request, 'progress_graph.html', {'user': teacher, 'student': student, 'Master_DRCs': master_drcs})
+
+
+@login_required(login_url="/")
+def weekly_reports_view(request, student_username):
+    teacher = get_user(request)
+    if not Student.objects.filter(username=student_username).exists():
+        return redirect('/home')
+    student = Student.objects.get(username=student_username)
+    if student not in teacher.student_set.all():
+        return redirect('/home')
+    return render(request, 'weekly_reports.html', {'user': teacher, 'student': student})

@@ -1,0 +1,34 @@
+{% extends 'base_home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5bac3b535a.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Reports</title>
+</head>
+
+<style>
+body{
+    background-color: whitesmoke;
+}
+#title{
+    margin-top: 8%;
+}
+</style>
+
+<body>
+    <div align="center"><h2 id="title">There are currently no Weekly Reports for {{ student.name }}</h2>
+        <br>
+    <h4>Weekly reports will begin after the student has been using Vana for a week.</h4></div>
+
+
+{% endblock %}
+</body>
+
+</html>

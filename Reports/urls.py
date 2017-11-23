@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^PastSubmissions/([a-zA-z0-9_-]{3,16})', views.past_submissions_view, name='view past submissions'),
     url(r'^StudentHistory/([a-zA-z0-9_-]{3,16})', views.student_history_view, name='student history'),
     url(r'^ProgressGraph/([a-zA-z0-9_-]{3,16})', views.progress_graph_view, name='progress graph'),
+    url(r'^WeeklyReports/([a-zA-z0-9_-]{3,16})', views.weekly_reports_view, name='view weekly reports'),
 ]
 

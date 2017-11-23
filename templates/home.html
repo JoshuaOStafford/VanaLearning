@@ -59,11 +59,25 @@ body{
                 <h5>{{ reports_remaining }} Reports Remaining for Today</h5>
                 {% endif %}
             </button>
-            <button class="btn btn-large" id="button-space" onclick="window.location.href='/view/WeeklyReports'">
+
+
+            <button class="btn btn-large" id="button-space" data-toggle="modal" data-target="#students">
                 <h3>View Weekly Reports<br></h3>
                 <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
                 <br>
             </button>
+            <div class="modal fade" id="students" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                          <h3 class="modal-title">Click on Student to View Weekly Reports</h3>
+                        </div>
+            <div class="modal-body">
+                {% for student in user.student_set.all %}
+                    <button id="student-button" onclick="window.location.href='/WeeklyReports/{{ student.username }}'">{{ student.name }}</button>
+                {% endfor %}
+
+            </div>
         </div>
     </div>
 {% endblock %}
