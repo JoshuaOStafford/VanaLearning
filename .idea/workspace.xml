@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/progress_graph.html" afterPath="$PROJECT_DIR$/templates/progress_graph.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="76" column="152" lean-forward="false" selection-start-line="76" selection-start-column="152" selection-end-line="76" selection-end-column="152" />
+            <state relative-caret-position="306">
+              <caret line="84" column="12" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
               <folding>
                 <element signature="e#2476#2482#0#HTML" expanded="true" />
               </folding>
@@ -63,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="progress_graph.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="progress_graph.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -182,9 +183,9 @@
         <option value="$PROJECT_DIR$/Reports/urls.py" />
         <option value="$PROJECT_DIR$/Reports/views.py" />
         <option value="$PROJECT_DIR$/templates/weekly_reports.html" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/base_home.html" />
         <option value="$PROJECT_DIR$/templates/progress_graph.html" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
       </list>
     </option>
   </component>
@@ -882,16 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="76" column="152" lean-forward="false" selection-start-line="76" selection-start-column="152" selection-end-line="76" selection-end-column="152" />
-          <folding>
-            <element signature="e#2476#2482#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Reports/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -923,6 +914,16 @@
         <state relative-caret-position="315">
           <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="84" column="12" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+          <folding>
+            <element signature="e#2476#2482#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
