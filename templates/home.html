@@ -1,0 +1,72 @@
+{% extends 'base_home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5bac3b535a.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vana Home</title>
+</head>
+
+<style>
+
+body{
+    background-color: #f0f0f0;
+    font-family: 'EB Garamond', cursive;
+    font-size: 1.5em;
+
+}
+#wrapper{
+    width: 90%;
+    margin-top: 15%;
+}
+#button-space {
+        width: 30% !important;
+        height: 40% !important;
+        white-space: normal;
+        word-wrap: break-word;
+        background-color: white ;
+        border: 4px solid black;
+        color: black;
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+
+#button-space:hover{
+        background-color: black;
+        color: #99ddff;
+    }
+</style>
+
+<body>
+
+    <div align="center">
+        <div id="wrapper">
+            <button class="btn btn-large" id="button-space" onclick="window.location.href='/log/DailyReports'">
+                <h3>Log Daily Reports<br></h3>
+
+                <i class="fa fa-pencil fa-5x" aria-hidden="true"></i>
+                {% if reports_remaining == 0 %}
+                <h5>All Reports have been Logged</h5>
+                {% elif reports_remaining == 1 %}
+                <h5>{{ reports_remaining }} Report Remaining for Today</h5>
+                {% else %}
+                <h5>{{ reports_remaining }} Reports Remaining for Today</h5>
+                {% endif %}
+            </button>
+            <button class="btn btn-large" id="button-space" onclick="window.location.href='/view/WeeklyReports'">
+                <h3>View Weekly Reports<br></h3>
+                <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+                <br>
+            </button>
+        </div>
+    </div>
+{% endblock %}
+</body>
+
+</html>

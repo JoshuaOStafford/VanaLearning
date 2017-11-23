@@ -1,0 +1,70 @@
+{% extends "base_home.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<style>
+    body{
+        font-family: 'EB Garamond', cursive;
+        background-color: 	white;
+    }
+
+    button{
+        background-color:	#D3D3D3;
+}
+    button:hover {
+        background-color:slategrey;
+}
+    .container {
+        width: 55%;
+        margin-right: auto;
+        margin-left: auto;
+}
+    #login-button{
+            background-color: green;
+            color: white;
+    }
+    #register-button{
+            background-color: black;
+            color: white;
+    }
+    h2{
+        color: white;
+    }
+</style>
+
+<body>
+
+
+    <br>
+
+<div class="container">
+    <div class="jumbotron" style="background-color: slategrey">
+        <div class="jumbotron-heading">
+           <h1 align="center" style="color: #99ddff">Vana Login</h1>
+        </div>
+        <br/>
+    <form method="post" action="/login">
+        {% csrf_token %}
+        <h2>Username:</h2><br/>
+        {{ form.username }}<br/><br/>
+        <h2>Password:</h2><br/>
+        {{ form.password }}<br/><br/>
+        <br/>
+        <button id="login-button" type="submit" class="pull-left btn">Login</button>
+        <button id="register-button" onclick="window.location.href='/schedule_demo'" class="pull-right btn">Sign Up</button>
+    </form>
+</div>
+</div>
+
+{% endblock %}
+</body>
+</html>

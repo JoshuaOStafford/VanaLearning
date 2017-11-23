@@ -1,0 +1,167 @@
+{% extends 'base_home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5bac3b535a.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Past Submissions</title>
+</head>
+
+<style>
+body{
+    background-color: whitesmoke;
+}
+#past_drc {
+    background-color: white;
+    border: 2px solid black;
+    width: 80%;
+    margin-top: 2%;
+}
+#m1 {
+    width: 17%;
+    float: left;
+    margin-left: 3%;
+    margin-right: 1%;
+    font-size: 120%;
+}
+#m2 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m3 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m4 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m5 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 3%;
+    font-size: 120%;
+    }
+#comments {
+    clear: both;
+    text-align: left;
+    padding: 3%;
+    font-size: 125%;
+}
+#NA{
+    font-size: 150%;
+    color: slategray;
+}
+#date{
+    text-align: left;
+    padding-left: 3%;
+    float: left;
+}
+#edit-button{
+    margin-top: 1%;
+    width: 20% !important;
+    height: auto;
+    white-space: normal;
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+    margin-right: 3%;
+    font-size: 150%;
+    float: right;
+}
+#edit-button:hover {
+    background-color: black;
+    color: #99ddff;
+}
+
+hr{
+    clear: both;
+}
+
+</style>
+<body>
+<div align="center">
+<br><br><br>
+<h3>Your Past Submissions for {{ student.name }}</h3>
+    {% for drc in past_drcs %}
+    <div id="past_drc">
+
+    <h2 id="date">{{ drc.get_date }}</h2>
+    {% if date == drc.date %}
+    <button id="edit-button" onclick="window.location.href='/edit/DailyReport/{{ student.username }}'">
+        <span class="glyphicon glyphicon-edit"></span> Edit Report
+    </button>
+    {% endif %}
+    <hr>
+    <div id="m1">
+        <b>{{ student.m1_name }}</b>
+    <br><br>
+        {% if drc.m1 %}
+            <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
+        {% else %}
+            <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
+        {% endif %}
+    </div>
+    <div id="m2">
+        <b>{{ student.m2_name }}</b>
+        <br><br>
+        {% if drc.m2 %}
+            <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
+        {% else %}
+            <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
+        {% endif %}
+    </div>
+    <div id="m3">
+        <b>{{ student.m3_name }}</b>
+        <br><br>
+        {% if drc.m3 %}
+            <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
+        {% elif drc.m3 == None %}
+            <div id="NA"><b>N/A</b></div>
+        {% else %}
+            <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
+        {% endif %}
+    </div>
+    <div id="m4">
+        <b>{{ student.m4_name }}</b>
+        <br>
+        {% if drc.m4 %}
+            <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
+        {% else %}
+            <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
+        {% endif %}
+    </div>
+        <div id="m5">
+        <b>{{ student.m5_name }}</b>
+        <br><br>
+        {% if drc.m5 %}
+            <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
+        {% else %}
+            <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
+        {% endif %}
+    </div>
+    <div id="comments">
+        <b>Comments:</b> {% if drc.comments == "" %}You did not leave a comment on this day.{% endif %} {{ drc.comments }}
+
+
+    </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

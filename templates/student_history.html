@@ -1,0 +1,142 @@
+{% extends 'base_home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5bac3b535a.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student History</title>
+</head>
+
+<style>
+
+body{
+    background-color: whitesmoke;
+}
+#daily_report {
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    width: 80%;
+    margin-top: 2%;
+}
+#m1 {
+    width: 17%;
+    float: left;
+    margin-left: 3%;
+    margin-right: 1%;
+    font-size: 120%;
+}
+#m2 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m3 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m4 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m5 {
+        width: 17%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 3%;
+    font-size: 120%;
+    }
+#comments {
+    clear: both;
+    text-align: left;
+    padding: 3%;
+    font-size: 125%;
+}
+#metric_fraction{
+    font-size: 200%;
+}
+#progress_graph_button {
+    margin-top: 2%;
+    width: 25% !important;
+    height: auto;
+    white-space: normal;
+    background-color: white ;
+    border: 3px solid black;
+    color: black;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-size: 150%;
+}
+#progress_graph_button:hover {
+    background-color: black;
+    color: #99ddff;
+}
+#date{
+    text-align: left;
+    padding-left: 3%;
+}
+
+
+</style>
+
+<body>
+    <br><br><br>
+    <div  align="center">
+    <button id="progress_graph_button" onclick="window.location.href='/ProgressGraph/{{ student.username }}'">
+        <i class="fa fa-line-chart" aria-hidden="true"></i> View Progress via Graph
+    </button>
+    <h3>Viewing Past Daily Report Cards for {{ student.name }}</h3>
+    {% for daily_report in Master_DRCs %}
+
+    <div id="daily_report">
+        <h2 id="date">{{ daily_report.get_date }}</h2>
+        <hr>
+    <div id="m1">
+        <b>{{ student.m1_name }}</b>
+    <br><br>
+        <div id="metric_fraction">{{ daily_report.m1_score }} / {{ daily_report.drc_set.all.count }}</div>
+    </div>
+    <div id="m2">
+        <b>{{ student.m2_name }}</b>
+        <br><br>
+         <div id="metric_fraction">{{ daily_report.m2_score }} / {{ daily_report.drc_set.all.count }}</div>
+    </div>
+    <div id="m3">
+        <b>{{ student.m3_name }}</b>
+        <br><br>
+         <div id="metric_fraction">{{ daily_report.m3_score }} / {{ daily_report.HW_Assigned }}</div>
+    </div>
+    <div id="m4">
+        <b>{{ student.m4_name }}</b>
+        <br>
+         <div id="metric_fraction">{{ daily_report.m4_score }} / {{ daily_report.drc_set.all.count }}</div>
+    </div>
+        <div id="m5">
+        <b>{{ student.m5_name }}</b>
+        <br><br>
+         <div id="metric_fraction">{{ daily_report.m5_score }} / {{ daily_report.drc_set.all.count }}</div>
+         </div>
+    <div id="comments"></div>
+
+    </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+</body>
+
+</html>
