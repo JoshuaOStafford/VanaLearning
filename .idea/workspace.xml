@@ -2,121 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/BookBackground.7a48bac2559b.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/BookBackground.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/base.6b517d0d5813.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/base.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/changelists.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/changelists.f6dc691f8d62.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/dashboard.7ac78187c567.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/dashboard.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/fonts.494e4ec545c9.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/fonts.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/forms.2003a066ae02.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/forms.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/login.a846c0e2ef65.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/login.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/rtl.4c867197b256.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/rtl.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/widgets.5e372b41c483.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/widgets.css.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectBox.b49f008d186b.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectBox.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectFilter2.17009b6d4428.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectFilter2.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.32861b6cbdf9.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.min.f51f04edab28.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.min.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/calendar.9ac94d055fbd.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/calendar.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/cancel.1d69cba4b4bf.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/cancel.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/change_form.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.17d715df2104.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.min.dc930adb2821.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.min.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/core.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.eda404ee376d.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.min.d75b9ed03975.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.min.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/jquery.init.95b62fa19378.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/jquery.init.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/popup_response.6ce3197f8fc8.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/popup_response.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate.ff9208865444.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate.min.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate_init.0d3b53c37074.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate_init.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/timeparse.51258861a46a.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/timeparse.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/urlify.411bc3bb651c.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/urlify.js.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/favicon.48dc568733ef.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/paper.bc4b26ea515d.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/paper.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/sleek.2ae3608adc5d.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/sleek.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/vanalogo.2caa1c92cd51.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/vanalogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/base.5af66c1b1797.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/base.6b517d0d5813.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/base.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/changelists.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/changelists.f6dc691f8d62.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/dashboard.7ac78187c567.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/dashboard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/fonts.494e4ec545c9.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/fonts.cc6140298ba7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/fonts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/forms.2003a066ae02.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/forms.77b3f8a70811.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/forms.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/login.a846c0e2ef65.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/rtl.4c867197b256.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/widgets.5e372b41c483.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/widgets.a7251c097987.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/css/widgets.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectBox.b49f008d186b.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectBox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectFilter2.17009b6d4428.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/SelectFilter2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.32861b6cbdf9.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.min.f51f04edab28.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/actions.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/calendar.9ac94d055fbd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/cancel.1d69cba4b4bf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/cancel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/change_form.9e85003a1a38.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/change_form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.17d715df2104.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/collapse.min.dc930adb2821.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/core.fd861d43f0f5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.min.d75b9ed03975.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/inlines.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/jquery.init.95b62fa19378.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/jquery.init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/popup_response.6ce3197f8fc8.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/popup_response.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate.ff9208865444.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate.min.f4057ebb9b62.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/prepopulate_init.0d3b53c37074.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/urlify.411bc3bb651c.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/admin/js/urlify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vana/staticfiles/staticfiles.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base_home.html" afterPath="$PROJECT_DIR$/templates/base_home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -177,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vana/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
+            <state relative-caret-position="394">
               <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
@@ -209,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -229,6 +115,16 @@
                 <element signature="e#3280#4182#0" expanded="false" />
                 <element signature="e#4216#4254#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2055">
+              <caret line="137" column="106" lean-forward="false" selection-start-line="137" selection-start-column="106" selection-end-line="137" selection-end-column="106" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -274,7 +170,6 @@
         <option value="$PROJECT_DIR$/templates/schedule_demo.html" />
         <option value="$PROJECT_DIR$/Reports/forms.py" />
         <option value="$PROJECT_DIR$/Vana/urls.py" />
-        <option value="$PROJECT_DIR$/templates/base_home.html" />
         <option value="$PROJECT_DIR$/templates/progress_graph.html" />
         <option value="$PROJECT_DIR$/Reports/urls.py" />
         <option value="$PROJECT_DIR$/templates/edit_report.html" />
@@ -288,6 +183,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Vana/settings.py" />
         <option value="$PROJECT_DIR$/Vana/wsgi.py" />
+        <option value="$PROJECT_DIR$/templates/base_home.html" />
       </list>
     </option>
   </component>
@@ -642,6 +538,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -649,7 +546,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23828755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23828755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@Vana" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -826,6 +723,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6808">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,13 +745,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="145" column="16" lean-forward="false" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -861,6 +753,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -875,6 +770,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -882,6 +778,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="49" column="111" lean-forward="false" selection-start-line="49" selection-start-column="111" selection-end-line="49" selection-end-column="111" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -889,6 +786,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="74" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,6 +794,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
           <caret line="246" column="14" lean-forward="true" selection-start-line="246" selection-start-column="14" selection-end-line="246" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -961,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vana/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Reports/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -988,6 +879,22 @@
             <element signature="e#3280#4182#0" expanded="false" />
             <element signature="e#4216#4254#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2055">
+          <caret line="137" column="106" lean-forward="false" selection-start-line="137" selection-start-column="106" selection-end-line="137" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vana/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
