@@ -76,10 +76,11 @@
       <file leaf-file-name="base_home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="170" column="146" lean-forward="false" selection-start-line="170" selection-start-column="146" selection-end-line="170" selection-end-column="146" />
+            <state relative-caret-position="237">
+              <caret line="170" column="123" lean-forward="false" selection-start-line="170" selection-start-column="123" selection-end-line="170" selection-end-column="123" />
               <folding>
-                <element signature="e#6460#6466#0#HTML" expanded="true" />
+                <element signature="e#5829#5835#0#HTML" expanded="true" />
+                <element signature="e#6491#6497#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -691,10 +692,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="170" column="146" lean-forward="false" selection-start-line="170" selection-start-column="146" selection-end-line="170" selection-end-column="146" />
+        <state relative-caret-position="237">
+          <caret line="170" column="123" lean-forward="false" selection-start-line="170" selection-start-column="123" selection-end-line="170" selection-end-column="123" />
           <folding>
-            <element signature="e#6460#6466#0#HTML" expanded="true" />
+            <element signature="e#5829#5835#0#HTML" expanded="true" />
+            <element signature="e#6491#6497#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
