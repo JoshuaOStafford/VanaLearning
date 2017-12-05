@@ -119,8 +119,7 @@ def teacher_submissions_view(request):
     teacher = get_user(request)
     if not teacher == Teacher.objects.get(username='lhorich'):
         return redirect('/home')
-    date = datetime.date.today()
-    date = pytz.utc.localize(date)
+    date = datetime.now(pytz.utc)
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
     b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
     c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
