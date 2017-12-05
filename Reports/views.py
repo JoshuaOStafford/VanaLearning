@@ -3,6 +3,7 @@ from Reports.models import Student, DRC, MasterDRC, Teacher
 import datetime
 from django.contrib.auth.decorators import login_required
 from Reports.functions import get_user, log_drc
+import pytz
 from datetime import datetime as datetime_parser
 
 
@@ -119,7 +120,7 @@ def teacher_submissions_view(request):
     if not teacher == Teacher.objects.get(username='lhorich'):
         return redirect('/home')
     date = datetime.date.today()
-
+    date = pytz.utc.localize(date)
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
     b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
     c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
