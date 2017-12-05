@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from Reports.models import Student, DRC, MasterDRC, Teacher
-import datetime
+from datetime import datetime, timezone
 from django.contrib.auth.decorators import login_required
 from Reports.functions import get_user, log_drc
 import pytz
-from datetime import datetime as datetime_parser
 
 
 def landing_page_view(request):
@@ -119,7 +118,7 @@ def teacher_submissions_view(request):
     teacher = get_user(request)
     if not teacher == Teacher.objects.get(username='lhorich'):
         return redirect('/home')
-    date = datetime.now(pytz.utc)
+    date = datetime.now(timezone.utc)
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
     b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
     c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
