@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from Reports.models import Student, DRC, MasterDRC
+from Reports.models import Student, DRC, MasterDRC, Teacher
 import datetime
 from django.contrib.auth.decorators import login_required
 from Reports.functions import get_user, log_drc
+from datetime import datetime as datetime_parser
 
 
 def landing_page_view(request):
@@ -110,3 +111,32 @@ def weekly_reports_view(request, student_username):
     if student not in teacher.student_set.all():
         return redirect('/home')
     return render(request, 'weekly_reports.html', {'user': teacher, 'student': student})
+
+
+@login_required(login_url="/")
+def teacher_submissions_view(request):
+    teacher = get_user(request)
+    if not teacher == Teacher.objects.get(username='lhorich'):
+        return redirect('/home')
+    date = datetime.date.today()
+
+    a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
+    b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
+    c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
+    d6 = DRC.objects.filter(teacher=Teacher.objects.get(username='vwhite'), date=date).count()
+
+    a7 = DRC.objects.filter(teacher=Teacher.objects.get(username='ghunter'), date=date).count()
+    b7 = DRC.objects.filter(teacher=Teacher.objects.get(username='amarusak'), date=date).count()
+    c7 = DRC.objects.filter(teacher=Teacher.objects.get(username='cmiller'), date=date).count()
+    d7 = DRC.objects.filter(teacher=Teacher.objects.get(username='czolet'), date=date).count()
+
+    a8 = DRC.objects.filter(teacher=Teacher.objects.get(username='mchellman'), date=date).count()
+    b8 = DRC.objects.filter(teacher=Teacher.objects.get(username='chenry'), date=date).count()
+    c8 = DRC.objects.filter(teacher=Teacher.objects.get(username='cholman'), date=date).count()
+    d8 = DRC.objects.filter(teacher=Teacher.objects.get(username='lhorich'), date=date).count()
+
+    return render(request, 'teacher_submissions.html', {'user': teacher, '6a': a6, '6b': b6, '6c': c6, '6d': d6,
+                                                        '7a': a7, '7b': b7, '7c': c7, '7d': d7,'8a': a8, '8b': b8,
+                                                        '8c': c8, '8d': d8})
+
+
