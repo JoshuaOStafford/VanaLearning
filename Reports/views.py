@@ -20,7 +20,7 @@ def user_home(request):
     teacher = get_user(request)
     if teacher is None:
         return redirect('/login')
-    date = datetime.date.today()
+    date = datetime.now(timezone.utc)
     total_students = len(teacher.student_set.all())
     reports_logged = len(DRC.objects.filter(teacher=teacher, date=date))
     reports_remaining = total_students - reports_logged
@@ -29,7 +29,7 @@ def user_home(request):
 
 @login_required(login_url="/")
 def log_drc_view(request):
-    date = datetime.date.today()
+    date = datetime.now(timezone.utc)
     teacher = get_user(request)
     if teacher is None:
         return redirect('/home')
@@ -68,7 +68,7 @@ def edit_drc_view(request, student_username):
 
 @login_required(login_url="/")
 def past_submissions_view(request, student_username):
-    date = datetime.date.today()
+    date = datetime.now(timezone.utc)
     teacher = get_user(request)
     if not Student.objects.filter(username=student_username).exists():
         return redirect('/home')
