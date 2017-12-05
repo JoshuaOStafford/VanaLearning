@@ -124,7 +124,6 @@ def teacher_submissions_view(request):
 
     tz = pytz.timezone('US/Eastern')
     date = datetime.now(tz)
-    date_str = str(date)
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
     b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
     c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
@@ -142,6 +141,6 @@ def teacher_submissions_view(request):
 
     return render(request, 'teacher_submissions.html', {'user': teacher, '6a': a6, '6b': b6, '6c': c6, '6d': d6,
                                                         '7a': a7, '7b': b7, '7c': c7, '7d': d7,'8a': a8, '8b': b8,
-                                                        '8c': c8, '8d': d8, 'date': date_str})
+                                                        '8c': c8, '8d': d8})
 
 
