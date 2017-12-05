@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/teacher_submissions.html" afterPath="$PROJECT_DIR$/templates/teacher_submissions.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
+            <state relative-caret-position="326">
               <caret line="124" column="29" lean-forward="false" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -64,49 +64,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher_submissions.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="teacher_submissions.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/teacher_submissions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-              <folding>
-                <marker date="1512449530634" expanded="true" signature="1689:1837" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="1846:1994" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2047:2869" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2224:2375" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2237:2276" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2289:2324" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2337:2365" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2384:2535" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2397:2436" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2449:2484" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2497:2525" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2544:2695" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2557:2596" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2609:2644" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2657:2685" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2704:2856" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2717:2757" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2770:2805" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2818:2846" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="2908:3733" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3085:3240" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3098:3141" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3154:3189" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3202:3230" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3249:3400" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3262:3301" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3314:3349" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3362:3390" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3409:3561" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3422:3462" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3475:3510" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3523:3551" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3570:3720" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3583:3621" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3634:3669" ph="..." />
-                <marker date="1512449530634" expanded="true" signature="3682:3710" ph="..." />
-              </folding>
+            <state relative-caret-position="309">
+              <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,10 +149,10 @@
         <option value="$PROJECT_DIR$/templates/student_history.html" />
         <option value="$PROJECT_DIR$/templates/weekly_reports.html" />
         <option value="$PROJECT_DIR$/Reports/urls.py" />
-        <option value="$PROJECT_DIR$/templates/teacher_submissions.html" />
         <option value="$PROJECT_DIR$/templates/base_home.html" />
         <option value="$PROJECT_DIR$/Vana/settings.py" />
         <option value="$PROJECT_DIR$/Reports/views.py" />
+        <option value="$PROJECT_DIR$/templates/teacher_submissions.html" />
       </list>
     </option>
   </component>
@@ -727,51 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teacher_submissions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-          <folding>
-            <marker date="1512449530634" expanded="true" signature="1689:1837" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="1846:1994" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2047:2869" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2224:2375" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2237:2276" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2289:2324" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2337:2365" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2384:2535" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2397:2436" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2449:2484" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2497:2525" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2544:2695" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2557:2596" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2609:2644" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2657:2685" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2704:2856" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2717:2757" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2770:2805" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2818:2846" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="2908:3733" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3085:3240" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3098:3141" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3154:3189" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3202:3230" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3249:3400" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3262:3301" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3314:3349" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3362:3390" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3409:3561" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3422:3462" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3475:3510" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3523:3551" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3570:3720" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3583:3621" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3634:3669" ph="..." />
-            <marker date="1512449530634" expanded="true" signature="3682:3710" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vana/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -782,11 +700,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Reports/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="326">
           <caret line="124" column="29" lean-forward="false" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/teacher_submissions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
