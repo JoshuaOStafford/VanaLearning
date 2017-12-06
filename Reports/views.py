@@ -23,6 +23,8 @@ def user_home(request):
     tz = pytz.timezone('US/Eastern')
     date = datetime.now(tz)
     total_students = len(teacher.student_set.all())
+    if teacher.username == 'lhorich':
+        total_students = 2
     reports_logged = len(DRC.objects.filter(teacher=teacher, date=date))
     reports_remaining = total_students - reports_logged
     return render(request, 'home.html', {'user': teacher, 'reports_remaining': reports_remaining})
