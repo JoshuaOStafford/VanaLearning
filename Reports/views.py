@@ -36,6 +36,8 @@ def log_drc_view(request):
     if teacher is None:
         return redirect('/home')
     students = teacher.student_set.all()
+    if teacher.username == 'lhorich':
+        students = Student.objects.filter(id>4)
     remaining_students = []
     for student in students:
         if not DRC.objects.filter(student=student, teacher=teacher, date=date).exists():
