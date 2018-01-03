@@ -87,10 +87,10 @@ def past_submissions_view(request, student_username):
     past_drcs = past_drcs.order_by('date')
     past_drcs = past_drcs.reverse()
     top_drc = past_drcs.first()
-    if date == top_drc.date:
+    if test_date == top_drc.date:
         test = "Success"
     else:
-        test = str(date) + "   " + str(top_drc.date)
+        test = str(test_date) + "   " + str(top_drc.date)
     return render(request, 'past_submissions.html', {'user': teacher, 'past_drcs': past_drcs, 'student': student,
                                                      'date': date, 'test': test_date})
 
