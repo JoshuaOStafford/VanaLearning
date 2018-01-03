@@ -42,9 +42,10 @@ def create_absent_drc(student, teacher):
     drc = DRC(student=student, date=date, teacher=teacher, masterDRC=master_drc, absent=True)
     drc.m1 = False
     drc.m2 = False
-    drc.m3 = False
+    drc.m3 = None
     drc.m4 = False
     drc.m5 = False
+    drc.comments = student.username + " was absent today."
     drc.save()
     update_master_drc(drc, master_drc)
     return drc

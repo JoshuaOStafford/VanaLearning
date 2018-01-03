@@ -110,12 +110,12 @@ body{
     <div id="m1">
         <b>{{ student.m1_name }}</b>
     <br><br>
-        <div id="metric_fraction">{{ daily_report.m1_score }} / {{ daily_report.drc_set.all.count }}</div>
+        <div id="metric_fraction">{{ daily_report.m1_score }} / {{ daily_report.drc_set.all.total_count }}</div>
     </div>
     <div id="m2">
         <b>{{ student.m2_name }}</b>
         <br><br>
-         <div id="metric_fraction">{{ daily_report.m2_score }} / {{ daily_report.drc_set.all.count }}</div>
+         <div id="metric_fraction">{{ daily_report.m2_score }} / {{ daily_report.drc_set.all.total_count }}</div>
     </div>
     <div id="m3">
         <b>{{ student.m3_name }}</b>
@@ -125,7 +125,7 @@ body{
         <div id="m5">
         <b>{{ student.m5_name }}</b>
         <br><br>
-         <div id="metric_fraction">{{ daily_report.m5_score }} / {{ daily_report.drc_set.all.count }}</div>
+         <div id="metric_fraction">{{ daily_report.m5_score }} / {{ daily_report.total_count }}</div>
          </div>
     <div id="comments"></div>
 

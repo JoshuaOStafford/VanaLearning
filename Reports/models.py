@@ -33,29 +33,28 @@ class MasterDRC(models.Model):
         return self.date.strftime("%A, %B %d")
 
     def get_m1(self):
-        total = self.drc_set.count()
+        total = self.total_count()
         percentage = round(float(self.m1_score) / total * 100,2)
         return str(percentage)
 
     def get_m2(self):
-        total = self.drc_set.count()
+        total = self.total_count()
         percentage = round(float(self.m2_score) / total * 100,2)
         return str(percentage)
 
     def get_m3(self):
-        total = self.drc_set.count()
         if self.HW_Assigned <= 0:
             return None
         percentage = round(float(self.m3_score) / self.HW_Assigned * 100,2)
         return str(percentage)
 
     def get_m4(self):
-        total = self.drc_set.count()
+        total = self.total_count()
         percentage = round(float(self.m4_score) / total * 100,2)
         return str(percentage)
 
     def get_m5(self):
-        total = self.drc_set.count()
+        total = self.total_count()
         percentage = round(float(self.m5_score) / total * 100,2)
         return str(percentage)
 
@@ -81,6 +80,13 @@ class MasterDRC(models.Model):
         if float(self.get_m5()) - 2.0 < 0:
             return self.get_m5()
         return float(self.get_m5()) - 2
+
+    def total_count(self):
+        total = 0
+        for drc in self.drc_set:
+            if not drc.absent:
+                total += 1
+        return total
 
 
 class DRC(models.Model):
