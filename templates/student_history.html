@@ -107,6 +107,9 @@ body{
     <div id="daily_report">
         <h2 id="date">{{ daily_report.get_date }}</h2>
         <hr>
+    {% if daily_report.absent %}
+        <h3 align="center">{{ student.name }} was absent today.</h3>
+    {% else %}
     <div id="m1">
         <b>{{ student.m1_name }}</b>
     <br><br>
@@ -128,7 +131,7 @@ body{
          <div id="metric_fraction">{{ daily_report.m5_score }} / {{ daily_report.total_count }}</div>
          </div>
     <div id="comments"></div>
-
+    {% endif %}
     </div>
     {% endfor %}
     </div>

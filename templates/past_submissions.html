@@ -114,7 +114,9 @@ hr{
     <div id="m1">
         <b>{{ student.m1_name }}</b>
     <br><br>
-        {% if drc.m1 %}
+        {% if drc.absent %}
+            <div id="NA"><b>N/A</b></div>
+        {% elif drc.m1 %}
             <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
         {% else %}
             <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
@@ -123,7 +125,9 @@ hr{
     <div id="m2">
         <b>{{ student.m2_name }}</b>
         <br><br>
-        {% if drc.m2 %}
+        {% if drc.absent %}
+            <div id="NA"><b>N/A</b></div>
+        {% elif drc.m2 %}
             <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
         {% else %}
             <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
@@ -144,7 +148,9 @@ hr{
         <div id="m5">
         <b>{{ student.m5_name }}</b>
         <br><br>
-        {% if drc.m5 %}
+        {% if drc.absent %}
+            <div id="NA"><b>N/A</b></div>
+        {% elif drc.m5 %}
             <i class="fa fa-check fa-2x" aria-hidden="true" style="color:green"></i>
         {% else %}
             <i class="fa fa-times fa-2x" aria-hidden="true" style="color:red"></i>
