@@ -106,7 +106,7 @@ hr{
     <div id="past_drc">
 
     <h2 id="date">{{ drc.get_date }}</h2>
-    {% if date == drc.date %}
+    {% if test_date == drc.date %}
     <button id="edit-button" onclick="window.location.href='/edit/DailyReport/{{ student.username }}'">
         <span class="glyphicon glyphicon-edit"></span> Edit Report
     </button>
