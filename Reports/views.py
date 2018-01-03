@@ -83,6 +83,8 @@ def past_submissions_view(request, student_username):
         return redirect('/home')
     student = Student.objects.get(username=student_username)
     past_drcs = DRC.objects.filter(teacher=teacher, student=student)
+    past_drcs = past_drcs.order_by('date')
+    past_drcs = past_drcs.reverse()
     return render(request, 'past_submissions.html', {'user': teacher, 'past_drcs': past_drcs, 'student': student,
                                                      'date': date})
 
