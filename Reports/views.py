@@ -92,7 +92,7 @@ def past_submissions_view(request, student_username):
     else:
         test = str(test_date) + "   " + str(top_drc.date)
     return render(request, 'past_submissions.html', {'user': teacher, 'past_drcs': past_drcs, 'student': student,
-                                                     'date': date, 'test': test_date})
+                                                     'date': date, 'test_date': test_date, 'test': test})
 
 
 @login_required(login_url="/")
