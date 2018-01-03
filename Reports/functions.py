@@ -13,20 +13,18 @@ def get_user(request):
 
 def log_drc(request, student, teacher):
     if request.POST.get(student.username + '_m1', False) and request.POST.get(student.username + '_m2', False) \
-            and request.POST.get(student.username + '_m3', False) and request.POST.get(student.username + '_m4', False) \
-            and request.POST.get(student.username + '_m5', False):
+            and request.POST.get(student.username + '_m3', False) and request.POST.get(student.username + '_m5', False):
         m1 = request.POST[student.username + '_m1']
         m2 = request.POST[student.username + '_m2']
         m3 = request.POST[student.username + '_m3']
-        m4 = request.POST[student.username + '_m4']
         m5 = request.POST[student.username + '_m5']
         comments = request.POST.get(student.username + '_comments', False)
-        create_drc(student, teacher, m1, m2, m3, m4, m5, comments)
+        create_drc(student, teacher, m1, m2, m3, m5, comments)
         return True
     return False
 
 
-def create_drc(student, teacher, m1, m2, m3, m4, m5, comments):
+def create_drc(student, teacher, m1, m2, m3, m5, comments):
     date = datetime.date.today()
     if not MasterDRC.objects.filter(student=student, date=date).exists():
         master_drc = MasterDRC(student=student, date=date)
@@ -46,7 +44,7 @@ def create_drc(student, teacher, m1, m2, m3, m4, m5, comments):
         drc.m3 = None
     else:
         drc.m3 = (m3 == '1')
-    drc.m4 = (m4 == '1')
+    drc.m4 = False
     drc.m5 = (m5 == '1')
     if not comments:
         drc.comments = ''

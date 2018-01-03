@@ -173,7 +173,6 @@ label{
             <th>Appropriate Behavior</th>
             <th>Attentive</th>
             <th>Completed Homework</th>
-            <th>Needed Reminders & Redirection</th>
             <th>Organized</th>
             </tr>
             {% for student in remaining_students %}
@@ -217,18 +216,6 @@ label{
                      <input type="radio" name="{{ student.username }}_m3" id="{{ student.username }}m3_na" value="2">
                      <label for="{{ student.username }}m3_na" class="after_radio">N/A</label>
                      </li>
-                     </ul>
-                 </td>
-                 <td>
-                     <ul class="test">
-                         <li class="test-yes">
-                     <input type="radio" name="{{ student.username }}_m4" id="{{ student.username }}m4_yes" value="1"/>
-                     <label for="{{ student.username }}m4_yes" class="after_radio">Yes</label>
-                         </li>
-                     <li class="test-no">
-                     <input type="radio" name="{{ student.username }}_m4" id="{{ student.username }}m4_no" value="0">
-                     <label for="{{ student.username }}m4_no" class="after_radio">No</label>
-                         </li>
                      </ul>
                  </td>
                  <td>
