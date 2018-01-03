@@ -34,11 +34,15 @@ class MasterDRC(models.Model):
 
     def get_m1(self):
         total = self.total_count()
+        if total == 0:
+            return None
         percentage = round(float(self.m1_score) / total * 100,2)
         return str(percentage)
 
     def get_m2(self):
         total = self.total_count()
+        if total == 0:
+            return None
         percentage = round(float(self.m2_score) / total * 100,2)
         return str(percentage)
 
@@ -50,11 +54,15 @@ class MasterDRC(models.Model):
 
     def get_m4(self):
         total = self.total_count()
+        if total == 0:
+            return None
         percentage = round(float(self.m4_score) / total * 100,2)
         return str(percentage)
 
     def get_m5(self):
         total = self.total_count()
+        if total == 0:
+            return None
         percentage = round(float(self.m5_score) / total * 100,2)
         return str(percentage)
 
