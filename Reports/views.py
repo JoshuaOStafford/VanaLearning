@@ -78,7 +78,7 @@ def edit_drc_view(request, student_username):
 def past_submissions_view(request, student_username):
     tz = pytz.timezone('US/Eastern')
     date = datetime.now(tz)
-    test_date = datetime.now()
+    d_truncated = date.date()
     teacher = get_user(request)
     if not Student.objects.filter(username=student_username).exists():
         return redirect('/home')
@@ -87,12 +87,12 @@ def past_submissions_view(request, student_username):
     past_drcs = past_drcs.order_by('date')
     past_drcs = past_drcs.reverse()
     top_drc = past_drcs.first()
-    if test_date == top_drc.date:
+    if d_truncated == top_drc.date:
         test = "Success"
     else:
-        test = str(test_date) + "   " + str(top_drc.date)
+        test = str(d_truncated) + "   " + str(top_drc.date)
     return render(request, 'past_submissions.html', {'user': teacher, 'past_drcs': past_drcs, 'student': student,
-                                                     'date': date, 'test_date': test_date, 'test': test})
+                                                     'date': date, 'test_date': d_truncated, 'test': test})
 
 
 @login_required(login_url="/")
