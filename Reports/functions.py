@@ -12,6 +12,10 @@ def get_user(request):
 
 
 def log_drc(request, student, teacher):
+    absent = request.POST.get(student.username + '_absent', False)
+    if absent:
+        create_absent_drc(student, teacher)
+        return True
     if request.POST.get(student.username + '_m1', False) and request.POST.get(student.username + '_m2', False) \
             and request.POST.get(student.username + '_m3', False) and request.POST.get(student.username + '_m5', False):
         m1 = request.POST[student.username + '_m1']
@@ -24,13 +28,37 @@ def log_drc(request, student, teacher):
     return False
 
 
-def create_drc(student, teacher, m1, m2, m3, m5, comments):
+def create_absent_drc(student, teacher):
     date = datetime.date.today()
     if not MasterDRC.objects.filter(student=student, date=date).exists():
-        master_drc = MasterDRC(student=student, date=date)
+        master_drc = MasterDRC(student=student, date=date, absent=True)
         master_drc.save()
     else:
         master_drc = MasterDRC.objects.get(student=student, date=date)
+    if DRC.objects.filter(student=student, date=date, teacher=teacher).exists():
+        old_drc = DRC.objects.get(student=student, date=date, teacher=teacher)
+        remove_drc_from_master(old_drc, master_drc)
+        old_drc.delete()
+    drc = DRC(student=student, date=date, teacher=teacher, masterDRC=master_drc, absent=True)
+    drc.m1 = False
+    drc.m2 = False
+    drc.m3 = False
+    drc.m4 = False
+    drc.m5 = False
+    drc.save()
+    update_master_drc(drc, master_drc)
+    return drc
+
+
+def create_drc(student, teacher, m1, m2, m3, m5, comments):
+    date = datetime.date.today()
+    if not MasterDRC.objects.filter(student=student, date=date).exists():
+        master_drc = MasterDRC(student=student, date=date, absent=False)
+        master_drc.save()
+    else:
+        master_drc = MasterDRC.objects.get(student=student, date=date)
+        master_drc.absent = False
+        master_drc.save()
     if DRC.objects.filter(student=student, date=date, teacher=teacher).exists():
         old_drc = DRC.objects.get(student=student, date=date, teacher=teacher)
         remove_drc_from_master(old_drc, master_drc)

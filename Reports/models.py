@@ -21,6 +21,7 @@ class Student(models.Model):
 class MasterDRC(models.Model):
     date = models.DateField()
     student = models.ForeignKey(Student)
+    absent = models.BooleanField(default=False)
     m1_score = models.IntegerField(default=0)
     m2_score = models.IntegerField(default=0)
     m3_score = models.IntegerField(default=0)
@@ -88,6 +89,7 @@ class DRC(models.Model):
     student = models.ForeignKey(Student)
     teacher = models.ForeignKey(Teacher)
     masterDRC = models.ForeignKey(MasterDRC)
+    absent = models.BooleanField(default=False)
     # --- metrics --- #
     m1 = models.BooleanField()
     m2 = models.BooleanField()

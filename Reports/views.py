@@ -86,13 +86,8 @@ def past_submissions_view(request, student_username):
     past_drcs = DRC.objects.filter(teacher=teacher, student=student)
     past_drcs = past_drcs.order_by('date')
     past_drcs = past_drcs.reverse()
-    top_drc = past_drcs.first()
-    if d_truncated == top_drc.date:
-        test = "Success"
-    else:
-        test = str(d_truncated) + "   " + str(top_drc.date)
     return render(request, 'past_submissions.html', {'user': teacher, 'past_drcs': past_drcs, 'student': student,
-                                                     'date': date, 'test_date': d_truncated, 'test': test})
+                                                     'date': date, 'test_date': d_truncated})
 
 
 @login_required(login_url="/")
