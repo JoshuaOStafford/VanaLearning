@@ -91,7 +91,7 @@ class MasterDRC(models.Model):
 
     def total_count(self):
         total = 0
-        for drc in self.drc_set:
+        for drc in self.drc_set.all():
             if not drc.absent:
                 total += 1
         return total
