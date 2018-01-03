@@ -96,6 +96,7 @@ def student_history_view(request, student_username):
     if student not in teacher.student_set.all():
         return redirect('/home')
     master_drcs = MasterDRC.objects.filter(student=student)
+    master_drcs = master_drcs.order_by('date')
     return render(request, 'student_history.html', {'user': teacher, 'student': student, 'Master_DRCs': master_drcs})
 
 
