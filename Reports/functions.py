@@ -11,10 +11,10 @@ def get_user(request):
         return None
 
 
-def log_drc(request, student, teacher):
+def log_drc(request, student, teacher, old_date, is_past_report):
     absent = request.POST.get(student.username + '_absent', False)
     if absent:
-        create_absent_drc(student, teacher)
+        create_absent_drc(student, teacher, old_date, is_past_report)
         return True
     if request.POST.get(student.username + '_m1', False) and request.POST.get(student.username + '_m2', False) \
             and request.POST.get(student.username + '_m3', False) and request.POST.get(student.username + '_m5', False):
@@ -23,13 +23,16 @@ def log_drc(request, student, teacher):
         m3 = request.POST[student.username + '_m3']
         m5 = request.POST[student.username + '_m5']
         comments = request.POST.get(student.username + '_comments', False)
-        create_drc(student, teacher, m1, m2, m3, m5, comments)
+        create_drc(student, teacher, m1, m2, m3, m5, comments, old_date, is_past_report)
         return True
     return False
 
 
-def create_absent_drc(student, teacher):
-    date = datetime.date.today()
+def create_absent_drc(student, teacher, old_date, is_past_report):
+    if is_past_report:
+        date = old_date
+    else:
+        date = datetime.date.today()
     if not MasterDRC.objects.filter(student=student, date=date).exists():
         master_drc = MasterDRC(student=student, date=date, absent=True)
         master_drc.save()
@@ -51,8 +54,11 @@ def create_absent_drc(student, teacher):
     return drc
 
 
-def create_drc(student, teacher, m1, m2, m3, m5, comments):
-    date = datetime.date.today()
+def create_drc(student, teacher, m1, m2, m3, m5, comments, old_date, is_past_report):
+    if is_past_report:
+        date = old_date
+    else:
+        date = datetime.date.today()
     if not MasterDRC.objects.filter(student=student, date=date).exists():
         master_drc = MasterDRC(student=student, date=date, absent=False)
         master_drc.save()

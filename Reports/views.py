@@ -39,7 +39,7 @@ def log_drc_view(request):
         return redirect('/home')
     students = teacher.student_set.all()
     if teacher.username == 'lhorich':
-        students = []
+        students=[]
         students.append(Student.objects.get(username='max'))
         students.append(Student.objects.get(username='tuppy'))
     remaining_students = []
@@ -48,7 +48,12 @@ def log_drc_view(request):
             remaining_students.append(student)
     if request.method == 'POST':
         for student in students:
-            log_drc(request, student, teacher)
+            old_date = None
+            if not request.POST.get('date', False):
+                log_drc(request, student, teacher, old_date, False)
+            else:
+                old_date = request.POST['date']
+                log_drc(request, student, teacher, old_date, True)
         return redirect('/log/DailyReports')
     return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': remaining_students,
                                                 'are_remaining_students': len(remaining_students) != 0})
@@ -66,7 +71,7 @@ def edit_drc_view(request, student_username):
     if student not in teacher.student_set.all():
         return redirect('/home')
     if request.method == 'POST':
-        if log_drc(request, student, teacher):
+        if log_drc(request, student, teacher, None, False):
             message = "Report for " + student.name + " has successfully been changed."
         else:
             message = "We failed to change the report for " + student.name + ". Please make sure you entered all " \
