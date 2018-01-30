@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from Reports.models import Student, DRC, MasterDRC, Teacher
 from datetime import datetime, timezone
+import datetime as datetime3
 from django.contrib.auth.decorators import login_required
-from Reports.functions import get_user, log_drc
+from Reports.functions import get_user, log_drc, get_different_week_url
 import pytz
 from datetime import timedelta, datetime as datetime2
 
@@ -113,15 +114,68 @@ def student_history_view(request, student_username):
 
 
 @login_required(login_url="/")
-def progress_graph_view(request, student_username):
-    teacher = get_user(request)
-    if not Student.objects.filter(username=student_username).exists():
-        return redirect('/home')
-    student = Student.objects.get(username=student_username)
-    if student not in teacher.student_set.all():
-        return redirect('/home')
-    master_drcs = MasterDRC.objects.filter(student=student)
-    return render(request, 'progress_graph.html', {'user': teacher, 'student': student, 'Master_DRCs': master_drcs})
+@login_required(login_url="/")
+def progress_graph_view(request, student_username, start_date_str, end_date_str):
+    error_msg = ""
+    if request.method == 'POST':
+        date1_str = request.POST.get('date1', False)
+        date2_str = request.POST.get('date2', False)
+        if not date1_str or not date2_str or len(date1_str) != 10 or len(date2_str) != 10:
+            error_msg = "Please enter valid time span."
+        else:
+            date1 = datetime2.strptime(date1_str, '%Y-%m-%d')
+            date2 = datetime2.strptime(date2_str, '%Y-%m-%d')
+            if date1 >= date2:
+                error_msg = "Please make sure that the start date is before the end date."
+            else:
+                return redirect('/ProgressGraph/' + student_username + '/' + date1_str + "/to/" + date2_str)
+    student = get_user(request)
+    xaxis_dates = []
+    yaxis_m1_values = []
+    yaxis_m2_values = []
+    yaxis_m3_values = []
+    yaxis_m4_values = []
+    today = datetime3.date.today()
+    today_str = today.strftime('%Y-%m-%d')
+    current_link = student_username + '/' + start_date_str + "/to/" + end_date_str
+    past_week_link = student_username + '/' + get_different_week_url(today_str, -6)
+    past_2weeks_link = student_username + '/' + get_different_week_url(today_str, -14)
+    past_month_link = student_username + '/' + get_different_week_url(today_str, -28)
+    start_date = datetime2.strptime(start_date_str, '%Y-%m-%d')
+    end_date = datetime2.strptime(end_date_str, '%Y-%m-%d')
+    current_date = start_date
+    while current_date != (end_date + timedelta(days=1)):
+        dayOfWeek = current_date.strftime('%A')
+        if dayOfWeek != 'Saturday' and dayOfWeek != 'Sunday':
+            current_date_string = current_date.strftime('%a, %b %d')
+            xaxis_dates.append(current_date_string)
+
+            if MasterDRC.objects.filter(student=student, date=current_date).exists():
+                master_drc = MasterDRC.objects.get(student=student, date=current_date)
+                yaxis_m1_values.append(master_drc.get_m1_charted())
+                yaxis_m2_values.append(master_drc.get_m2_charted())
+                yaxis_m3_values.append(master_drc.get_m3_charted())
+                yaxis_m4_values.append(master_drc.get_m4_charted())
+            else:
+                yaxis_m1_values.append(-1)
+                yaxis_m2_values.append(-1)
+                yaxis_m3_values.append(-1)
+                yaxis_m4_values.append(-1)
+        current_date = current_date + timedelta(days=1)
+
+    return render(request, "progress_graph.html", {'xaxis_dates': xaxis_dates, 'yaxis_m1_data': yaxis_m1_values,
+                                                 'yaxis_m2_data': yaxis_m2_values, 'yaxis_m3_data': yaxis_m3_values,
+                                                 'yaxis_m4_data': yaxis_m4_values, 'student': student, 'past_week_link': past_week_link,
+                                                 'past_2weeks_link': past_2weeks_link, 'past_month_link': past_month_link,
+                                                 'current_link': current_link, 'errorMsg': error_msg, 'student_username': student_username})
+
+
+@login_required(login_url="/")
+def current_week_report_redirect(request, student_username):
+    today = datetime3.date.today()
+    today_str = today.strftime('%Y-%m-%d')
+    past_week_link = get_different_week_url(today_str, -6)
+    return redirect("/ProgressGraph/" + student_username + '/' + past_week_link)
 
 
 @login_required(login_url="/")

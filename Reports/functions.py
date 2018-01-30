@@ -1,6 +1,8 @@
 from Reports.models import Teacher, DRC, MasterDRC
 from django.shortcuts import redirect
 import datetime
+from datetime import timedelta, datetime as datetime2
+
 
 
 def get_user(request):
@@ -120,3 +122,11 @@ def update_master_drc(drc, master_drc):
     if drc.m3 is True or drc.m3 is False:
         master_drc.HW_Assigned += 1
     master_drc.save()
+
+
+def get_different_week_url(current_date, days_left):
+    monday_date = datetime2.strptime(current_date, '%Y-%m-%d')
+    start_date = monday_date + timedelta(days=days_left)
+    start_date_str = start_date.strftime("%Y-%m-%d")
+    link = start_date_str + "/to/" + current_date
+    return link

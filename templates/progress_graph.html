@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
 <script src="https://use.fontawesome.com/5bac3b535a.js"></script>
@@ -22,23 +23,158 @@
     <title>Progress Graph</title>
 </head>
 
-<style>
-body{
-    background-color: whitesmoke;
+    <style>
+    body{
+        font-family: 'EB Garamond', cursive;
+        background-color: #FFFFFF;
+    width: available;
+    height: available;
+    }
+    #wrapper {
+  display:table;
+  width:100%;
+        height:100%;
 }
-#title{
-    margin-top: 8%;
+#row {
+  display:table-row;
 }
-</style>
+#first {
+    display:table-cell;
+    width:10%;
+    vertical-align: middle;
+    text-align: center;
+
+}
+#second {
+    display:table-cell;
+    width:80%;
+    height: 100% !important;
+    text-align: center;
+}
+#third {
+    display:table-cell;
+    vertical-align: middle;
+    width:10%;
+    text-align: center;
+
+}
+    .container {
+    width: 100%;
+        height: 100%;
+    margin-bottom: 15px;
+    }
+    </style>
 
 <body>
- <div align="center"><h2 id="title">There are currently no data on {{ student.name }}</h2>
+<div id="wrapper">
+  <div id="row">
+      <div id="first"></div>
+    <div id="second">
+
+<div class="container">
+    <h3 align="center">{{ errorMsg }}</h3>
+    <div align="center">
+        <button onclick="window.location.href='/ProgressGraph/{{ student_username }}/{{ past_week_link }}'">Past Week</button> &nbsp;&nbsp;
+        <button onclick="window.location.href='/ProgressGraph/{{ student_username }}/{{ past_2weeks_link }}'">Past Two Weeks</button> &nbsp;&nbsp;
+        <button onclick="window.location.href='/ProgressGraph/{{ student_username }}/{{ past_month_link }}'">Past Month</button>
         <br>
-    <h4>Progress graph will appear after daily reports are being submitted.</h4></div>
+        <form action="/ProgressGraph/{{ student_username }}/{{ current_link }}" method="post">
+        {% csrf_token %}
+    <input placeholder="YYYY-MM-DD" type="date" name="date1" title="Start Date">
+    <input placeholder="YYYY-MM-DD" type="date" name="date2" title="End Date">
+        <input type="submit" value="View Custom Span"/>
+</form>
+
+    </div>
+    <h5 align="center">Showing Cumulative Scores out of 100%</h5>
+  <div align="center">
+    <canvas id="myChart"></canvas>
+
+  </div>
+
+</div>
+
+</div>
+
+      <div id="third"></div>
+  </div>
+</div>
+
+    <script type="text/javascript">
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+      labels: [{% for date in xaxis_dates %}
+        '{{ date }}',
+     {% endfor %}],
+    datasets: [{
+      label: 'Well-behaved',
+      data: [{% for datapoint in yaxis_m1_data %}
+          {% if datapoint == -1 %} , {% else %} {{ datapoint }}, {% endif %}
+      {% endfor %}],
+      fill: false,
+      borderColor: "#DC143C",
+        borderWidth: 4,
+        tension: 0,
+        borderJoinStyle:"bevel"
+
+    }, {
+      label: 'Organized',
+      data: [{% for datapoint in yaxis_m2_data %}
+          {% if datapoint == -1 %} , {% else %} {{ datapoint }}, {% endif %}
+      {% endfor %}],
+      fill: false,
+      borderColor: "#0000FF",
+        borderWidth: 4,
+        tension: 0,
+        borderJoinStyle: "bevel"
+    },{
+      label: 'HW Complete',
+      data: [{% for datapoint in yaxis_m3_data %}
+          {% if datapoint == -1 %} , {% else %} {{ datapoint }}, {% endif %}
+      {% endfor %}],
+        fill: false,
+      borderColor: "#008000",
+        borderWidth: 4,
+        tension: 0,
+        borderJoinStyle: "bevel"
+    },{
+      label: 'Attentive',
+      data: [{% for datapoint in yaxis_m4_data %}
+          {% if datapoint == -1 %} , {% else %} {{ datapoint }}, {% endif %}
+      {% endfor %}],
+        fill: false,
+      borderColor: "#FFD700",
+        borderWidth: 4,
+        tension: 0,
+        borderJoinStyle: "bevel"
+    }
+    ]
+  }, options:{
+        responsive: true,
+        events: [''],
+        legend: {
+            position: 'top'
+        },
+        scales:{
+             yAxes: [{
+                    display: true,
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 5,
+                        stepValue: 1,
+                        max: 100
+                    }
+                }]
+            }
+        }
 
 
+});
 
-{% endblock %}
+    </script>
+
 </body>
-
+{% endblock %}
 </html>

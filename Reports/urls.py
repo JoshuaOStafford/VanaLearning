@@ -9,8 +9,10 @@ urlpatterns = [
     url(r'^edit/DailyReport/([a-zA-z0-9_-]{3,16})', views.edit_drc_view, name='edit daily report'),
     url(r'^PastSubmissions/([a-zA-z0-9_-]{3,16})', views.past_submissions_view, name='view past submissions'),
     url(r'^StudentHistory/([a-zA-z0-9_-]{3,16})', views.student_history_view, name='student history'),
-    url(r'^ProgressGraph/([a-zA-z0-9_-]{3,16})', views.progress_graph_view, name='progress graph'),
+    url(r'^ProgressGraph/([a-zA-z0-9_-]{3,16})/([0-9_-]{9,11})/to/([0-9_-]{9,11})$', views.progress_graph_view,
+        name='progress graph'),
     url(r'^WeeklyReports/([a-zA-z0-9_-]{3,16})', views.weekly_reports_view, name='view weekly reports'),
-    url(r'TeacherSubmissions', views.teacher_submissions_view, name='view teacher submission stats')
+    url(r'TeacherSubmissions', views.teacher_submissions_view, name='view teacher submission stats'),
+    url(r'^current_wr_redirect/([a-zA-z0-9_-]{3,16})$', views.current_week_report_redirect, name='WR_redirect'),
 ]
 
