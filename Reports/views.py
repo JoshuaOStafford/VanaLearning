@@ -144,23 +144,47 @@ def teacher_submissions_view(request):
     if request.method == 'POST':
         if request.POST.get('date', False):
             date = request.POST['date']
+    a6Done = b6Done = c6Done = d6Done = a7Done = b7Done = c7Done = d7Done = a8Done = b8Done = c8Done = d8Done = False
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
+    if a6 == 1:
+        a6Done = True
     b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
+    if b6 == 1:
+        b6Done = True
     c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
+    if c6 == 1:
+        c6Done = True
     d6 = DRC.objects.filter(teacher=Teacher.objects.get(username='vwhite'), date=date).count()
-
+    if d6 == 1:
+        d6Done = True
     a7 = DRC.objects.filter(teacher=Teacher.objects.get(username='ghunter'), date=date).count()
+    if a7 == 2:
+        a7Done = True
     b7 = DRC.objects.filter(teacher=Teacher.objects.get(username='amarusak'), date=date).count()
+    if b7 == 2:
+        b7Done = True
     c7 = DRC.objects.filter(teacher=Teacher.objects.get(username='cmiller'), date=date).count()
+    if c7 == 2:
+        c7Done = True
     d7 = DRC.objects.filter(teacher=Teacher.objects.get(username='czolet'), date=date).count()
-
+    if d7 == 2:
+        d7Done = True
     a8 = DRC.objects.filter(teacher=Teacher.objects.get(username='mchellman'), date=date).count()
+    if a8 == 2:
+        a8Done = True
     b8 = DRC.objects.filter(teacher=Teacher.objects.get(username='chenry'), date=date).count()
+    if b8 == 2:
+        b8Done = True
     c8 = DRC.objects.filter(teacher=Teacher.objects.get(username='cholman'), date=date).count()
+    if c8 == 2:
+        c8Done = True
     d8 = DRC.objects.filter(teacher=Teacher.objects.get(username='lhorich'), date=date).count()
-
+    if d8 == 2:
+        d8Done = True
     return render(request, 'teacher_submissions.html', {'user': teacher, '6a': a6, '6b': b6, '6c': c6, '6d': d6,
                                                         '7a': a7, '7b': b7, '7c': c7, '7d': d7,'8a': a8, '8b': b8,
-                                                        '8c': c8, '8d': d8})
+                                                        '8c': c8, '8d': d8, '6aDone': a6Done, '6bDone': b6Done, '6cDone': c6Done, '6dDone': d6Done,
+                                                        '7aDone': a7Done, '7bDone': b7Done, '7cDone': c7Done, '7dDone': d7Done, '8aDone': a8Done, '8bDone': b8Done,
+                                                        '8cDone': c8Done, '8dDone': d8Done, })
 
 

@@ -57,10 +57,10 @@ td{
         Teacher
         </th>
         <th>
-        Reports Submitted
+        All Reports Submitted
         </th>
         <th>
-        Reports Available
+        Reports Submitted (out of Total)
         </th>
     </tr>
     <tr>
@@ -68,10 +68,10 @@ td{
             Dana Bleiberg
         </td>
         <td>
-            {{ 6a }}
+            {% if 6aDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            1
+            {{ 6a }} / 1
         </td>
     </tr>
     <tr>
@@ -79,10 +79,10 @@ td{
             Marcie Demers
         </td>
         <td>
-            {{ 6b }}
+            {% if 6bDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            1
+            {{ 6b }} / 1
         </td>
     </tr>
     <tr>
@@ -90,10 +90,10 @@ td{
             Chip West
         </td>
         <td>
-            {{ 6c }}
+            {% if 6cDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            1
+            {{ 6c }} / 1
         </td>
     </tr>
     <tr>
@@ -101,10 +101,10 @@ td{
             Vin White
         </td>
         <td>
-            {{ 6d }}
+            {% if 6dDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            1
+            {{ 6d }} / 1
         </td>
     </tr>
 
@@ -113,10 +113,10 @@ td{
             Glenn Hunter
         </td>
         <td>
-            {{ 7a }}
+            {% if 7aDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 7a }} / 2
         </td>
     </tr>
     <tr>
@@ -124,10 +124,10 @@ td{
             Andy Marusak
         </td>
         <td>
-            {{ 7b }}
+            {% if 7bDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 7b }} / 2
         </td>
     </tr>
     <tr>
@@ -135,10 +135,10 @@ td{
             Chris Miller
         </td>
         <td>
-            {{ 7c }}
+            {% if 7cDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 7c }} / 2
         </td>
     </tr>
     <tr>
@@ -146,10 +146,10 @@ td{
             Caitlin Zolet
         </td>
         <td>
-            {{ 7d }}
+            {% if 7dDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 7d }} / 2
         </td>
     </tr>
 
@@ -158,10 +158,10 @@ td{
             Michael Chellman
         </td>
         <td>
-            {{ 8a }}
+            {% if 8aDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 8a }} / 2
         </td>
     </tr>
     <tr>
@@ -169,10 +169,10 @@ td{
            Chelsea Henry
         </td>
         <td>
-            {{ 8b }}
+            {% if 8bDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 8b }} / 2
         </td>
     </tr>
     <tr>
@@ -180,10 +180,10 @@ td{
             Claire Holman
         </td>
         <td>
-            {{ 8c }}
+            {% if 8cDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 8c }} / 2
         </td>
     </tr>
     <tr>
@@ -191,10 +191,10 @@ td{
             Lele Horich
         </td>
         <td>
-            {{ 8d }}
+            {% if 8dDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
         </td>
         <td>
-            2
+            {{ 8d }} / 2
         </td>
     </tr>
     </table>
