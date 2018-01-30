@@ -50,11 +50,9 @@ def log_drc_view(request):
         for student in students:
             old_date = None
             if not request.POST.get('date', False):
-                1/0
                 log_drc(request, student, teacher, old_date, False)
             else:
                 old_date = request.POST['date']
-                1/0
                 log_drc(request, student, teacher, old_date, True)
 
         return redirect('/log/DailyReports')
