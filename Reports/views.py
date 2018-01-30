@@ -54,6 +54,7 @@ def log_drc_view(request):
             else:
                 old_date = request.POST['date']
                 log_drc(request, student, teacher, old_date, True)
+                1/0
         return redirect('/log/DailyReports')
     return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': remaining_students,
                                                 'are_remaining_students': len(remaining_students) != 0})
