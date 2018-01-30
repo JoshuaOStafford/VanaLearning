@@ -8,7 +8,6 @@ import pytz
 from datetime import timedelta, datetime as datetime2
 
 
-
 def landing_page_view(request):
     user = get_user(request)
     return render(request, 'landing_page.html', {'user': user})
@@ -116,6 +115,9 @@ def student_history_view(request, student_username):
 @login_required(login_url="/")
 @login_required(login_url="/")
 def progress_graph_view(request, student_username, start_date_str, end_date_str):
+    teacher = get_user(request)
+    if not teacher == Teacher.objects.get(username='lhorich'):
+        return redirect('/home')
     error_msg = ""
     if request.method == 'POST':
         date1_str = request.POST.get('date1', False)
@@ -167,7 +169,8 @@ def progress_graph_view(request, student_username, start_date_str, end_date_str)
                                                  'yaxis_m2_data': yaxis_m2_values, 'yaxis_m3_data': yaxis_m3_values,
                                                  'yaxis_m4_data': yaxis_m4_values, 'student': student, 'past_week_link': past_week_link,
                                                  'past_2weeks_link': past_2weeks_link, 'past_month_link': past_month_link,
-                                                 'current_link': current_link, 'errorMsg': error_msg, 'student_username': student_username})
+                                                 'current_link': current_link, 'errorMsg': error_msg, 'student_username': student_username,
+                                                   'user': teacher})
 
 
 @login_required(login_url="/")
