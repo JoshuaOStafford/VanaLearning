@@ -48,7 +48,7 @@ class MasterDRC(models.Model):
 
     def get_m3(self):
         if self.HW_Assigned <= 0:
-            return None
+            return -1
         percentage = round(float(self.m3_score) / self.HW_Assigned * 100,2)
         return str(percentage)
 

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/progress_graph.html" afterPath="$PROJECT_DIR$/templates/progress_graph.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/models.py" afterPath="$PROJECT_DIR$/Reports/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
@@ -97,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Reports/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="74" column="40" lean-forward="true" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+            <state relative-caret-position="248">
+              <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -173,7 +172,6 @@
         <option value="$PROJECT_DIR$/templates/weekly_reports.html" />
         <option value="$PROJECT_DIR$/templates/base_home.html" />
         <option value="$PROJECT_DIR$/templates/edit_report.html" />
-        <option value="$PROJECT_DIR$/Reports/models.py" />
         <option value="$PROJECT_DIR$/templates/past_submissions.html" />
         <option value="$PROJECT_DIR$/Vana/settings.py" />
         <option value="$PROJECT_DIR$/templates/log_reports.html" />
@@ -183,6 +181,7 @@
         <option value="$PROJECT_DIR$/templates/student_history.html" />
         <option value="$PROJECT_DIR$/templates/progress_graph.html" />
         <option value="$PROJECT_DIR$/Reports/views.py" />
+        <option value="$PROJECT_DIR$/Reports/models.py" />
       </list>
     </option>
   </component>
@@ -981,14 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="40" lean-forward="true" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/teacher_submissions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
@@ -1017,6 +1008,14 @@
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reports/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
