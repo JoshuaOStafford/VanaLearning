@@ -50,7 +50,7 @@ td{
 <body>
     <div align="center">
     <br><br><br>
-    <h2>Sixth Grade</h2>
+    <h2>Teachers</h2>
     <table>
     <tr>
         <th>
@@ -107,21 +107,7 @@ td{
             1
         </td>
     </tr>
-    </table>
 
-    <h2>Seventh Grade</h2>
-    <table>
-    <tr>
-        <th>
-        Teacher
-        </th>
-        <th>
-        Reports Submitted
-        </th>
-        <th>
-        Reports Available
-        </th>
-    </tr>
     <tr>
         <td>
             Glenn Hunter
@@ -166,21 +152,7 @@ td{
             2
         </td>
     </tr>
-    </table>
 
-    <h2>Eighth Grade</h2>
-    <table>
-    <tr>
-        <th>
-        Teacher
-        </th>
-        <th>
-        Reports Submitted
-        </th>
-        <th>
-        Reports Available
-        </th>
-    </tr>
     <tr>
         <td>
             Michael Chellman
@@ -227,9 +199,12 @@ td{
     </tr>
     </table>
 
+    <h3>View a past day</h3>
+    <form action="/TeacherSubmissions" method="post">
+        {% csrf_token %}
 
-
-
+        <input id="date" type="date" name="date">
+    </form>
     </div>
 {% endblock %}
 </body>

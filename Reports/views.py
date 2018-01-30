@@ -141,6 +141,9 @@ def teacher_submissions_view(request):
 
     tz = pytz.timezone('US/Eastern')
     date = datetime.now(tz)
+    if request.method == 'POST':
+        if request.POST.get('date', False):
+            date = request.POST['date']
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
     b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
     c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
