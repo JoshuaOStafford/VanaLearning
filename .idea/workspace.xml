@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/landing_page.html" afterPath="$PROJECT_DIR$/templates/landing_page.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,10 +32,10 @@
       <file leaf-file-name="landing_page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/landing_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-736">
-              <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+            <state relative-caret-position="1207">
+              <caret line="39" column="1693" lean-forward="false" selection-start-line="39" selection-start-column="1693" selection-end-line="39" selection-end-column="1693" />
               <folding>
-                <element signature="e#100263#100280#0#HTML" expanded="true" />
+                <element signature="e#100269#100286#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -914,10 +913,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/landing_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-736">
-          <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+        <state relative-caret-position="1207">
+          <caret line="39" column="1693" lean-forward="false" selection-start-line="39" selection-start-column="1693" selection-end-line="39" selection-end-column="1693" />
           <folding>
-            <element signature="e#100263#100280#0#HTML" expanded="true" />
+            <element signature="e#100269#100286#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
