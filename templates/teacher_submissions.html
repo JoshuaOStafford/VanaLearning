@@ -37,6 +37,9 @@ th{
     text-align: center;
     padding: 10px;
 }
+tr{
+    border: 1px solid black;
+}
 td{
     height: 40px;
     vertical-align: middle;
@@ -58,9 +61,6 @@ td{
   margin: 10px;
 }
 
-.button:hover {
-  background-color: #006400;
-}
 
     </style>
 
@@ -221,6 +221,7 @@ td{
         {% csrf_token %}
 
         <input id="date" type="date" name="date">
+        <br>
         <input type="submit" value="Change Date" class="button" />
 
     </form>

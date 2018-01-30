@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 from django.contrib.auth.decorators import login_required
 from Reports.functions import get_user, log_drc
 import pytz
+from datetime import timedelta, datetime as datetime2
+
 
 
 def landing_page_view(request):
@@ -141,10 +143,13 @@ def teacher_submissions_view(request):
 
     tz = pytz.timezone('US/Eastern')
     date = datetime.now(tz)
+    date_string = date.strftime("%A, %B %d")
+
     if request.method == 'POST':
         if request.POST.get('date', False):
             date = request.POST['date']
-    date_string = date.strftime("%A, %B %d")
+            current_date = datetime2.strptime(date, '%Y-%m-%d')
+            date_string = current_date.strftime("%A, %B %d")
     a6Done = b6Done = c6Done = d6Done = a7Done = b7Done = c7Done = d7Done = a8Done = b8Done = c8Done = d8Done = False
     a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
     if a6 == 1:
