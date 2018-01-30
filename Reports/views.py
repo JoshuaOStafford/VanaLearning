@@ -130,7 +130,7 @@ def progress_graph_view(request, student_username, start_date_str, end_date_str)
             if date1 >= date2:
                 error_msg = "Please make sure that the start date is before the end date."
             else:
-                return redirect('/ProgressGraph/' + student_username + '/' + date1_str + "/to/" + date2_str)
+                return redirect('ProgressGraph/' + student_username + '/' + date1_str + "/to/" + date2_str)
 
     student = Student.objects.get(username=student_username)
     xaxis_dates = []
