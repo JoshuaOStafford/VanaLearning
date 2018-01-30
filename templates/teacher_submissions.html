@@ -44,6 +44,23 @@ td{
     padding: 5px;
     border-right: 1px solid black;
 }
+.button {
+  border-radius: 4px;
+  background-color: #99ddff;
+  border: 3px solid black;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 16px;
+  width: 200px;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #006400;
+}
 
     </style>
 
@@ -204,6 +221,8 @@ td{
         {% csrf_token %}
 
         <input id="date" type="date" name="date">
+        <input type="submit" value="Change Date" class="button" />
+
     </form>
     </div>
 {% endblock %}
