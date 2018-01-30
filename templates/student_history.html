@@ -73,6 +73,7 @@ body{
 }
 #progress_graph_button {
     margin-top: 2%;
+    margin-bottom: 2%;
     width: 25% !important;
     height: auto;
     white-space: normal;
@@ -99,7 +100,7 @@ body{
     <br><br><br>
     <div  align="center">
     <button id="progress_graph_button" onclick="window.location.href='/current_wr_redirect/{{ student.username }}'">
-        <br><i class="fa fa-line-chart" aria-hidden="true"></i> View Progress via Graph <br> Now Available
+        <i class="fa fa-line-chart" aria-hidden="true"></i> View Progress via Graph <br> Now Available
     </button>
     <h3>Viewing Past Daily Report Cards for {{ student.name }}</h3>
     {% for daily_report in Master_DRCs %}
