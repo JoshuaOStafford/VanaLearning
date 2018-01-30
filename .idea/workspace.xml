@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/progress_graph.html" afterPath="$PROJECT_DIR$/templates/progress_graph.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="2400">
               <caret line="160" column="42" lean-forward="true" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -61,16 +61,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="progress_graph.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="progress_graph.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="103" column="66" lean-forward="false" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
+            <state relative-caret-position="188">
+              <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
               <folding>
-                <element signature="e#1811#1817#0#HTML" expanded="true" />
-                <element signature="e#1817#1823#0#HTML" expanded="true" />
-                <element signature="e#1958#1964#0#HTML" expanded="true" />
-                <element signature="e#1964#1970#0#HTML" expanded="true" />
+                <element signature="e#1824#1830#0#HTML" expanded="true" />
+                <element signature="e#1830#1836#0#HTML" expanded="true" />
+                <element signature="e#1971#1977#0#HTML" expanded="true" />
+                <element signature="e#1977#1983#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,10 +180,10 @@
         <option value="$PROJECT_DIR$/templates/log_reports.html" />
         <option value="$PROJECT_DIR$/templates/teacher_submissions.html" />
         <option value="$PROJECT_DIR$/Reports/functions.py" />
-        <option value="$PROJECT_DIR$/templates/progress_graph.html" />
         <option value="$PROJECT_DIR$/Reports/urls.py" />
         <option value="$PROJECT_DIR$/templates/student_history.html" />
         <option value="$PROJECT_DIR$/Reports/views.py" />
+        <option value="$PROJECT_DIR$/templates/progress_graph.html" />
       </list>
     </option>
   </component>
@@ -982,19 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="103" column="66" lean-forward="false" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
-          <folding>
-            <element signature="e#1811#1817#0#HTML" expanded="true" />
-            <element signature="e#1817#1823#0#HTML" expanded="true" />
-            <element signature="e#1958#1964#0#HTML" expanded="true" />
-            <element signature="e#1964#1970#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Reports/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1015,10 +1002,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Reports/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
+        <state relative-caret-position="2400">
           <caret line="160" column="42" lean-forward="true" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+          <folding>
+            <element signature="e#1824#1830#0#HTML" expanded="true" />
+            <element signature="e#1830#1836#0#HTML" expanded="true" />
+            <element signature="e#1971#1977#0#HTML" expanded="true" />
+            <element signature="e#1977#1983#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
