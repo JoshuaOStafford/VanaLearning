@@ -185,6 +185,6 @@ def teacher_submissions_view(request):
                                                         '7a': a7, '7b': b7, '7c': c7, '7d': d7,'8a': a8, '8b': b8,
                                                         '8c': c8, '8d': d8, '6aDone': a6Done, '6bDone': b6Done, '6cDone': c6Done, '6dDone': d6Done,
                                                         '7aDone': a7Done, '7bDone': b7Done, '7cDone': c7Done, '7dDone': d7Done, '8aDone': a8Done, '8bDone': b8Done,
-                                                        '8cDone': c8Done, '8dDone': d8Done, })
+                                                        '8cDone': c8Done, '8dDone': d8Done, 'date': date})
 
 
