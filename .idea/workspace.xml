@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base_home.html" afterPath="$PROJECT_DIR$/templates/base_home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,9 +84,11 @@
       <file leaf-file-name="base_home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="145" column="79" lean-forward="false" selection-start-line="145" selection-start-column="79" selection-end-line="145" selection-end-column="79" />
-              <folding />
+            <state relative-caret-position="333">
+              <caret line="175" column="0" lean-forward="true" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+              <folding>
+                <element signature="e#6933#6939#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -953,9 +953,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="145" column="79" lean-forward="false" selection-start-line="145" selection-start-column="79" selection-end-line="145" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="333">
+          <caret line="175" column="0" lean-forward="true" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+          <folding>
+            <element signature="e#6933#6939#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
