@@ -76,6 +76,25 @@ label{
 .button:hover {
   background-color: #006400;
 }
+
+#past_button {
+  border-radius: 4px;
+  background-color: black;
+  border: 3px solid black;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 16px;
+  width: 200px;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#past_button:hover {
+  background-color: #006400;
+}
+
 #resubmit{
     margin-top: 5%;
 }
@@ -255,8 +274,9 @@ label{
         {% endif %}
         </form>
         <br>
-        <h3>Need to log past reports?</h3>
-        <button class="btn btn-large" onclick="window.location.href='/log/PastReports'">Log Past Reports</button>
+        <h2>Need to log past reports?</h2>
+
+        <button class="btn btn-large" id="past_button" onclick="window.location.href='/log/PastReports'">Log Past Reports</button>
 
 
 
