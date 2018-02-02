@@ -63,7 +63,7 @@ def log_drc_view(request):
 
 
 @login_required(login_url="/")
-def log_drc_view(request):
+def log_pastdrc_view(request):
     msg = ""
     teacher = get_user(request)
     if teacher is None:
@@ -76,7 +76,6 @@ def log_drc_view(request):
 
     if request.method == 'POST':
         for student in students:
-            old_date = None
             if not request.POST.get('date', False):
                 msg = "Please enter a date"
                 return render(request, 'past_reports.html', {'user': teacher, 'remaining_students': students,
