@@ -175,8 +175,9 @@
 
           </ul>
         </li>
+                {% if user.username == 'lhorich' %}
                                                     <li><a onclick="window.location.href='/TeacherSubmissions'"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;&nbsp;Monitor Submissions</a></li>
-
+                {% endif %}
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
