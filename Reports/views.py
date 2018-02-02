@@ -84,8 +84,8 @@ def log_pastdrc_view(request):
                 old_date = request.POST['date']
                 log_drc(request, student, teacher, old_date, True)
 
-        return redirect('/log/DailyReports')
-    return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': students,
+        return redirect('/log/PastReports')
+    return render(request, 'past_reports.html', {'user': teacher, 'remaining_students': students,
                                                 'are_remaining_students': len(students) != 0, 'error_msg': msg})
 
 
