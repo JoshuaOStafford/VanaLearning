@@ -116,7 +116,7 @@ def student_history_view(request, student_username):
 @login_required(login_url="/")
 def progress_graph_view(request, student_username, start_date_str, end_date_str):
     teacher = get_user(request)
-    if not teacher == Teacher.objects.get(username='lhorich'):
+    if not (teacher == Teacher.objects.get(username='lhorich') or teacher == Teacher.objects.get(username='christine')):
         return redirect('/home')
     error_msg = ""
     if request.method == 'POST':
