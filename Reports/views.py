@@ -63,6 +63,34 @@ def log_drc_view(request):
 
 
 @login_required(login_url="/")
+def log_drc_view(request):
+    msg = ""
+    teacher = get_user(request)
+    if teacher is None:
+        return redirect('/home')
+    students = teacher.student_set.all()
+    if teacher.username == 'lhorich':
+        students=[]
+        students.append(Student.objects.get(username='max'))
+        students.append(Student.objects.get(username='tuppy'))
+
+    if request.method == 'POST':
+        for student in students:
+            old_date = None
+            if not request.POST.get('date', False):
+                msg = "Please enter a date"
+                return render(request, 'past_reports.html', {'user': teacher, 'remaining_students': students,
+                                                'are_remaining_students': len(students) != 0, 'error_msg': msg})
+            else:
+                old_date = request.POST['date']
+                log_drc(request, student, teacher, old_date, True)
+
+        return redirect('/log/DailyReports')
+    return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': students,
+                                                'are_remaining_students': len(students) != 0, 'error_msg': msg})
+
+
+@login_required(login_url="/")
 def edit_drc_view(request, student_username):
     message = ""
     teacher = get_user(request)
