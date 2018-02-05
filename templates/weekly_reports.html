@@ -45,7 +45,7 @@ body{
     width: 50%;
     float: left;
     margin-left: 1%;
-    font-size: 140%;
+    font-size: 100%;
 
 }
 </style>
@@ -70,18 +70,18 @@ body{
         </div>
 
         <div id="comments">
-            <b><u>Successes</u></b><br>
+            <h6><u>Successes</u></h6><br>
             {% if wr1.success1 != '' %}1. {{ wr1.success1 }}<br>{% endif %}
             {% if wr1.success2 != '' %}2. {{ wr1.success2 }}<br>{% endif %}
             {% if wr1.success3 != '' %}3. {{ wr1.success3 }}<br>{% endif %}
-            <b><u>Areas for Improvement</u></b><br>
+            <h6><u>Areas for Improvement</u></h6><br>
             {% if wr1.aoi1 != '' %}1. {{ wr1.aoi1 }}<br>{% endif %}
             {% if wr1.aoi2 != '' %}2. {{ wr1.aoi1 }}<br>{% endif %}
             {% if wr1.aoi3 != '' %}3. {{ wr1.aoi1 }}<br>{% endif %}
-            <b><u>Insights</u></b><br>
+            <h6><u>Insights</u></h6><br>
             {% if wr1.insight1 != '' %}1. {{ wr1.insight1 }}<br>{% endif %}
-            {% if wr1.insight1 != '' %}2. {{ wr1.insight2 }}<br>{% endif %}
-            {% if wr1.insight1 != '' %}3. {{ wr1.insight3 }}<br>{% endif %}
+            {% if wr1.insight2 != '' %}2. {{ wr1.insight2 }}<br>{% endif %}
+            {% if wr1.insight3 != '' %}3. {{ wr1.insight3 }}<br>{% endif %}
         </div>
         <br>
         <div style="clear: both"></div>
