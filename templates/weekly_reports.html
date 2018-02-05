@@ -53,15 +53,16 @@ body{
     <div align="center">
 
     <div id="weekly_report">
+        <span style="font-size: 160%">
         Weekly Report 1: {{ student.name }}<br>
         From January 29th to February 2nd<br>
-
+        </span>
 
         <div id="scores">
         Appropriate Behavior: {{ wr1.m1percent }}% ({{ wr1.m1yes }} / {{ wr1.total }}) <br>
         Attentive: {{ wr1.m2percent }}% ({{ wr1.m2yes }} / {{ wr1.total }}) <br>
-        Attentive: {{ wr1.m3percent }}% ({{ wr1.m3yes }} / {{ wr1.hw_total }}) <br>
-        Attentive: {{ wr1.m4percent }}% ({{ wr1.m4yes }} / {{ wr1.total }}) <br>
+        HW Complete: {{ wr1.m3percent }}% ({{ wr1.m3yes }} / {{ wr1.hw_total }}) <br>
+        Organized: {{ wr1.m4percent }}% ({{ wr1.m4yes }} / {{ wr1.total }}) <br>
         </div>
 
     </div>
