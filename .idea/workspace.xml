@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/weekly_reports.html" afterPath="$PROJECT_DIR$/templates/weekly_reports.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weekly_reports.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weekly_reports.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/weekly_reports.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="370">
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Reports/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-261">
-              <caret line="225" column="35" lean-forward="true" selection-start-line="225" selection-start-column="35" selection-end-line="225" selection-end-column="35" />
+            <state relative-caret-position="308">
+              <caret line="222" column="125" lean-forward="false" selection-start-line="222" selection-start-column="125" selection-end-line="222" selection-end-column="125" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -141,8 +141,8 @@
         <option value="$PROJECT_DIR$/Reports/models.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/progress_graph.html" />
-        <option value="$PROJECT_DIR$/Reports/views.py" />
         <option value="$PROJECT_DIR$/templates/weekly_reports.html" />
+        <option value="$PROJECT_DIR$/Reports/views.py" />
       </list>
     </option>
   </component>
@@ -943,24 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="225" column="35" lean-forward="true" selection-start-line="225" selection-start-column="35" selection-end-line="225" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/log_reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2307">
-          <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -977,6 +959,24 @@
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#b#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/log_reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2307">
+          <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reports/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="222" column="125" lean-forward="false" selection-start-line="222" selection-start-column="125" selection-end-line="222" selection-end-column="125" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
