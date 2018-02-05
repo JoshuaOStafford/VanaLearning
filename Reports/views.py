@@ -226,7 +226,7 @@ def weekly_reports_view(request, student_username):
     elif student.username == 'max':
         week1_report = {'m1yes': 8, 'm2yes': 8, 'm3yes': 5, 'm4yes': 9, 'total': 9, 'hw_total': 6,
                         'm1percent': 89, 'm2percent': 89, 'm3percent': 83, 'm4percent': 100,
-                        'success1': 'Second week in a row with an average of at least 90%', 'success2': '', 'success3': '', 'aoi1': 'Earned “No” ratings on Wednesday for the second week in a row (over the past two weeks, 50% of all his “No’s” have occurred on Wednesdays)', 'aoi2': '', 'aoi3': '',
+                        'success1': 'Second week in a row with an average of at least 90%', 'success2': '', 'success3': '', 'aoi1': 'Received a disproportionate amount of No\'s on Wednesday\'s for the second week in a row (50% of all his "No\'s over the past two weeks occurred on the two wednesdays)', 'aoi2': '', 'aoi3': '',
                         'insight1': "Did not get more than one “No” on any measures", 'insight2': "Teachers completed an average of 2.25 reports per day (compared with 1.5 last week)", 'insight3': '', 'attendance': 4}
 
     elif student.username == 'tuppy':
