@@ -219,7 +219,7 @@ def weekly_reports_view(request, student_username):
     if student.username == 'jalen':
         week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
                         'm1percent': 67, 'm2percent': 67, 'm3percent': 75, 'm4percent': 78,
-                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+                        'pro_comment1': 'Test #1', 'pro_comment2': 'Test #2', 'con_comment1': 'Test #3', 'con_comment2': 'Test #4'}
 
     elif student.username == 'max':
         week1_report = {'m1yes': 8, 'm2yes': 8, 'm3yes': 5, 'm4yes': 9, 'total': 9, 'hw_total': 6,

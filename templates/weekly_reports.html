@@ -41,10 +41,18 @@ body{
 }
 #scores{
     text-align: left;
-    width: 40%;
+    width: 35%;
+    float: left;
     margin-left: 3%;
     margin-right: 1%;
     font-size: 160%;
+}
+#comments{
+    width: 40%;
+    float: left;
+    margin-left: 1%;
+    font-size: 140%;
+
 }
 </style>
 
@@ -54,7 +62,7 @@ body{
 
     <div id="weekly_report">
         <span style="font-size: 180%; margin-left: 6%"><b>
-        Weekly Report
+        Weekly Report 1
             <span style="float: right; margin-right: 6%">
                 January 29th - February 2nd
             </span>
@@ -65,6 +73,15 @@ body{
         Attentive: <b>{{ wr1.m2percent }}%</b> ({{ wr1.m2yes }} / {{ wr1.total }}) <br>
         HW Complete: <b>{{ wr1.m3percent }}%</b> ({{ wr1.m3yes }} / {{ wr1.hw_total }}) <br>
         Organized: <b>{{ wr1.m4percent }}%</b> ({{ wr1.m4yes }} / {{ wr1.total }}) <br>
+        </div>
+
+        <div>
+            <b>Successes</b>
+            1. {{ wr1.pro_comment1 }}<br>
+            2. {{ wr1.pro_comment2 }}<br>
+            <b>Areas for Improvement</b>
+            1. {{ wr1.con_comment1 }}
+            2. {{ wr1.con_comment2 }}
         </div>
 
     </div>
