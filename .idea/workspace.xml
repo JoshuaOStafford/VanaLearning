@@ -66,8 +66,8 @@
       <file leaf-file-name="progress_graph.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+            <state relative-caret-position="559">
+              <caret line="91" column="55" lean-forward="false" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -975,8 +975,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/progress_graph.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="559">
+          <caret line="91" column="55" lean-forward="false" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
           <folding />
         </state>
       </provider>
