@@ -43,22 +43,18 @@
         <entry file="file://$PROJECT_DIR$/templates/weekly_reports.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="68" column="66" lean-forward="false" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
+              <caret line="68" column="59" lean-forward="false" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#b#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#1610#1616#0#HTML" expanded="true" />
                 <element signature="e#1616#1622#0#HTML" expanded="true" />
-                <element signature="e#1622#1628#0#HTML" expanded="true" />
+                <element signature="e#1709#1715#0#HTML" expanded="true" />
                 <element signature="e#1715#1721#0#HTML" expanded="true" />
-                <element signature="e#1721#1727#0#HTML" expanded="true" />
-                <element signature="e#1727#1733#0#HTML" expanded="true" />
-                <element signature="e#1822#1828#0#HTML" expanded="true" />
-                <element signature="e#1828#1834#0#HTML" expanded="true" />
-                <element signature="e#1834#1840#0#HTML" expanded="true" />
-                <element signature="e#1930#1936#0#HTML" expanded="true" />
-                <element signature="e#1936#1942#0#HTML" expanded="true" />
-                <element signature="e#1942#1948#0#HTML" expanded="true" />
+                <element signature="e#1810#1816#0#HTML" expanded="true" />
+                <element signature="e#1816#1822#0#HTML" expanded="true" />
+                <element signature="e#1912#1918#0#HTML" expanded="true" />
+                <element signature="e#1918#1924#0#HTML" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -1014,22 +1010,18 @@
     <entry file="file://$PROJECT_DIR$/templates/weekly_reports.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="68" column="66" lean-forward="false" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
+          <caret line="68" column="59" lean-forward="false" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#b#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#1610#1616#0#HTML" expanded="true" />
             <element signature="e#1616#1622#0#HTML" expanded="true" />
-            <element signature="e#1622#1628#0#HTML" expanded="true" />
+            <element signature="e#1709#1715#0#HTML" expanded="true" />
             <element signature="e#1715#1721#0#HTML" expanded="true" />
-            <element signature="e#1721#1727#0#HTML" expanded="true" />
-            <element signature="e#1727#1733#0#HTML" expanded="true" />
-            <element signature="e#1822#1828#0#HTML" expanded="true" />
-            <element signature="e#1828#1834#0#HTML" expanded="true" />
-            <element signature="e#1834#1840#0#HTML" expanded="true" />
-            <element signature="e#1930#1936#0#HTML" expanded="true" />
-            <element signature="e#1936#1942#0#HTML" expanded="true" />
-            <element signature="e#1942#1948#0#HTML" expanded="true" />
+            <element signature="e#1810#1816#0#HTML" expanded="true" />
+            <element signature="e#1816#1822#0#HTML" expanded="true" />
+            <element signature="e#1912#1918#0#HTML" expanded="true" />
+            <element signature="e#1918#1924#0#HTML" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
