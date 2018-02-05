@@ -219,7 +219,7 @@ def weekly_reports_view(request, student_username):
     if student.username == 'jalen':
         week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
                         'm1percent': 67, 'm2percent': 67, 'm3percent': 75, 'm4percent': 78,
-                        'success1': 'Improving attentiveness', 'success2': '', 'success3': '', 'aoi1': 'Homework completion and organization fell 25% and 23% from last week, respectively. ', 'aoi2': '', 'aoi3': '',
+                        'success1': 'More attentive than last week', 'success2': '', 'success3': '', 'aoi1': 'Homework completion and organization fell 25% and 23% from last week, respectively. ', 'aoi2': '', 'aoi3': '',
                         'insight1': "Unwise to compare his performance this week with his performance last week, because he received 0 report cards on the Monday, Tuesday, and Wednesday of the week before. ",
                         'insight2': "Teachers completed an average of 1.6 reports per day (compared with 2 per day last week)", 'insight3': '', 'attendance': 5}
 
