@@ -74,14 +74,17 @@ body{
 
         <div id="comments">
             <h4><u>Successes</u></h4>
+            {% if wr1.success1 == '' and wr1.success2 == '' and wr1.success3 == '' %} None {% endif %}
             {% if wr1.success1 != '' %}1. {{ wr1.success1 }}<br>{% endif %}
             {% if wr1.success2 != '' %}2. {{ wr1.success2 }}<br>{% endif %}
             {% if wr1.success3 != '' %}3. {{ wr1.success3 }}<br>{% endif %}
             <h4><u>Areas for Improvement</u></h4>
+            {% if wr1.aoi1 == '' and wr1.aoi2 == '' and wr1.aoi3 == '' %} None {% endif %}
             {% if wr1.aoi1 != '' %}1. {{ wr1.aoi1 }}<br>{% endif %}
             {% if wr1.aoi2 != '' %}2. {{ wr1.aoi2 }}<br>{% endif %}
             {% if wr1.aoi3 != '' %}3. {{ wr1.aoi3 }}<br>{% endif %}
             <h4><u>Insights</u></h4>
+            {% if wr1.insight1 == '' and wr1.insight2 == '' and wr1.insight3 == '' %} None {% endif %}
             {% if wr1.insight1 != '' %}1. {{ wr1.insight1 }}<br>{% endif %}
             {% if wr1.insight2 != '' %}2. {{ wr1.insight2 }}<br>{% endif %}
             {% if wr1.insight3 != '' %}3. {{ wr1.insight3 }}<br>{% endif %}
