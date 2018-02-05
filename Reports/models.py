@@ -145,3 +145,23 @@ class DRC(models.Model):
 
     def get_date(self):
         return self.date.strftime("%A, %B %d")
+
+
+# class weeklyreport(models.Model):
+#     student = models.ForeignKey(Student)
+#     week = models.PositiveIntegerField()
+#     m1_score = models.PositiveIntegerField()
+#     m2_score = models.PositiveIntegerField()
+#     m3_score = models.PositiveIntegerField()
+#     m5_score = models.PositiveIntegerField()
+#     m1_total = models.PositiveIntegerField()
+#     m2_total = models.PositiveIntegerField()
+#     m3_total = models.PositiveIntegerField()
+#     m5_total = models.PositiveIntegerField()
+#     pro_comment1 = models.TextField(max_length=300)
+#     pro_comment2 = models.TextField(max_length=300)
+#     pro_comment3 = models.TextField(max_length=300)
+#     con_comment1 = models.TextField(max_length=300)
+#     con_comment2 = models.TextField(max_length=300)
+#     con_comment3 = models.TextField(max_length=300)
+

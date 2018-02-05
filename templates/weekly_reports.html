@@ -29,12 +29,65 @@ body{
 #title{
     margin-top: 8%;
 }
+#weekly_report {
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    width: 80%;
+    margin-top: 2%;
+}
+#m1 {
+    width: 22%;
+    float: left;
+    margin-left: 3%;
+    margin-right: 1%;
+    font-size: 120%;
+}
+#m2 {
+        width: 22%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m3 {
+        width: 22%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m5 {
+        width: 22%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 3%;
+    font-size: 120%;
+    }
+#comments {
+    clear: both;
+    text-align: left;
+    padding: 3%;
+    font-size: 125%;
+}
+#metric_fraction{
+    font-size: 200%;
+}
 </style>
 
 <body>
-    <div align="center"><h2 id="title">There are currently no Weekly Reports for {{ student.name }}</h2>
-        <br>
-    <h4>We are working on getting weekly reports up and running soon.</h4></div>
+    <div align="center">
+    <div id="weekly_report">
+        Weekly Report 1: {{ student.name }}
+        From January 29th to February 2nd
+
+        Appropriate Behavior: {{ wr.m1percent }}% ({{ wr.m1score }}/{{ wr.total }}
+        Attentive: {{ wr.m2percent }}% ({{ wr.m2score }}/{{ wr2.total }}
+        Attentive: {{ wr.m3percent }}% ({{ wr.m3score }}/{{ wr3.hw_total }}
+        Attentive: {{ wr.m4percent }}% ({{ wr.m4score }}/{{ wr4.total }}
+
+    </div>
+    </div>
 
 
 {% endblock %}

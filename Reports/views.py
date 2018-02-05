@@ -215,9 +215,37 @@ def weekly_reports_view(request, student_username):
     if not Student.objects.filter(username=student_username).exists():
         return redirect('/home')
     student = Student.objects.get(username=student_username)
+    week1_report = {}
+    if student.username == 'jalen':
+        week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'm_total': 9, 'hw_total': 4,
+                        'm1percent': 67, 'm2percent': 67, 'm3percent': 75, 'm4percent': 78,
+                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+
+    elif student.username == 'max':
+        week1_report = {'m1yes': 8, 'm2yes': 8, 'm3yes': 5, 'm4yes': 9, 'm_total': 9, 'hw_total': 6,
+                        'm1percent': 89, 'm2percent': 89, 'm3percent': 83, 'm4percent': 100,
+                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+
+    elif student.username == 'tuppy':
+        week1_report = {'m1yes': 5, 'm2yes': 5, 'm3yes': 4, 'm4yes': 6, 'm_total': 8, 'hw_total': 4,
+                        'm1percent': 63, 'm2percent': 63, 'm3percent': 100, 'm4percent': 75,
+                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+
+    elif student.username == 'tyler':
+        week1_report = {'m1yes': 4, 'm2yes': 4, 'm3yes': 0, 'm4yes': 4, 'm_total': 4, 'hw_total': 0,
+                        'm1percent': 100, 'm2percent': 100, 'm3percent': 100, 'm4percent': 100,
+                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+
+    elif student.username == 'jack':
+        week1_report = {'m1yes': 11, 'm2yes': 11, 'm3yes': 6, 'm4yes': 10, 'mtotal': 11, 'hw_total': 6,
+                        'm1percent': 100, 'm2percent': 100, 'm3percent': 100, 'm4percent': 91,
+                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+
+    else:
+        return redirect('/home')
     if student not in teacher.student_set.all():
         return redirect('/home')
-    return render(request, 'weekly_reports.html', {'user': teacher, 'student': student})
+    return render(request, 'weekly_reports.html', {'user': teacher, 'student': student, 'wr1': week1_report})
 
 
 @login_required(login_url="/")
