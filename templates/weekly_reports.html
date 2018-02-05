@@ -68,14 +68,14 @@ body{
     font-size: 125%;
 }
 #title{
-    font-size: 200%;
+    font-size: 150%;
 }
 #scores{
     width: 40%;
     float: left;
     margin-left: 3%;
     margin-right: 1%;
-    font-size: 120%;
+    font-size: 140%;
 }
 </style>
 
@@ -88,12 +88,14 @@ body{
         Weekly Report 1: {{ student.name }}<br>
         From January 29th to February 2nd<br>
         </div>
+
         <div id="scores">
         Appropriate Behavior: {{ wr1.m1percent }}% ({{ wr1.m1yes }} / {{ wr1.total }}) <br>
         Attentive: {{ wr1.m2percent }}% ({{ wr1.m2yes }} / {{ wr1.total }}) <br>
         Attentive: {{ wr1.m3percent }}% ({{ wr1.m3yes }} / {{ wr1.hw_total }}) <br>
         Attentive: {{ wr1.m4percent }}% ({{ wr1.m4yes }} / {{ wr1.total }}) <br>
         </div>
+
     </div>
     </div>
 
