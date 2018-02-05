@@ -219,27 +219,35 @@ def weekly_reports_view(request, student_username):
     if student.username == 'jalen':
         week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
                         'm1percent': 67, 'm2percent': 67, 'm3percent': 75, 'm4percent': 78,
-                        'pro_comment1': 'Test #1', 'pro_comment2': 'Test #2', 'con_comment1': 'Test #3', 'con_comment2': 'Test #4'}
+                        'success1': 'Improving attentiveness', 'success2': '', 'success3': '', 'aoi1': 'Homework completion and organization fell 25% and 23% from last week, respectively. ', 'aoi2': '', 'aoi3': '',
+                        'insight1': "Unwise to compare his performance this week with his performance last week, because he received 0 report cards on the Monday, Tuesday, and Wednesday of the week before. ",
+                        'insight2': "Teachers completed an average of 1.6 reports per day (compared with 2 per day last week)", 'insight3': '', 'attendance': 100}
 
     elif student.username == 'max':
         week1_report = {'m1yes': 8, 'm2yes': 8, 'm3yes': 5, 'm4yes': 9, 'total': 9, 'hw_total': 6,
                         'm1percent': 89, 'm2percent': 89, 'm3percent': 83, 'm4percent': 100,
-                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+                        'success1': 'Second week in a row with an average of at least 90%', 'success2': '', 'success3': '', 'aoi1': 'Earned “No” ratings on Wednesday for the second week in a row (over the past two weeks, 50% of all his “No’s” have occurred on Wednesdays)', 'aoi2': '', 'aoi3': '',
+                        'insight1': "Did not get more than one “No” on any measures", 'insight2': "Teachers completed an average of 2.25 reports per day (compared with 1.5 last week)", 'insight3': '', 'attendance': 80}
 
     elif student.username == 'tuppy':
         week1_report = {'m1yes': 5, 'm2yes': 5, 'm3yes': 4, 'm4yes': 6, 'total': 8, 'hw_total': 4,
                         'm1percent': 63, 'm2percent': 63, 'm3percent': 100, 'm4percent': 75,
-                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+                        'success1': 'Significantly more attentive than last week', 'success2': 'Performed 50% better this Wednesday than last Wednesday', 'success3': '', 'aoi1': 'Second week in a row with a combined average of Appropriate Behavior and Attentive in the low 60%',
+                        'aoi2': 'Performed 50% worse this Friday than last Friday', 'aoi3': 'Behavioral consistency. The percentage of time he received a rating of Yes, rather than No, on all tracked behaviors varied significantly each day. From Monday to Friday, respectively, he received the following proportion of yeses: 33%, 100%, 86%, 57%, and 70%. ',
+                        'insight1': "Teachers completed an average of 2 reports per day (compared with 1.25 last week)", 'insight2': "Teachers engaged rose steadily throughout the week", 'insight3': '',
+                        'attendance': 80}
 
     elif student.username == 'tyler':
         week1_report = {'m1yes': 4, 'm2yes': 4, 'm3yes': 0, 'm4yes': 4, 'total': 4, 'hw_total': 0,
                         'm1percent': 100, 'm2percent': 100, 'm3percent': 100, 'm4percent': 100,
-                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+                        'success1': '100% effectiveness on every documented measure for the second week in a row', 'success2': '', 'success3': '', 'aoi1': '', 'aoi2': '', 'aoi3': '',
+                        'insight1': "Was given 0 homework assignments all week. ", 'insight2': "Over the past two weeks, he has been given “Yes” marks 100% of them time on every tracked behavior, from 100% of his teachers. ", 'insight3': "Teachers completed an average of 2 reports per day (compared with 1.4 last week)", 'attendance': 40}
 
     elif student.username == 'jack':
         week1_report = {'m1yes': 11, 'm2yes': 11, 'm3yes': 6, 'm4yes': 10, 'total': 11, 'hw_total': 6,
                         'm1percent': 100, 'm2percent': 100, 'm3percent': 100, 'm4percent': 91,
-                        'pro_comment1': '', 'pro_comment2': '', 'con_comment1': '', 'con_comment2': ''}
+                        'success1': '100% homework completion, which was higher than last week\'s percentage even though he had more homeworks', 'success2': '', 'success3': '', 'aoi1': '', 'aoi2': '', 'aoi3': '',
+                        'insight1': "Had better attendance than last week", 'insight2': "Teachers completed an average of 2.2 reports per day (compared with 1.33 last week)", 'insight3': '', 'attendance': 100}
 
     else:
         return redirect('/home')
