@@ -67,18 +67,20 @@ body{
         Attentive: <b>{{ wr1.m2percent }}%</b> ({{ wr1.m2yes }}/{{ wr1.total }}) <br>
         HW Complete: <b>{{ wr1.m3percent }}%</b> ({{ wr1.m3yes }}/{{ wr1.hw_total }}) <br>
         Organized: <b>{{ wr1.m4percent }}%</b> ({{ wr1.m4yes }}/{{ wr1.total }}) <br>
+            <br>
+        Days With Reports Logged: {{ attendance }} out of 5<br>
         </div>
 
         <div id="comments">
-            <h6><u>Successes</u></h6><br>
+            <h4><u>Successes</u></h4>
             {% if wr1.success1 != '' %}1. {{ wr1.success1 }}<br>{% endif %}
             {% if wr1.success2 != '' %}2. {{ wr1.success2 }}<br>{% endif %}
             {% if wr1.success3 != '' %}3. {{ wr1.success3 }}<br>{% endif %}
-            <h6><u>Areas for Improvement</u></h6><br>
+            <h4><u>Areas for Improvement</u></h4>
             {% if wr1.aoi1 != '' %}1. {{ wr1.aoi1 }}<br>{% endif %}
             {% if wr1.aoi2 != '' %}2. {{ wr1.aoi1 }}<br>{% endif %}
             {% if wr1.aoi3 != '' %}3. {{ wr1.aoi1 }}<br>{% endif %}
-            <h6><u>Insights</u></h6><br>
+            <h4><u>Insights</u></h4>
             {% if wr1.insight1 != '' %}1. {{ wr1.insight1 }}<br>{% endif %}
             {% if wr1.insight2 != '' %}2. {{ wr1.insight2 }}<br>{% endif %}
             {% if wr1.insight3 != '' %}3. {{ wr1.insight3 }}<br>{% endif %}
