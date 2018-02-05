@@ -53,12 +53,12 @@ body{
     <div align="center">
 
     <div id="weekly_report">
-        <span style="font-size: 180%"><b>
-        Weekly Report 1: {{ student.name }} <span style="float: right; margin-right: 5%">
+        <span style="font-size: 180%; text-align: left; margin-left: 5%"><b>
+        Weekly Report {{ student.name }} <span style="float: right; margin-right: 5%">
         January 29th - February 2nd
         </span>
         </b></span>
-
+        <br>
         <div id="scores">
         Appropriate Behavior: <b>{{ wr1.m1percent }}%</b> ({{ wr1.m1yes }} / {{ wr1.total }}) <br>
         Attentive: <b>{{ wr1.m2percent }}%</b> ({{ wr1.m2yes }} / {{ wr1.total }}) <br>
