@@ -67,9 +67,6 @@ body{
     padding: 3%;
     font-size: 125%;
 }
-#title{
-    font-size: 150%;
-}
 #scores{
     width: 40%;
     float: left;
@@ -84,10 +81,9 @@ body{
     <div align="center">
 
     <div id="weekly_report">
-        <div id="title">
         Weekly Report 1: {{ student.name }}<br>
         From January 29th to February 2nd<br>
-        </div>
+
 
         <div id="scores">
         Appropriate Behavior: {{ wr1.m1percent }}% ({{ wr1.m1yes }} / {{ wr1.total }}) <br>
@@ -98,7 +94,6 @@ body{
 
     </div>
     </div>
-
 
 {% endblock %}
 </body>
