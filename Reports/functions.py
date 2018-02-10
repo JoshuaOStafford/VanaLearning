@@ -171,7 +171,7 @@ def calculate_past_week_data(teachers, monday):
             if DRC.objects.filter(date=current_date, teacher=teacher_object).exists():
                 submissions = DRC.objects.filter(date=current_date, teacher=teacher_object).count()
             total_submissions += submissions
-            
+
         teacher['last_week_count'] = total_submissions
         teacher['last_week_percentage'] = round(100*(total_submissions/teacher['available']), 2)
     return teachers
