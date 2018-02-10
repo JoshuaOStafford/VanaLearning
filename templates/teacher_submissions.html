@@ -83,7 +83,15 @@ td{
         </tr>
 
     {% for teacher in teachers %}
-
+        {% if forloop.counter == 1 %}
+        <tr style="width: 100%">Sixth Grade</tr>
+        {% endif %}
+        {% if forloop.counter == 5 %}
+        <tr style="width: 100%">Seventh Grade</tr>
+        {% endif %}
+        {% if forloop.counter == 9 %}
+        <tr style="width: 100%">Eighth Grade</tr>
+        {% endif %}
         <tr>
         <td>{{ teacher.teacher.name }}</td>
         <td>{{ teacher.last_week_count }} - ({{ teacher.last_week_percentage }}%)</td>
