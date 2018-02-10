@@ -185,6 +185,9 @@ def calculate_current_week_data(teachers, monday):
             submissions = 0
             if DRC.objects.filter(date=current_date, teacher=teacher_object).exists():
                 submissions = DRC.objects.filter(date=current_date, teacher=teacher_object).count()
+
+            if days_past_monday == 3:
+                1/0
             total_submissions += submissions
         teacher['current_week_count'] = total_submissions
     return teachers
