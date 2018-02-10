@@ -78,20 +78,20 @@ td{
     <table>
         <tr>
         <th>Teacher</th>
-        <th>Past Week</th>
-        <th>Current Week</th>
+        <th>Past Week<br>{{ past_week }}</th>
+        <th>Current Week<br>{{ this_week }}</th>
         </tr>
 
     {% for teacher in teachers %}
 
         {% if forloop.counter == 1 %}
-            <tr><td style="font-size: 150%"><b><u>Sixth Grade</u></b></td><td></td><td></td></tr>
+            <tr><td style="font-size: 125%"><b><u>Sixth Grade</u></b></td><td></td><td></td></tr>
         {% endif %}
         {% if forloop.counter == 5 %}
-            <tr><td style="font-size: 150%"><b><u>Seventh Grade</u></b></td><td></td><td></td></tr>
+            <tr><td style="font-size: 125%"><b><u>Seventh Grade</u></b></td><td></td><td></td></tr>
         {% endif %}
         {% if forloop.counter == 9 %}
-            <tr><td style="font-size: 150%"><b><u>Eighth Grade</u></b></td><td></td><td></td></tr>
+            <tr><td style="font-size: 125%"><b><u>Eighth Grade</u></b></td><td></td><td></td></tr>
         {% endif %}
 
         <tr>

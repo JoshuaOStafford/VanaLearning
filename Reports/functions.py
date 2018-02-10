@@ -192,7 +192,8 @@ def calculate_current_week_data(teachers, monday):
 
 
 def get_week_string(monday):
-    return None
+    friday = monday + timedelta(days=4)
+    return monday.strftime("%d %M") + " - " + friday.strftime("%d %M")
 
 
 def get_monday(today, weeks_ago):

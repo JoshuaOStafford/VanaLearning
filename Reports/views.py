@@ -325,8 +325,8 @@ def track_reports_view(request):
     today = date.today()
     last_monday = get_monday(today, 1)
     this_monday = get_monday(today, 0)
-    past_week = 'Past Week String'
-    this_week = 'Current Week String'
+    past_week = get_week_string(last_monday)
+    this_week = get_week_string(this_monday)
 
     teachers = get_teachers_data_setup()
     teachers = calculate_past_week_data(teachers, last_monday)
