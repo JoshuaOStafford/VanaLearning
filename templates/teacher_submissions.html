@@ -82,8 +82,8 @@ td{
     {% for teacher in teachers %}
 
         <tr>
-        <td>{{ teacher.teacher }}</td>
-        <td>{{ teacher.last_week_count }} - ({{ teacher.last_week_percentage }}%</td>
+        <td>{{ teacher.teacher.name }}</td>
+        <td>{{ teacher.last_week_count }} - ({{ teacher.last_week_percentage }}%)</td>
         <td>{{ teacher.current_week_count }}</td>
         </tr>
 
