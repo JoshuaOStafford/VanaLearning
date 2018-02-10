@@ -166,7 +166,7 @@ def calculate_past_week_data(teachers, monday):
     for teacher in teachers:
         total_submissions = 0
         for days_past_monday in range(0, 4):
-            current_date = monday.timedelta(days_past_monday)
+            current_date = monday + timedelta(days=days_past_monday)
             submissions = 0
             if DRC.objects.filter(date=current_date, teacher=teacher).exists():
                 submissions = DRC.objects.filter(date=current_date, teacher=teacher).count()
@@ -180,7 +180,7 @@ def calculate_current_week_data(teachers, monday):
         teacher_object = teacher['teacher']
         total_submissions = 0
         for days_past_monday in range(0, 4):
-            current_date = monday.timedelta(days_past_monday)
+            current_date = monday + timedelta(days=days_past_monday)
             submissions = 0
             if DRC.objects.filter(date=current_date, teacher=teacher_object).exists():
                 submissions = DRC.objects.filter(date=current_date, teacher=teacher_object).count()
@@ -194,7 +194,7 @@ def get_week_string(monday):
 
 
 def get_monday(today, weeks_ago):
-    today = today.timedelta(-7*weeks_ago)
+    today = today + timedelta(days=-7*weeks_ago)
     while today.weekday() != 0:
-        today = today.timedelta(day=-1)
+        today = today + timedelta(days=-1)
     return today
