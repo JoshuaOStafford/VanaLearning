@@ -3,9 +3,9 @@ from Reports.models import Student, DRC, MasterDRC, Teacher
 from datetime import datetime, timezone
 import datetime as datetime3
 from django.contrib.auth.decorators import login_required
-from Reports.functions import get_user, log_drc, get_different_week_url
+from Reports.functions import get_user, log_drc, get_different_week_url, get_teachers_data_setup, calculate_past_week_data, calculate_current_week_data, get_week_string, get_monday
 import pytz
-from datetime import timedelta, datetime as datetime2
+from datetime import timedelta, date, datetime as datetime2
 
 
 def landing_page_view(request):
@@ -314,4 +314,25 @@ def teacher_submissions_view(request):
                                                         '7aDone': a7Done, '7bDone': b7Done, '7cDone': c7Done, '7dDone': d7Done, '8aDone': a8Done, '8bDone': b8Done,
                                                         '8cDone': c8Done, '8dDone': d8Done, 'date': date_string})
 
+
+@login_required(login_url="/")
+def track_reports_view(request):
+    admin = get_user(request)
+    if not admin == Teacher.objects.get(username='lhorich'):
+        return redirect('/home')
+
+    tz = pytz.timezone('US/Eastern')
+    today = date.today()
+    last_monday = get_monday(today, 1)
+    this_monday = get_monday(today, 0)
+    past_week = 'Past Week String'
+    this_week = 'Current Week String'
+
+    teachers = get_teachers_data_setup()
+    teachers = calculate_past_week_data(teachers, last_monday)
+
+    teachers = calculate_current_week_data(teachers, this_monday)
+
+    return render(request, 'teacher_submissions.html', {'user': admin, 'teachers': teachers, 'past_week':
+                                                        past_week, 'this_week': this_week})
 

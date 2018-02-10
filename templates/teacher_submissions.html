@@ -70,164 +70,22 @@ td{
 <body>
     <div align="center">
     <br><br><br>
-    <h2>Submissions Log for {{ date }}</h2>
+    <h2>Teacher Submissions</h2>
     <table>
     <tr>
-        <th>
-        Teacher
-        </th>
-        <th>
-        All Reports Submitted
-        </th>
-        <th>
-        Reports Submitted (out of Total)
-        </th>
+    <th>Teacher</th>
+    <th>Past Week</th>
+    <th>Current Week</th>
     </tr>
+    {% for teacher in teachers %}
     <tr>
-        <td>
-            Dana Bleiberg
-        </td>
-        <td>
-            {% if 6aDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 6a }} / 1
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Marcie Demers
-        </td>
-        <td>
-            {% if 6bDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 6b }} / 1
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Chip West
-        </td>
-        <td>
-            {% if 6cDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 6c }} / 1
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Vin White
-        </td>
-        <td>
-            {% if 6dDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 6d }} / 1
-        </td>
+    <td>{{ teacher.teacher }}</td>
+    <td>{{ teacher.last_week_count }} - ({{ teacher.last_week_percentage }}%</td>
+    <td>{{ teacher.current_week_count }}</td>
     </tr>
 
-    <tr>
-        <td>
-            Glenn Hunter
-        </td>
-        <td>
-            {% if 7aDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 7a }} / 2
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Andy Marusak
-        </td>
-        <td>
-            {% if 7bDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 7b }} / 2
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Chris Miller
-        </td>
-        <td>
-            {% if 7cDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 7c }} / 2
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Caitlin Zolet
-        </td>
-        <td>
-            {% if 7dDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 7d }} / 2
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            Michael Chellman
-        </td>
-        <td>
-            {% if 8aDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 8a }} / 2
-        </td>
-    </tr>
-    <tr>
-        <td>
-           Chelsea Henry
-        </td>
-        <td>
-            {% if 8bDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 8b }} / 2
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Claire Holman
-        </td>
-        <td>
-            {% if 8cDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 8c }} / 2
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Lele Horich
-        </td>
-        <td>
-            {% if 8dDone %} <i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% else %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i>{% endif %}
-        </td>
-        <td>
-            {{ 8d }} / 2
-        </td>
-    </tr>
+    {% endfor %}
     </table>
-
-    <h3>View a past day</h3>
-    <form action="/TeacherSubmissions" method="post">
-        {% csrf_token %}
-
-        <input id="date" type="date" name="date">
-        <br>
-        <input type="submit" value="Change Date" class="button" />
-
-    </form>
     </div>
 {% endblock %}
 </body>
