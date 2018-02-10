@@ -71,21 +71,26 @@ td{
     <div align="center">
     <br><br><br>
     <h2>Teacher Submissions</h2>
+
     <table>
-    <tr>
-    <th>Teacher</th>
-    <th>Past Week</th>
-    <th>Current Week</th>
-    </tr>
+        <tr>
+        <th>Teacher</th>
+        <th>Past Week</th>
+        <th>Current Week</th>
+        </tr>
+
     {% for teacher in teachers %}
-    <tr>
-    <td>{{ teacher.teacher }}</td>
-    <td>{{ teacher.last_week_count }} - ({{ teacher.last_week_percentage }}%</td>
-    <td>{{ teacher.current_week_count }}</td>
-    </tr>
+
+        <tr>
+        <td>{{ teacher.teacher }}</td>
+        <td>{{ teacher.last_week_count }} - ({{ teacher.last_week_percentage }}%</td>
+        <td>{{ teacher.current_week_count }}</td>
+        </tr>
 
     {% endfor %}
+
     </table>
+
     </div>
 {% endblock %}
 </body>
