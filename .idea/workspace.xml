@@ -46,7 +46,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1518236671583" expanded="true" signature="75:1192" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,8 +76,8 @@
       <file leaf-file-name="functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Reports/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="189" column="19" lean-forward="false" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+            <state relative-caret-position="334">
+              <caret line="173" column="12" lean-forward="false" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="12" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -961,14 +963,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1518236671583" expanded="true" signature="75:1192" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Reports/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="189" column="19" lean-forward="false" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+        <state relative-caret-position="334">
+          <caret line="173" column="12" lean-forward="false" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="12" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
