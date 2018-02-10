@@ -4,7 +4,6 @@ import datetime
 from datetime import timedelta, datetime as datetime2, date
 
 
-
 def get_user(request):
     user = request.user
     if Teacher.objects.filter(username=user.get_username()).exists():
@@ -164,12 +163,13 @@ def get_teachers_data_setup():
 
 def calculate_past_week_data(teachers, monday):
     for teacher in teachers:
+        teacher_object = teacher['teacher']
         total_submissions = 0
         for days_past_monday in range(0, 4):
             current_date = monday + timedelta(days=days_past_monday)
             submissions = 0
-            if DRC.objects.filter(date=current_date, teacher=teacher).exists():
-                submissions = DRC.objects.filter(date=current_date, teacher=teacher).count()
+            if DRC.objects.filter(date=current_date, teacher=teacher_object).exists():
+                submissions = DRC.objects.filter(date=current_date, teacher=teacher_object).count()
             total_submissions += submissions
         teacher['last_week_percentage'] = round((total_submissions/teacher['last_week_count']), 2)
     return teachers
