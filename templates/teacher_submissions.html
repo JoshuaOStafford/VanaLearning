@@ -19,7 +19,7 @@
   gtag('config', 'UA-110599905-1');
 </script>
     <meta charset="UTF-8">
-    <title>Student History</title>
+    <title>Monitor Submissions</title>
 </head>
 
 <style>
@@ -130,8 +130,15 @@ td{
     </div>
 
     <div id="change_week">
-        <br><br><br><br>
+        <br><br><br><br><br><br><br><br>
         <h3>See another week</h3>
+        <form action="/TeacherSubmissions" method="post">
+            {% csrf_token %}
+
+            <input id="week" title="Change Week" type="week">
+            <input type="submit" value="Change Weeek" class="button" />
+        </form>
+
     </div>
     </div>
 {% endblock %}
