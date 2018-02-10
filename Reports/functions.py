@@ -132,30 +132,30 @@ def get_different_week_url(current_date, days_left):
 
 
 def get_teachers_data_setup():
-    teacher1 = {'teacher': Teacher.objects.get(username='dbleiberg'), 'last_week_count': 4, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher2 = {'teacher': Teacher.objects.get(username='mdemers'), 'last_week_count': 4, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher3 = {'teacher': Teacher.objects.get(username='cwest'), 'last_week_count': 4, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher4 = {'teacher': Teacher.objects.get(username='vwhite'), 'last_week_count': 4, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher5 = {'teacher': Teacher.objects.get(username='ghunter'), 'last_week_count': 8, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher6 = {'teacher': Teacher.objects.get(username='amarusak'), 'last_week_count': 8, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher7 = {'teacher': Teacher.objects.get(username='cmiller'), 'last_week_count': 8, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher8 = {'teacher': Teacher.objects.get(username='czolet'), 'last_week_count': 8, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher9 = {'teacher': Teacher.objects.get(username='mchellman'), 'last_week_count': 8, 'last_week_percentage': 0,
-                'current_week_count': 0}
-    teacher10 = {'teacher': Teacher.objects.get(username='chenry'), 'last_week_count': 8, 'last_week_percentage': 0,
-                 'current_week_count': 0}
-    teacher11 = {'teacher': Teacher.objects.get(username='cholman'), 'last_week_count': 8, 'last_week_percentage': 0,
-                 'current_week_count': 0}
-    teacher12 = {'teacher': Teacher.objects.get(username='lhorich'), 'last_week_count': 8, 'last_week_percentage': 0,
-                 'current_week_count': 0}
+    teacher1 = {'teacher': Teacher.objects.get(username='dbleiberg'), 'available': 4, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher2 = {'teacher': Teacher.objects.get(username='mdemers'), 'available': 4, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher3 = {'teacher': Teacher.objects.get(username='cwest'), 'available': 4, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher4 = {'teacher': Teacher.objects.get(username='vwhite'), 'available': 4, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher5 = {'teacher': Teacher.objects.get(username='ghunter'), 'available': 8, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher6 = {'teacher': Teacher.objects.get(username='amarusak'), 'available': 8, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher7 = {'teacher': Teacher.objects.get(username='cmiller'), 'available': 8, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher8 = {'teacher': Teacher.objects.get(username='czolet'), 'available': 8, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher9 = {'teacher': Teacher.objects.get(username='mchellman'), 'available': 8, 'last_week_percentage': 0,
+                'current_week_count': 0, 'last_week_count': 0}
+    teacher10 = {'teacher': Teacher.objects.get(username='chenry'), 'available': 8, 'last_week_percentage': 0,
+                 'current_week_count': 0, 'last_week_count': 0}
+    teacher11 = {'teacher': Teacher.objects.get(username='cholman'), 'available': 8, 'last_week_percentage': 0,
+                 'current_week_count': 0, 'last_week_count': 0}
+    teacher12 = {'teacher': Teacher.objects.get(username='lhorich'), 'available': 8, 'last_week_percentage': 0,
+                 'current_week_count': 0, 'last_week_count': 0}
     teachers = [teacher1, teacher2, teacher3, teacher4, teacher5, teacher6,
                 teacher7, teacher8, teacher9, teacher10, teacher11, teacher12]
     return teachers
@@ -171,7 +171,8 @@ def calculate_past_week_data(teachers, monday):
             if DRC.objects.filter(date=current_date, teacher=teacher_object).exists():
                 submissions = DRC.objects.filter(date=current_date, teacher=teacher_object).count()
             total_submissions += submissions
-        teacher['last_week_percentage'] = round(100*(total_submissions/teacher['last_week_count']), 2)
+        teacher['last_week_count'] = total_submissions
+        teacher['last_week_percentage'] = round(100*(total_submissions/teacher['available']), 2)
     return teachers
 
 
