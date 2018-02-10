@@ -30,7 +30,7 @@ body{
 table {
    border: 3px solid black;
     background-color: white;
-    width: 45%;
+    width: 90%;
 }
 th{
     background-color: slategray;
@@ -66,12 +66,31 @@ td{
 .button:hover{
     background-color: slategray;
 }
-
+#wrapper{
+    width: 100%;
+}
+#left{
+    width: 25%;
+    height: 100%;
+}
+#submissions_table{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+#change_week{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
 
     </style>
 
 <body>
-    <div align="center">
+    <div id="wrapper" align="center">
+    <div id="left"></div>
+
+    <div id="submissions_table">
     <br><br>
     <h3>Teacher Submissions</h3>
 
@@ -104,6 +123,11 @@ td{
 
     </table>
 
+    </div>
+
+    <div id="change_week">
+
+    </div>
     </div>
 {% endblock %}
 </body>
