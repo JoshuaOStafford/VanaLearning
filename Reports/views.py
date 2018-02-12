@@ -3,7 +3,7 @@ from Reports.models import Student, DRC, MasterDRC, Teacher
 from datetime import datetime, timezone
 import datetime as datetime3
 from django.contrib.auth.decorators import login_required
-from Reports.functions import get_user, log_drc, get_different_week_url, get_teachers_data_setup, calculate_past_week_data, calculate_current_week_data, get_week_string, get_monday
+from Reports.functions import get_user, log_drc, get_different_week_url, get_teachers_data_setup, calculate_past_week_data, calculate_current_week_data, get_week_string, get_monday, get_raw_week_data
 import pytz
 from datetime import timedelta, date, datetime as datetime2
 
@@ -140,6 +140,27 @@ def student_history_view(request, student_username):
 
 
 @login_required(login_url="/")
+def student_raw_week_view(request, student_username):
+    teacher = get_user(request)
+    if teacher != Teacher.objects.get(username='lhorich'):
+        return redirect('/home')
+    if not Student.objects.filter(username=student_username).exists():
+        return redirect('/home')
+    student = Student.objects.get(username=student_username)
+    today = date.today()
+    this_monday = get_monday(today, 0)
+    this_week = get_week_string(this_monday)
+    metrics = get_raw_week_data(this_monday, student)
+    metric1 = metrics['m1']
+    metric2 = metrics['m2']
+    metric3 = metrics['m3']
+    metric4 = metrics['m4']
+    return render(request, 'student_raw_week_data.html', {'user': teacher, 'student': student, 'metric1': metric1,
+                                                          'metric2': metric2, 'metric3': metric3, 'metric4': metric4,
+                                                          'week_string': this_week})
+
+
+
 @login_required(login_url="/")
 def progress_graph_view(request, student_username, start_date_str, end_date_str):
     teacher = get_user(request)
@@ -254,65 +275,6 @@ def weekly_reports_view(request, student_username):
     if student not in teacher.student_set.all():
         return redirect('/home')
     return render(request, 'weekly_reports.html', {'user': teacher, 'student': student, 'wr1': week1_report})
-
-
-@login_required(login_url="/")
-def teacher_submissions_view(request):
-    teacher = get_user(request)
-    if not teacher == Teacher.objects.get(username='lhorich'):
-        return redirect('/home')
-
-    tz = pytz.timezone('US/Eastern')
-    date = datetime.now(tz)
-    date_string = date.strftime("%A, %B %d")
-
-    if request.method == 'POST':
-        if request.POST.get('date', False):
-            date = request.POST['date']
-            current_date = datetime2.strptime(date, '%Y-%m-%d')
-            date_string = current_date.strftime("%A, %B %d")
-    a6Done = b6Done = c6Done = d6Done = a7Done = b7Done = c7Done = d7Done = a8Done = b8Done = c8Done = d8Done = False
-    a6 = DRC.objects.filter(teacher=Teacher.objects.get(username='dbleiberg'), date=date).count()
-    if a6 == 1:
-        a6Done = True
-    b6 = DRC.objects.filter(teacher=Teacher.objects.get(username='mdemers'), date=date).count()
-    if b6 == 1:
-        b6Done = True
-    c6 = DRC.objects.filter(teacher=Teacher.objects.get(username='cwest'), date=date).count()
-    if c6 == 1:
-        c6Done = True
-    d6 = DRC.objects.filter(teacher=Teacher.objects.get(username='vwhite'), date=date).count()
-    if d6 == 1:
-        d6Done = True
-    a7 = DRC.objects.filter(teacher=Teacher.objects.get(username='ghunter'), date=date).count()
-    if a7 == 2:
-        a7Done = True
-    b7 = DRC.objects.filter(teacher=Teacher.objects.get(username='amarusak'), date=date).count()
-    if b7 == 2:
-        b7Done = True
-    c7 = DRC.objects.filter(teacher=Teacher.objects.get(username='cmiller'), date=date).count()
-    if c7 == 2:
-        c7Done = True
-    d7 = DRC.objects.filter(teacher=Teacher.objects.get(username='czolet'), date=date).count()
-    if d7 == 2:
-        d7Done = True
-    a8 = DRC.objects.filter(teacher=Teacher.objects.get(username='mchellman'), date=date).count()
-    if a8 == 2:
-        a8Done = True
-    b8 = DRC.objects.filter(teacher=Teacher.objects.get(username='chenry'), date=date).count()
-    if b8 == 2:
-        b8Done = True
-    c8 = DRC.objects.filter(teacher=Teacher.objects.get(username='cholman'), date=date).count()
-    if c8 == 2:
-        c8Done = True
-    d8 = DRC.objects.filter(teacher=Teacher.objects.get(username='lhorich'), date=date).count()
-    if d8 == 2:
-        d8Done = True
-    return render(request, 'teacher_submissions.html', {'user': teacher, '6a': a6, '6b': b6, '6c': c6, '6d': d6,
-                                                        '7a': a7, '7b': b7, '7c': c7, '7d': d7,'8a': a8, '8b': b8,
-                                                        '8c': c8, '8d': d8, '6aDone': a6Done, '6bDone': b6Done, '6cDone': c6Done, '6dDone': d6Done,
-                                                        '7aDone': a7Done, '7bDone': b7Done, '7cDone': c7Done, '7dDone': d7Done, '8aDone': a8Done, '8bDone': b8Done,
-                                                        '8cDone': c8Done, '8dDone': d8Done, 'date': date_string})
 
 
 @login_required(login_url="/")

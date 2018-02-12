@@ -201,3 +201,48 @@ def get_monday(today, weeks_ago):
     while today.weekday() != 0:
         today = today + timedelta(days=-1)
     return today
+
+
+def get_raw_week_data(monday, student):
+    metric1 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+    metric2 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+    metric3 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+    metric4 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+    for days_past_monday in range(0, 5):
+        current_date = monday + timedelta(days=days_past_monday)
+        if MasterDRC.objects.filter(date=current_date, student=student).exists():
+            master_drc = MasterDRC.objects.get(date=current_date, student=student)
+            m1_string = "" + master_drc.m1_score + " / " + master_drc.total_count()
+            m2_string = "" + master_drc.m2_score + " / " + master_drc.total_count()
+            m3_string = "" + master_drc.m3_score + " / " + master_drc.HW_Assigned
+            m4_string = "" + master_drc.m5_score + " / " + master_drc.total_count()
+
+            if current_date.weekday() == 0:
+                metric1['monday'] = m1_string
+                metric2['monday'] = m2_string
+                metric3['monday'] = m3_string
+                metric4['monday'] = m4_string
+            elif current_date.weekday() == 1:
+                metric1['tuesday'] = m1_string
+                metric2['tuesday'] = m2_string
+                metric3['tuesday'] = m3_string
+                metric4['tuesday'] = m4_string
+            elif current_date.weekday() == 2:
+                metric1['wednesday'] = m1_string
+                metric2['wednesday'] = m2_string
+                metric3['wednesday'] = m3_string
+                metric4['wednesday'] = m4_string
+            elif current_date.weekday() == 3:
+                metric1['thursday'] = m1_string
+                metric2['thursday'] = m2_string
+                metric3['thursday'] = m3_string
+                metric4['thursday'] = m4_string
+            elif current_date.weekday() == 4:
+                metric1['friday'] = m1_string
+                metric2['friday'] = m2_string
+                metric3['friday'] = m3_string
+                metric4['friday'] = m4_string
+    return {'m1': metric1, 'm2': metric2, 'm3': metric3, 'm4': metric4}
+
+
+
