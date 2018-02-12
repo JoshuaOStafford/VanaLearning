@@ -31,7 +31,7 @@ body{
 table {
    border: 3px solid black;
     background-color: white;
-    width: 80%;
+    width: 85%;
 }
 th{
     background-color: slategray;
@@ -46,7 +46,7 @@ tr{
     border: 1px solid black;
 }
 td{
-    height: 60px;
+    height: 75px;
     vertical-align: middle;
     text-align: center;
     padding: 5px;
@@ -65,7 +65,7 @@ td{
 
     {% for week in weeks_data_array %}
 
-        <h2>Data from {{ week.week_str }}</h2>
+        <h1>Data from {{ week.week_str }}</h1>
         <br>
 <table>
 <tr>
@@ -117,7 +117,7 @@ td{
 
 
 </table>
-<br><br>
+<br><br><br>
 
     {% endfor %}
 
