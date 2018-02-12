@@ -148,16 +148,18 @@ def student_raw_week_view(request, student_username):
         return redirect('/home')
     student = Student.objects.get(username=student_username)
     today = date.today()
+    starting_date = date(2017, 12, 10)
     this_monday = get_monday(today, 0)
-    this_week = get_week_string(this_monday)
-    metrics = get_raw_week_data(this_monday, student)
-    metric1 = metrics['m1']
-    metric2 = metrics['m2']
-    metric3 = metrics['m3']
-    metric4 = metrics['m4']
-    return render(request, 'student_raw_week_data.html', {'user': teacher, 'student': student, 'metric1': metric1,
-                                                          'metric2': metric2, 'metric3': metric3, 'metric4': metric4,
-                                                          'week_string': this_week})
+    weeks_data_array = []
+    while this_monday > starting_date:
+        metrics = get_raw_week_data(this_monday, student)
+        week = {'week_str': get_week_string(this_monday), 'metric1': metrics['m1'], 'metric2': metrics['m2'], 'metric3': metrics['m3'],
+                'metric4': metrics['m4']}
+        this_monday -= timedelta(days=7)
+        weeks_data_array.append(week)
+
+    return render(request, 'student_raw_week_data.html', {'user': teacher, 'student': student,
+                                                          'weeks_data_array': weeks_data_array})
 
 
 
