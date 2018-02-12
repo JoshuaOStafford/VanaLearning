@@ -203,11 +203,17 @@ def get_monday(today, weeks_ago):
     return today
 
 
-def get_raw_week_data(monday, student):
-    metric1 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
-    metric2 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
-    metric3 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
-    metric4 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+def get_raw_week_data(monday, student, is_current_week):
+    if is_current_week:
+        metric1 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+        metric2 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+        metric3 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+        metric4 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+    else:
+        metric1 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+        metric2 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+        metric3 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+        metric4 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
     empty = True
     for days_past_monday in range(0, 5):
         current_date = monday + timedelta(days=days_past_monday)

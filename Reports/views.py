@@ -153,7 +153,7 @@ def student_raw_week_view(request, student_username):
     current_monday = this_monday
     weeks_data_array = []
     while current_monday > starting_date:
-        metrics = get_raw_week_data(current_monday, student)
+        metrics = get_raw_week_data(current_monday, student, (current_monday == this_monday))
         week = {'week_str': get_week_string(current_monday), 'metric1': metrics['m1'], 'metric2': metrics['m2'], 'metric3': metrics['m3'],
                 'metric4': metrics['m4']}
         if current_monday != this_monday:
