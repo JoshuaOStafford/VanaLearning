@@ -52,7 +52,7 @@ td{
     padding: 5px;
     border-right: 1px solid black;
     width: 16%;
-    font-size: 150%;
+    font-size: 200%;
     font-weight: bold;
 
 }
@@ -97,7 +97,7 @@ hr:before { /* Not really supposed to work, but does */
 </tr>
 
 <tr>
-    <td style="font-weight: inherit">Appropriate Behavior</td>
+    <td style="font-weight: inherit; font-size: 150%">Appropriate Behavior</td>
     <td>{% if week.metric1.monday != None %}{{ week.metric1.monday }}{% else %}No Report{% endif %}</td>
     <td>{% if week.metric1.tuesday != None %}{{ week.metric1.tuesday }}{% else %}No Report{% endif %}</td>
     <td>{% if week.metric1.wednesday != None %}{{ week.metric1.wednesday }}{% else %}No Report{% endif %}</td>
@@ -106,7 +106,7 @@ hr:before { /* Not really supposed to work, but does */
 </tr>
 
 <tr>
-    <td style="font-weight: inherit">Attentive</td>
+    <td style="font-weight: inherit; font-size: 150%">Attentive</td>
     <td>{% if week.metric2.monday != None %}{{ week.metric2.monday }}{% else %}No Report{% endif %}</td>
     <td>{% if week.metric2.tuesday != None %}{{ week.metric2.tuesday }}{% else %}No Report{% endif %}</td>
     <td>{% if week.metric2.wednesday != None %}{{ week.metric2.wednesday }}{% else %}No Report{% endif %}</td>
@@ -115,7 +115,7 @@ hr:before { /* Not really supposed to work, but does */
 </tr>
 
 <tr>
-    <td style="font-weight: inherit">HW Complete</td>
+    <td style="font-weight: inherit; font-size: 150%">HW Complete</td>
     <td>{% if week.metric3.monday != None %}{{ week.metric3.monday }} {% else %}No Report {% endif %}</td>
     <td>{% if week.metric3.tuesday != None %}{{ week.metric3.tuesday }} {% else %}No Report {% endif %}</td>
     <td>{% if week.metric3.wednesday != None %}{{ week.metric3.wednesday }} {% else %}No Report {% endif %}</td>
@@ -124,7 +124,7 @@ hr:before { /* Not really supposed to work, but does */
 </tr>
 
 <tr>
-    <td style="font-weight: inherit">Organized</td>
+    <td style="font-weight: inherit; font-size: 150%">Organized</td>
     <td>{% if week.metric4.monday != None %}{{ week.metric4.monday }} {% else %}No Report {% endif %}</td>
     <td>{% if week.metric4.tuesday != None %}{{ week.metric4.tuesday }} {% else %}No Report {% endif %}</td>
     <td>{% if week.metric4.wednesday != None %}{{ week.metric4.wednesday }} {% else %}No Report {% endif %}</td>
