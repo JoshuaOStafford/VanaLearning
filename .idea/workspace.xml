@@ -32,8 +32,8 @@
       <file leaf-file-name="student_raw_week_data.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/student_raw_week_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="252">
+              <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -997,8 +997,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/student_raw_week_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="252">
+          <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
           <folding />
         </state>
       </provider>
