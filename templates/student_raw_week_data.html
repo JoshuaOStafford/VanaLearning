@@ -26,25 +26,28 @@
 table {
    border: 3px solid black;
     background-color: white;
-    width: 75%;
+    width: 80%;
 }
 th{
     background-color: slategray;
     color: white;
     text-align: center;
     padding: 10px;
-    width: 16%
+    width: 16%;
+    font-size: 175%;
+
 }
 tr{
     border: 1px solid black;
 }
 td{
-    height: 50px;
+    height: 60px;
     vertical-align: middle;
     text-align: center;
     padding: 5px;
     border-right: 1px solid black;
-    width: 16%
+    width: 16%;
+    font-size: 150%;
 }
 
 </style>
@@ -57,7 +60,7 @@ td{
 
     {% for week in weeks_data_array %}
 
-        <h2>Data from {{ week.week_str }} for {{ student.name }}</h2>
+        <h2>Data from {{ week.week_str }}</h2>
         <br>
 <table>
 <tr>
