@@ -156,12 +156,12 @@ def student_raw_week_view(request, student_username):
         metrics = get_raw_week_data(current_monday, student)
         week = {'week_str': get_week_string(current_monday), 'metric1': metrics['m1'], 'metric2': metrics['m2'], 'metric3': metrics['m3'],
                 'metric4': metrics['m4']}
-        current_monday -= timedelta(days=7)
         if current_monday != this_monday:
             if not metrics['empty']:
                 weeks_data_array.append(week)
         else:
             weeks_data_array.append(week)
+        current_monday -= timedelta(days=7)
 
     return render(request, 'student_raw_week_data.html', {'user': teacher, 'student': student,
                                                           'weeks_data_array': weeks_data_array})
