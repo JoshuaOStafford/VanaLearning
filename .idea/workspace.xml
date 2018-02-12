@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/student_raw_week_data.html" afterPath="$PROJECT_DIR$/templates/student_raw_week_data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/teacher_submissions.html" afterPath="$PROJECT_DIR$/templates/teacher_submissions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/functions.py" afterPath="$PROJECT_DIR$/Reports/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,10 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="student_raw_week_data.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="student_raw_week_data.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/student_raw_week_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
+            <state relative-caret-position="371">
               <caret line="104" column="84" lean-forward="false" selection-start-line="104" selection-start-column="84" selection-end-line="104" selection-end-column="84" />
               <folding />
             </state>
@@ -43,13 +43,13 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="158" column="37" lean-forward="true" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
+            <state relative-caret-position="485">
+              <caret line="163" column="41" lean-forward="false" selection-start-line="163" selection-start-column="41" selection-end-line="163" selection-end-column="41" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#7156#10465#0" expanded="false" />
-                <element signature="e#10564#10777#0" expanded="false" />
-                <element signature="e#10867#15265#0" expanded="false" />
+                <element signature="e#7344#10653#0" expanded="false" />
+                <element signature="e#10752#10965#0" expanded="false" />
+                <element signature="e#11055#15453#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Reports/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="204" column="0" lean-forward="true" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+            <state relative-caret-position="33">
+              <caret line="220" column="36" lean-forward="true" selection-start-line="220" selection-start-column="36" selection-end-line="220" selection-end-column="36" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -82,8 +82,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-317">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="115">
+              <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -145,10 +145,10 @@
         <option value="$PROJECT_DIR$/templates/weekly_reports.html" />
         <option value="$PROJECT_DIR$/Vana/settings.py" />
         <option value="$PROJECT_DIR$/Reports/urls.py" />
-        <option value="$PROJECT_DIR$/Reports/views.py" />
         <option value="$PROJECT_DIR$/templates/teacher_submissions.html" />
-        <option value="$PROJECT_DIR$/Reports/functions.py" />
         <option value="$PROJECT_DIR$/templates/student_raw_week_data.html" />
+        <option value="$PROJECT_DIR$/Reports/functions.py" />
+        <option value="$PROJECT_DIR$/Reports/views.py" />
       </list>
     </option>
   </component>
@@ -587,9 +587,9 @@
           <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#7156#10465#0" expanded="false" />
-            <element signature="e#10564#10777#0" expanded="false" />
-            <element signature="e#10867#15265#0" expanded="false" />
+            <element signature="e#7344#10653#0" expanded="false" />
+            <element signature="e#10752#10965#0" expanded="false" />
+            <element signature="e#11055#15453#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,9 +645,9 @@
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#7156#10465#0" expanded="false" />
-            <element signature="e#10564#10777#0" expanded="false" />
-            <element signature="e#10867#15265#0" expanded="false" />
+            <element signature="e#7344#10653#0" expanded="false" />
+            <element signature="e#10752#10965#0" expanded="false" />
+            <element signature="e#11055#15453#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,9 +709,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#7156#10465#0" expanded="false" />
-            <element signature="e#10564#10777#0" expanded="false" />
-            <element signature="e#10867#15265#0" expanded="false" />
+            <element signature="e#7344#10653#0" expanded="false" />
+            <element signature="e#10752#10965#0" expanded="false" />
+            <element signature="e#11055#15453#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -773,9 +773,9 @@
           <caret line="143" column="74" lean-forward="false" selection-start-line="143" selection-start-column="74" selection-end-line="143" selection-end-column="74" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#7156#10465#0" expanded="false" />
-            <element signature="e#10564#10777#0" expanded="false" />
-            <element signature="e#10867#15265#0" expanded="false" />
+            <element signature="e#7344#10653#0" expanded="false" />
+            <element signature="e#10752#10965#0" expanded="false" />
+            <element signature="e#11055#15453#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -935,14 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-317">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vana/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -961,19 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="158" column="37" lean-forward="true" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#7156#10465#0" expanded="false" />
-            <element signature="e#10564#10777#0" expanded="false" />
-            <element signature="e#10867#15265#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/teacher_submissions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -982,21 +961,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/functions.py">
+    <entry file="file://$PROJECT_DIR$/Reports/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="204" column="0" lean-forward="true" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+        <state relative-caret-position="115">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reports/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="163" column="41" lean-forward="false" selection-start-line="163" selection-start-column="41" selection-end-line="163" selection-end-column="41" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#7344#10653#0" expanded="false" />
+            <element signature="e#10752#10965#0" expanded="false" />
+            <element signature="e#11055#15453#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/student_raw_week_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
+        <state relative-caret-position="371">
           <caret line="104" column="84" lean-forward="false" selection-start-line="104" selection-start-column="84" selection-end-line="104" selection-end-column="84" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reports/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="220" column="36" lean-forward="true" selection-start-line="220" selection-start-column="36" selection-end-line="220" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -208,14 +208,22 @@ def get_raw_week_data(monday, student):
     metric2 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
     metric3 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
     metric4 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+    empty = True
     for days_past_monday in range(0, 5):
         current_date = monday + timedelta(days=days_past_monday)
         if MasterDRC.objects.filter(date=current_date, student=student).exists():
             master_drc = MasterDRC.objects.get(date=current_date, student=student)
-            m1_string = "" + str(master_drc.m1_score) + " / " + str(master_drc.total_count())
-            m2_string = "" + str(master_drc.m2_score) + " / " + str(master_drc.total_count())
-            m3_string = "" + str(master_drc.m3_score) + " / " + str(master_drc.HW_Assigned)
-            m4_string = "" + str(master_drc.m5_score) + " / " + str(master_drc.total_count())
+            empty = False
+            if master_drc.absent:
+                m1_string = "Absent"
+                m2_string = "Absent"
+                m3_string = "Absent"
+                m4_string = "Absent"
+            else:
+                m1_string = "" + str(master_drc.m1_score) + " / " + str(master_drc.total_count())
+                m2_string = "" + str(master_drc.m2_score) + " / " + str(master_drc.total_count())
+                m3_string = "" + str(master_drc.m3_score) + " / " + str(master_drc.HW_Assigned)
+                m4_string = "" + str(master_drc.m5_score) + " / " + str(master_drc.total_count())
 
             if current_date.weekday() == 0:
                 metric1['monday'] = m1_string
@@ -242,7 +250,8 @@ def get_raw_week_data(monday, student):
                 metric2['friday'] = m2_string
                 metric3['friday'] = m3_string
                 metric4['friday'] = m4_string
-    return {'m1': metric1, 'm2': metric2, 'm3': metric3, 'm4': metric4}
+
+    return {'m1': metric1, 'm2': metric2, 'm3': metric3, 'm4': metric4, 'empty': empty}
 
 
 
