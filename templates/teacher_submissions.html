@@ -108,7 +108,9 @@ td{
     {% for teacher in teachers %}
 
         {% if forloop.counter == 1 %}
-            <tr><td style="font-size: 125%"><b><u>Sixth Grade</u></b></td><td></td><td></td></tr>
+            <tr><td style="font-size: 125%"><b><u>Sixth Grade</u></b></td>
+                <td>Completed - (Percentage Completed)</td>
+                <td>Number Completed</td></tr>
         {% endif %}
         {% if forloop.counter == 5 %}
             <tr><td style="font-size: 125%"><b><u>Seventh Grade</u></b></td><td></td><td></td></tr>

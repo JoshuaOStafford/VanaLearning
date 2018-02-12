@@ -71,38 +71,38 @@ td{
 
 <tr>
     <td>Appropriate Behavior</td>
-    <td>{% if week.metric1.monday != None %}{{ week.metric1.monday }}{% endif %}</td>
-    <td>{% if week.metric1.tuesday != None %}{{ week.metric1.tuesday }}{% endif %}</td>
-    <td>{% if week.metric1.wednesday != None %}{{ week.metric1.wednesday }}{% endif %}</td>
-    <td>{% if week.metric1.thursday != None %}{{ week.metric1.thursday }}{% endif %}</td>
-    <td>{% if week.metric1.friday != None %}{{ week.metric1.friday }}{% endif %}</td>
+    <td>{% if week.metric1.monday != None %}{{ week.metric1.monday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric1.tuesday != None %}{{ week.metric1.tuesday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric1.wednesday != None %}{{ week.metric1.wednesday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric1.thursday != None %}{{ week.metric1.thursday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric1.friday != None %}{{ week.metric1.friday }}{% else %}N/A{% endif %}</td>
 </tr>
 
 <tr>
     <td>Attentive</td>
-    <td>{% if week.metric2.monday != None %}{{ week.metric2.monday }}{% endif %}</td>
-    <td>{% if week.metric2.tuesday != None %}{{ week.metric2.tuesday }}{% endif %}</td>
-    <td>{% if week.metric2.wednesday != None %}{{ week.metric2.wednesday }}{% endif %}</td>
-    <td>{% if week.metric2.thursday != None %}{{ week.metric2.thursday }}{% endif %}</td>
-    <td>{% if week.metric2.friday != None %}{{ week.metric2.friday }}{% endif %}</td>
+    <td>{% if week.metric2.monday != None %}{{ week.metric2.monday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric2.tuesday != None %}{{ week.metric2.tuesday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric2.wednesday != None %}{{ week.metric2.wednesday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric2.thursday != None %}{{ week.metric2.thursday }}{% else %}N/A{% endif %}</td>
+    <td>{% if week.metric2.friday != None %}{{ week.metric2.friday }}{% else %}N/A{% endif %}</td>
 </tr>
 
 <tr>
     <td>HW Complete</td>
-    <td>{% if week.metric3.monday != None %}{{ week.metric3.monday }}{% endif %}</td>
-    <td>{% if week.metric3.tuesday != None %}{{ week.metric3.tuesday }}{% endif %}</td>
-    <td>{% if week.metric3.wednesday != None %}{{ week.metric3.wednesday }}{% endif %}</td>
-    <td>{% if week.metric3.thursday != None %}{{ week.metric3.thursday }}{% endif %}</td>
-    <td>{% if week.metric3.friday != None %}{{ week.metric3.friday }}{% endif %}</td>
+    <td>{% if week.metric3.monday != None %}{{ week.metric3.monday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric3.tuesday != None %}{{ week.metric3.tuesday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric3.wednesday != None %}{{ week.metric3.wednesday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric3.thursday != None %}{{ week.metric3.thursday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric3.friday != None %}{{ week.metric3.friday }} {% else %}N/A {% endif %}</td>
 </tr>
 
 <tr>
     <td>Organized</td>
-    <td>{% if week.metric4.monday != None %}{{ week.metric4.monday }}{% endif %}</td>
-    <td>{% if week.metric4.tuesday != None %}{{ week.metric4.tuesday }}{% endif %}</td>
-    <td>{% if week.metric4.wednesday != None %}{{ week.metric4.wednesday }}{% endif %}</td>
-    <td>{% if week.metric4.thursday != None %}{{ week.metric4.thursday }}{% endif %}</td>
-    <td>{% if week.metric4.friday != None %}{{ week.metric4.friday }}{% endif %}</td>
+    <td>{% if week.metric4.monday != None %}{{ week.metric4.monday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric4.tuesday != None %}{{ week.metric4.tuesday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric4.wednesday != None %}{{ week.metric4.wednesday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric4.thursday != None %}{{ week.metric4.thursday }} {% else %}N/A {% endif %}</td>
+    <td>{% if week.metric4.friday != None %}{{ week.metric4.friday }} {% else %}N/A {% endif %}</td>
 </tr>
 
 
