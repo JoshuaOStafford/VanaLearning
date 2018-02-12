@@ -212,10 +212,10 @@ def get_raw_week_data(monday, student):
         current_date = monday + timedelta(days=days_past_monday)
         if MasterDRC.objects.filter(date=current_date, student=student).exists():
             master_drc = MasterDRC.objects.get(date=current_date, student=student)
-            m1_string = "" + master_drc.m1_score + " / " + master_drc.total_count()
-            m2_string = "" + master_drc.m2_score + " / " + master_drc.total_count()
-            m3_string = "" + master_drc.m3_score + " / " + master_drc.HW_Assigned
-            m4_string = "" + master_drc.m5_score + " / " + master_drc.total_count()
+            m1_string = "" + str(master_drc.m1_score) + " / " + str(master_drc.total_count())
+            m2_string = "" + str(master_drc.m2_score) + " / " + str(master_drc.total_count())
+            m3_string = "" + str(master_drc.m3_score) + " / " + str(master_drc.HW_Assigned)
+            m4_string = "" + str(master_drc.m5_score) + " / " + str(master_drc.total_count())
 
             if current_date.weekday() == 0:
                 metric1['monday'] = m1_string
