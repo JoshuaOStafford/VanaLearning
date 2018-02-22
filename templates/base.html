@@ -147,14 +147,8 @@
 
             {% if request.user.is_active and user != None %}
 
-                {% if user.type == 'Parent' %}
 
-                    <li><a onclick="window.location.href='/day'"><span class="glyphicon glyphicon-pencil"></span> Day&nbsp;</a></li>
-                    <li><a onclick="window.location.href='/weekly_view/{{ child.username }}'"><span class="glyphicon glyphicon-book"></span> &nbsp;Weekly</a></li>
-                    <li><a onclick="window.location.href='/current_wr_redirect/{{ child.username }}'"><span class="glyphicon glyphicon-stats"></span>  &nbsp;Graphs</a></li>
-                    <li><a onclick="window.location.href='/insights/{{ child.username }}'"><span class="glyphicon glyphicon-search"></span>  &nbsp;Insights</a></li>
-
-                {% elif request.user.is_active %}
+                {% if request.user.is_active %}
 
 
                     <li><a onclick="window.location.href='/log'"><span class="glyphicon glyphicon-pencil"></span> Log&nbsp;</a></li>
