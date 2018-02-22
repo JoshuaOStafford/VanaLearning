@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5bac3b535a.js"></script>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110599905-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110599905-1');
+</script>
+    <meta charset="UTF-8">
+    <title>Student History</title>
+</head>
+
+<style>
+
+body{
+        font-family: 'EB Garamond', cursive;
+        font-size: 1.5em;
+    background-color: whitesmoke;
+    }
+table {
+   border: 3px solid black;
+    background-color: white;
+    width: 85%;
+}
+th{
+    background-color: slategray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 16%;
+    font-size: 175%;
+
+}
+tr{
+    border: 1px solid black;
+}
+td{
+    height: 75px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px;
+    border-right: 1px solid black;
+    width: 16%;
+    font-size: 200%;
+    font-weight: bold;
+
+}
+
+hr {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+</style>
+
+<body>
+    <div align="center">
+    <br>
+    <br>
+    <br>
+
+    {% for week in weeks_data_array %}
+        <h1>Daily Reports from {{ week.week_str }}</h1>
+        <br>
+<table>
+<tr>
+    <th>Metric</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+</tr>
+
+<tr>
+    <td style="font-weight: inherit; font-size: 150%">Appropriate Behavior</td>
+    <td>{% if week.metric1.monday == None %} No Report {% elif week.metric1.monday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric1.monday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric1.monday }} {% endif %}</td>
+    <td>{% if week.metric1.tuesday == None %} No Report {% elif week.metric1.tuesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric1.tuesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric1.tuesday }} {% endif %}</td>
+    <td>{% if week.metric1.wednesday == None %} No Report {% elif week.metric1.wednesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric1.wednesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric1.wednesday }} {% endif %}</td>
+    <td>{% if week.metric1.thursday == None %} No Report {% elif week.metric1.thursday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric1.thursday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric1.thursday }} {% endif %}</td>
+    <td>{% if week.metric1.friday == None %} No Report {% elif week.metric1.friday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric1.friday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric1.friday }} {% endif %}</td>
+</tr>
+
+<tr>
+    <td style="font-weight: inherit; font-size: 150%">Attentive</td>
+    <td>{% if week.metric2.monday == None %} No Report {% elif week.metric2.monday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric2.monday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric2.monday }} {% endif %}</td>
+    <td>{% if week.metric2.tuesday == None %} No Report {% elif week.metric2.tuesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric2.tuesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric2.tuesday }} {% endif %}</td>
+    <td>{% if week.metric2.wednesday == None %} No Report {% elif week.metric2.wednesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric2.wednesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric2.wednesday }} {% endif %}</td>
+    <td>{% if week.metric2.thursday == None %} No Report {% elif week.metric2.thursday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric2.thursday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric2.thursday }} {% endif %}</td>
+    <td>{% if week.metric2.friday == None %} No Report {% elif week.metric2.friday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric2.friday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric2.friday }} {% endif %}</td>
+
+</tr>
+
+<tr>
+    <td style="font-weight: inherit; font-size: 150%">HW Complete</td>
+    <td>{% if week.metric3.monday == None %} No Report {% elif week.metric3.monday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.monday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.monday }} {% endif %}</td>
+    <td>{% if week.metric3.tuesday == None %} No Report {% elif week.metric3.tuesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.tuesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.tuesday }} {% endif %}</td>
+    <td>{% if week.metric3.wednesday == None %} No Report {% elif week.metric3.wednesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.wednesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.wednesday }} {% endif %}</td>
+    <td>{% if week.metric3.thursday == None %} No Report {% elif week.metric3.thursday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.thursday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.thursday }} {% endif %}</td>
+    <td>{% if week.metric3.friday == None %} No Report {% elif week.metric3.friday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.friday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.friday }} {% endif %}</td>
+
+</tr>
+
+<tr>
+    <td style="font-weight: inherit; font-size: 150%">Organized</td>
+    <td>{% if week.metric4.monday == None %} No Report {% elif week.metric4.monday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric4.monday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric4.monday }} {% endif %}</td>
+    <td>{% if week.metric4.tuesday == None %} No Report {% elif week.metric4.tuesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric4.tuesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric4.tuesday }} {% endif %}</td>
+    <td>{% if week.metric4.wednesday == None %} No Report {% elif week.metric4.wednesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric4.wednesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric4.wednesday }} {% endif %}</td>
+    <td>{% if week.metric4.thursday == None %} No Report {% elif week.metric4.thursday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric4.thursday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric4.thursday }} {% endif %}</td>
+    <td>{% if week.metric4.friday == None %} No Report {% elif week.metric4.friday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric4.friday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric4.friday }} {% endif %}</td>
+
+</tr>
+
+
+
+
+</table>
+        <br><br>
+        <hr>
+
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+</body>
+</html>

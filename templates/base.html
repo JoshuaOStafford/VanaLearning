@@ -11,13 +11,18 @@
 <style>
     body{
         font-family: 'EB Garamond', cursive;
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
     .navbar-header{
         font-family: "Calligraffitti", cursive;
     }
     a{
         cursor: pointer;
+        font-size: 150%;
+    }
+    li{
+        font-family: 'EB Garamond', cursive;
+        font-size: 120%;
     }
 
 .navbar-custom {
@@ -139,46 +144,72 @@
         </div>
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav navbar-left">
-            {% if request.user.is_active %}
-                    <li><a onclick="window.location.href='/home'"><span class="glyphicon glyphicon-home"></span> Home&nbsp;</a></li>
-                    <li><a onclick="window.location.href='/log/DailyReports'"><span class="glyphicon glyphicon-pencil"></span> Log&nbsp;</a></li>
 
-                {% if user.username == 'lhorich' or user.username == 'christine' %}
-                <li class="dropdown">
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span>  &nbsp;Student History<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                        {% for student in user.student_set.all %}
-                            {% if forloop.counter != 1 %}
-                            <li role="separator" class="divider"></li>
-                            {% endif %}
-                        <li><a onclick="window.location.href='/StudentHistory/{{ student.username }}'">{{ student.name }}</a></li>
-                        {% endfor %}
-          </ul>
-        </li>
+            {% if request.user.is_active and user.type == 'Parent'%}
+
+                    <li><a onclick="window.location.href='/day'"><span class="glyphicon glyphicon-pencil"></span> Day&nbsp;</a></li>
+                    <li><a onclick="window.location.href='/weekly_view/{{ child.username }}'"><span class="glyphicon glyphicon-book"></span> &nbsp;Weekly</a></li>
+                    <li><a onclick="window.location.href='/current_wr_redirect/{{ child.username }}'"><span class="glyphicon glyphicon-stats"></span>  &nbsp;Graphs</a></li>
+                    <li><a onclick="window.location.href='/insights/{{ child.username }}'"><span class="glyphicon glyphicon-search"></span>  &nbsp;Insights</a></li>
+
+                {% elif request.user.is_active %}
+
+
+                    <li><a onclick="window.location.href='/log'"><span class="glyphicon glyphicon-pencil"></span> Log&nbsp;</a></li>
+
+                     {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith'%}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span>  &nbsp;Weekly<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                {% for student in user.student_set.all %}
+                                    {% if forloop.counter != 1 %}
+                                 <li role="separator" class="divider"></li>
+                                    {% endif %}
+                                <li><a onclick="window.location.href='/weekly_view/{{ student.username }}'">{{ student.name }}</a></li>
+                                {% endfor %}
+                                </ul>
+                        </li>
                     {% endif %}
 
-                <li class="dropdown">
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-folder-open"></span>  &nbsp;Past Submissions<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
+                    {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith'%}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-stats"></span>  &nbsp;Graphs<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            {% for student in user.student_set.all %}
+                                {% if forloop.counter != 1 %}
+                                <li role="separator" class="divider"></li>
+                                {% endif %}
+                            <li><a onclick="window.location.href='/current_wr_redirect/{{ student.username }}'">{{ student.name }}</a></li>
+                            {% endfor %}
+                            </ul>
+                    </li>
+                    {% endif %}
+
+                    {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith'%}
+                        <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search"></span>  &nbsp;Insights<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                {% for student in user.student_set.all %}
+                                    {% if forloop.counter != 1 %}
+                                    <li role="separator" class="divider"></li>
+                                    {% endif %}
+                                <li><a onclick="window.location.href='/insights/{{ student.username }}'">{{ student.name }}</a></li>
+                                {% endfor %}
+                        </ul>
+                        </li>
+                    {% endif %}
+
+
+
+
                         {% if user.username == 'lhorich' %}
-                            <li><a onclick="window.location.href='/PastSubmissions/max'">Max</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a onclick="window.location.href='/PastSubmissions/tuppy'">Tuppy</a></li>
-                        {% else %}
-                        {% for student in user.student_set.all %}
-                            {% if forloop.counter != 1 %}
-                            <li role="separator" class="divider"></li>
-                            {% endif %}
-                        <li><a onclick="window.location.href='/PastSubmissions/{{ student.username }}'">{{ student.name }}</a></li>
-                        {% endfor %}
+                            <li><a onclick="window.location.href='/TeacherSubmissions'"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;&nbsp;Monitor Submissions</a></li>
                         {% endif %}
 
-          </ul>
-        </li>
-                {% if user.username == 'lhorich' %}
-                                                    <li><a onclick="window.location.href='/TeacherSubmissions'"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;&nbsp;Monitor Submissions</a></li>
+
                 {% endif %}
-                {% endif %}
+
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if not request.user.is_active %}

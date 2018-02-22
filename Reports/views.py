@@ -3,14 +3,31 @@ from Reports.models import Student, DRC, MasterDRC, Teacher
 from datetime import datetime, timezone
 import datetime as datetime3
 from django.contrib.auth.decorators import login_required
-from Reports.functions import get_user, log_drc, get_different_week_url, get_teachers_data_setup, calculate_past_week_data, calculate_current_week_data, get_week_string, get_monday, get_raw_week_data
 import pytz
 from datetime import timedelta, date, datetime as datetime2
+from Reports.functions import get_user, log_drc, get_different_week_url, get_teachers_data_setup, calculate_past_week_data,\
+    calculate_current_week_data, get_week_string, get_monday, get_raw_week_data_total, past_five_days_log_strings, \
+    get_raw_week_data_single
 
+
+@login_required(login_url="/")
+def home(request):
+    return redirect('/log')
+
+
+def day_view(request):
+    child = None
+    user = get_user(request)
+    if user.type == 'Parent':
+        child = user.student
+    return render(request, 'day.html', {'user': user, 'child': child})
 
 def landing_page_view(request):
+    child = None
     user = get_user(request)
-    return render(request, 'landing_page.html', {'user': user})
+    if user.type == 'Parent':
+        child = user.student
+    return render(request, 'landing_page.html', {'user': user, 'child': child, 'request': request})
 
 
 def schedule_demo(request):
@@ -18,132 +35,93 @@ def schedule_demo(request):
 
 
 @login_required(login_url="/")
-def user_home(request):
-    teacher = get_user(request)
-    if teacher is None:
-        return redirect('/login')
-    tz = pytz.timezone('US/Eastern')
-    date = datetime.now(tz)
-    total_students = len(teacher.student_set.all())
-    if teacher.username == 'lhorich':
-        total_students = 2
-    reports_logged = len(DRC.objects.filter(teacher=teacher, date=date))
-    reports_remaining = total_students - reports_logged
-    return render(request, 'home.html', {'user': teacher, 'reports_remaining': reports_remaining})
-
-
-@login_required(login_url="/")
 def log_drc_view(request):
+    form_string = '/log'
     tz = pytz.timezone('US/Eastern')
     date = datetime.now(tz)
+    date_raw = datetime.now()
+    if date_raw.strftime("%A") != date.strftime("%A"):
+        date_raw = date_raw + timedelta(days=-1)
+    date_string = date.strftime("%A, %B %d")
     teacher = get_user(request)
-    if teacher is None:
+    if teacher.type != 'Teacher':
         return redirect('/home')
+    past_five_days = past_five_days_log_strings(date_raw, teacher)
     students = teacher.student_set.all()
     if teacher.username == 'lhorich':
-        students=[]
+        students = []
         students.append(Student.objects.get(username='max'))
         students.append(Student.objects.get(username='tuppy'))
+
     remaining_students = []
     for student in students:
-        if not DRC.objects.filter(student=student, teacher=teacher, date=date).exists():
+        if not DRC.objects.filter(student=student, teacher=teacher, date=date_raw).exists():
             remaining_students.append(student)
+
+    completed_students = []
+    for student in students:
+        if DRC.objects.filter(student=student, teacher=teacher, date=date_raw).exists():
+            drc = DRC.objects.get(student=student, teacher=teacher, date=date_raw)
+            completed_students.append({'name': student.name, 'm1': drc.m1, 'm2': drc.m2, 'm3': drc.m3, 'm4': drc.m5, 'homework': drc.m3 != None, 'absent': drc.absent})
+
     if request.method == 'POST':
         for student in students:
-            old_date = None
-            if not request.POST.get('date', False):
-                log_drc(request, student, teacher, old_date, False)
-            else:
-                old_date = request.POST['date']
-                log_drc(request, student, teacher, old_date, True)
-
-        return redirect('/log/DailyReports')
-    return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': remaining_students,
-                                                'are_remaining_students': len(remaining_students) != 0})
+            log_drc(request, student, teacher, date_raw, True)
+        return redirect('/log')
+    return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': remaining_students, 'completed_students': completed_students,
+                                                'are_remaining_students': len(remaining_students) != 0, 'are_completed_students': len(completed_students) != 0,
+                                                'form_string': form_string, 'past_five_days': past_five_days, 'date_string': date_string})
 
 
 @login_required(login_url="/")
-def log_pastdrc_view(request):
-    msg = ""
+def log_past_drc_view(request, date_str):
+    form_string = '/log/' + date_str
+    is_past = True
+    old_date = datetime2.strptime(date_str, '%Y-%m-%d')
+    prev_date_str = old_date.strftime("%A, %B %d")
+    tz = pytz.timezone('US/Eastern')
+    current_date = datetime.now(tz)
+    date_raw = datetime.now()
+    if date_raw.strftime("%A") != current_date.strftime("%A"):
+        date_raw = date_raw + timedelta(days=-1)
     teacher = get_user(request)
     if teacher is None:
         return redirect('/home')
+    past_five_days = past_five_days_log_strings(date_raw, teacher)
     students = teacher.student_set.all()
     if teacher.username == 'lhorich':
-        students=[]
+        students = []
         students.append(Student.objects.get(username='max'))
         students.append(Student.objects.get(username='tuppy'))
 
+    remaining_students = []
+    for student in students:
+        if not DRC.objects.filter(student=student, teacher=teacher, date=old_date).exists():
+            remaining_students.append(student)
+
+    completed_students = []
+    for student in students:
+        if DRC.objects.filter(student=student, teacher=teacher, date=old_date).exists():
+            drc = DRC.objects.get(student=student, teacher=teacher, date=old_date)
+            completed_students.append({'name': student.name, 'm1': drc.m1, 'm2': drc.m2, 'm3': drc.m3, 'm4': drc.m5,
+                                       'homework': drc.m3 != None, 'absent': drc.absent})
+
     if request.method == 'POST':
         for student in students:
-            if not request.POST.get('date', False):
-                msg = "Please enter a date"
-                return render(request, 'past_reports.html', {'user': teacher, 'remaining_students': students,
-                                                'are_remaining_students': len(students) != 0, 'error_msg': msg})
-            else:
-                old_date = request.POST['date']
-                log_drc(request, student, teacher, old_date, True)
-
-        return redirect('/log/PastReports')
-    return render(request, 'past_reports.html', {'user': teacher, 'remaining_students': students,
-                                                'are_remaining_students': len(students) != 0, 'error_msg': msg})
+            log_drc(request, student, teacher, old_date, True)
+        return redirect('/log/' + date_str)
+    return render(request, 'log_reports.html', {'user': teacher, 'remaining_students': remaining_students, 'completed_students': completed_students,
+                                                'are_remaining_students': len(remaining_students) != 0, 'are_completed_students': len(completed_students) != 0,
+                                                'is_past': is_past, 'past_string': prev_date_str, 'form_string': form_string,
+                                                'past_five_days': past_five_days, 'date_string': prev_date_str})
 
 
 @login_required(login_url="/")
-def edit_drc_view(request, student_username):
-    message = ""
-    teacher = get_user(request)
-    if teacher is None:
-        return redirect('/home')
-    if not Student.objects.filter(username=student_username).exists():
-        return redirect('/home')
-    student = Student.objects.get(username=student_username)
-    if student not in teacher.student_set.all():
-        return redirect('/home')
-    if request.method == 'POST':
-        if log_drc(request, student, teacher, None, False):
-            message = "Report for " + student.name + " has successfully been changed."
-        else:
-            message = "We failed to change the report for " + student.name + ". Please make sure you entered all " \
-                                                                             "five metrics."
-    return render(request, 'edit_report.html', {'user': teacher, 'student': student, 'msg': message})
-
-
-@login_required(login_url="/")
-def past_submissions_view(request, student_username):
-    tz = pytz.timezone('US/Eastern')
-    date = datetime.now(tz)
-    d_truncated = date.date()
-    teacher = get_user(request)
-    if not Student.objects.filter(username=student_username).exists():
-        return redirect('/home')
-    student = Student.objects.get(username=student_username)
-    past_drcs = DRC.objects.filter(teacher=teacher, student=student)
-    past_drcs = past_drcs.order_by('date')
-    past_drcs = past_drcs.reverse()
-    return render(request, 'past_submissions.html', {'user': teacher, 'past_drcs': past_drcs, 'student': student,
-                                                     'date': date, 'test_date': d_truncated})
-
-
-@login_required(login_url="/")
-def student_history_view(request, student_username):
-    teacher = get_user(request)
-    if not Student.objects.filter(username=student_username).exists():
-        return redirect('/home')
-    student = Student.objects.get(username=student_username)
-    if student not in teacher.student_set.all():
-        return redirect('/home')
-    master_drcs = MasterDRC.objects.filter(student=student)
-    master_drcs = master_drcs.order_by('date')
-    master_drcs = master_drcs.reverse()
-    return render(request, 'student_history.html', {'user': teacher, 'student': student, 'Master_DRCs': master_drcs})
-
-
-@login_required(login_url="/")
-def student_raw_week_view(request, student_username):
-    teacher = get_user(request)
-    if teacher != Teacher.objects.get(username='lhorich'):
-        return redirect('/home')
+def raw_week_view(request, student_username):
+    child = None
+    user = get_user(request)
+    if user.type == 'Parent':
+        child = user.student
     if not Student.objects.filter(username=student_username).exists():
         return redirect('/home')
     student = Student.objects.get(username=student_username)
@@ -153,7 +131,10 @@ def student_raw_week_view(request, student_username):
     current_monday = this_monday
     weeks_data_array = []
     while current_monday > starting_date:
-        metrics = get_raw_week_data(current_monday, student, (current_monday == this_monday))
+        if user in Teacher.objects.all():
+            metrics = get_raw_week_data_single(current_monday, student, (current_monday == this_monday), user)
+        else:
+            metrics = get_raw_week_data_total(current_monday, student, (current_monday == this_monday))
         week = {'week_str': get_week_string(current_monday), 'metric1': metrics['m1'], 'metric2': metrics['m2'], 'metric3': metrics['m3'],
                 'metric4': metrics['m4']}
         if current_monday != this_monday:
@@ -163,16 +144,18 @@ def student_raw_week_view(request, student_username):
             weeks_data_array.append(week)
         current_monday -= timedelta(days=7)
 
-    return render(request, 'student_raw_week_data.html', {'user': teacher, 'student': student,
+    return render(request, 'raw_week_data.html', {'user': user, 'child': child, 'student': student,
                                                           'weeks_data_array': weeks_data_array})
 
 
 
 @login_required(login_url="/")
-def progress_graph_view(request, student_username, start_date_str, end_date_str):
-    teacher = get_user(request)
-    if not (teacher == Teacher.objects.get(username='lhorich') or teacher == Teacher.objects.get(username='christine')):
-        return redirect('/home')
+def graph_view(request, student_username, start_date_str, end_date_str):
+    child = None
+    user = get_user(request)
+    if user.type == 'Parent':
+        child = user.student
+
     error_msg = ""
     if request.method == 'POST':
         date1_str = request.POST.get('date1', False)
@@ -185,7 +168,7 @@ def progress_graph_view(request, student_username, start_date_str, end_date_str)
             if date1 >= date2:
                 error_msg = "Please make sure that the start date is before the end date."
             else:
-                return redirect('/ProgressGraph/' + student_username + '/' + date1_str + "/to/" + date2_str)
+                return redirect('/graph/' + student_username + '/' + date1_str + "/to/" + date2_str)
 
     student = Student.objects.get(username=student_username)
     xaxis_dates = []
@@ -221,26 +204,29 @@ def progress_graph_view(request, student_username, start_date_str, end_date_str)
                 yaxis_m4_values.append(-1)
         current_date = current_date + timedelta(days=1)
 
-    return render(request, "progress_graph.html", {'xaxis_dates': xaxis_dates, 'yaxis_m1_data': yaxis_m1_values,
+    return render(request, "line_graph.html", {'xaxis_dates': xaxis_dates, 'yaxis_m1_data': yaxis_m1_values,
                                                  'yaxis_m2_data': yaxis_m2_values, 'yaxis_m3_data': yaxis_m3_values,
                                                  'yaxis_m4_data': yaxis_m4_values, 'student': student, 'past_week_link': past_week_link,
                                                  'past_2weeks_link': past_2weeks_link, 'past_month_link': past_month_link,
                                                  'current_link': current_link, 'errorMsg': error_msg, 'student_username': student_username,
-                                                   'user': teacher})
+                                               'user': user, 'child': child})
 
 
 @login_required(login_url="/")
-def current_week_report_redirect(request, student_username):
+def current_week_redirect(request, student_username):
     today = datetime3.date.today()
     today_str = today.strftime('%Y-%m-%d')
     past_week_link = get_different_week_url(today_str, -6)
-    return redirect("/ProgressGraph/" + student_username + '/' + past_week_link)
+    return redirect("/graph/" + student_username + '/' + past_week_link)
 
 
 @login_required(login_url="/")
-def weekly_reports_view(request, student_username):
-    teacher = get_user(request)
-    if not Student.objects.filter(username=student_username).exists():
+def insights_view(request, student_username):
+    child = None
+    user = get_user(request)
+    if user.type == 'Parent':
+        child = user.student
+    if user is None or not Student.objects.filter(username=student_username).exists():
         return redirect('/home')
     student = Student.objects.get(username=student_username)
     week1_report = {}
@@ -277,11 +263,13 @@ def weekly_reports_view(request, student_username):
                         'success1': '100% homework completion, which was higher than last week\'s percentage even though he had more homeworks', 'success2': '', 'success3': '', 'aoi1': '', 'aoi2': '', 'aoi3': '',
                         'insight1': "Had better attendance than last week", 'insight2': "Teachers completed an average of 2.2 reports per day (compared with 1.33 last week)", 'insight3': '', 'attendance': 5}
 
-    else:
-        return redirect('/home')
-    if student not in teacher.student_set.all():
-        return redirect('/home')
-    return render(request, 'weekly_reports.html', {'user': teacher, 'student': student, 'wr1': week1_report})
+    if user.type == 'Teacher':
+        if student not in user.student_set.all():
+            return redirect('/home')
+    elif user.type == 'Parent':
+        if student != user.student:
+            return redirect('/home')
+    return render(request, 'weekly_reports.html', {'user': user, 'child': child, 'student': student, 'wr1': week1_report})
 
 
 @login_required(login_url="/")

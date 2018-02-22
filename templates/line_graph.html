@@ -1,4 +1,4 @@
-{% extends 'base_home.html' %}
+{% extends 'base.html' %}
 
 {% block body %}
 <!DOCTYPE html>
@@ -26,9 +26,8 @@
     <style>
     body{
         font-family: 'EB Garamond', cursive;
-        background-color: #f0f0f0;
-    width: available;
-    height: available;
+        width: available;
+        height: available;
     }
     #wrapper {
   display:table;
@@ -75,11 +74,11 @@
 <div class="container">
     <h3 align="center">{{ errorMsg }}</h3>
     <div align="center">
-        <button onclick="window.location.href='/ProgressGraph/{{ past_week_link }}'">Past Week</button> &nbsp;&nbsp;
-        <button onclick="window.location.href='/ProgressGraph/{{ past_2weeks_link }}'">Past Two Weeks</button> &nbsp;&nbsp;
-        <button onclick="window.location.href='/ProgressGraph/{{ past_month_link }}'">Past Month</button>
+        <button onclick="window.location.href='/graph/{{ past_week_link }}'">Past Week</button> &nbsp;&nbsp;
+        <button onclick="window.location.href='/graph/{{ past_2weeks_link }}'">Past Two Weeks</button> &nbsp;&nbsp;
+        <button onclick="window.location.href='/graph/{{ past_month_link }}'">Past Month</button>
         <br>
-        <form action="/ProgressGraph/{{ current_link }}" method="post">
+        <form action="/graph/{{ current_link }}" method="post">
         {% csrf_token %}
     <input placeholder="YYYY-MM-DD" type="date" name="date1" title="Start Date">
     <input placeholder="YYYY-MM-DD" type="date" name="date2" title="End Date">

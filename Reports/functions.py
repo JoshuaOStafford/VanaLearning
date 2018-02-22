@@ -1,4 +1,4 @@
-from Reports.models import Teacher, DRC, MasterDRC
+from Reports.models import Teacher, DRC, MasterDRC, Parent
 from django.shortcuts import redirect
 import datetime
 from datetime import timedelta, datetime as datetime2, date
@@ -8,8 +8,13 @@ def get_user(request):
     user = request.user
     if Teacher.objects.filter(username=user.get_username()).exists():
         return Teacher.objects.get(username=user.get_username())
+    elif Parent.objects.filter(username=user.get_username()).exists():
+        return Parent.objects.get(username=user.get_username())
     else:
         return None
+
+
+
 
 
 def log_drc(request, student, teacher, old_date, is_past_report):
@@ -203,7 +208,7 @@ def get_monday(today, weeks_ago):
     return today
 
 
-def get_raw_week_data(monday, student, is_current_week):
+def get_raw_week_data_total(monday, student, is_current_week):
     if is_current_week:
         metric1 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
         metric2 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
@@ -260,4 +265,93 @@ def get_raw_week_data(monday, student, is_current_week):
     return {'m1': metric1, 'm2': metric2, 'm3': metric3, 'm4': metric4, 'empty': empty}
 
 
+def get_raw_week_data_single(monday, student, is_current_week, teacher):
+    if is_current_week:
+        metric1 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+        metric2 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+        metric3 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+        metric4 = {'monday': "", 'tuesday': "", 'wednesday': "", 'thursday': "", 'friday': ""}
+    else:
+        metric1 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+        metric2 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+        metric3 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+        metric4 = {'monday': None, 'tuesday': None, 'wednesday': None, 'thursday': None, 'friday': None}
+    empty = True
+    for days_past_monday in range(0, 5):
+        current_date = monday + timedelta(days=days_past_monday)
+        if DRC.objects.filter(date=current_date, student=student, teacher=teacher).exists():
+            drc = DRC.objects.get(date=current_date, student=student, teacher=teacher)
+            empty = False
+            if drc.absent:
+                m1_string = "Absent"
+                m2_string = "Absent"
+                m3_string = "Absent"
+                m4_string = "Absent"
+            else:
+                if drc.m1:
+                    m1_string = 'Yes'
+                else:
+                    m1_string = 'No'
+                if drc.m2:
+                    m2_string = 'Yes'
+                else:
+                    m2_string = 'No'
+                if drc.m3 is None:
+                    m3_string = 'N/A'
+                elif drc.m3:
+                    m3_string = 'Yes'
+                else:
+                    m3_string = 'No'
+                if drc.m5:
+                    m4_string = 'Yes'
+                else:
+                    m4_string = 'No'
+            if current_date.weekday() == 0:
+                metric1['monday'] = m1_string
+                metric2['monday'] = m2_string
+                metric3['monday'] = m3_string
+                metric4['monday'] = m4_string
+            elif current_date.weekday() == 1:
+                metric1['tuesday'] = m1_string
+                metric2['tuesday'] = m2_string
+                metric3['tuesday'] = m3_string
+                metric4['tuesday'] = m4_string
+            elif current_date.weekday() == 2:
+                metric1['wednesday'] = m1_string
+                metric2['wednesday'] = m2_string
+                metric3['wednesday'] = m3_string
+                metric4['wednesday'] = m4_string
+            elif current_date.weekday() == 3:
+                metric1['thursday'] = m1_string
+                metric2['thursday'] = m2_string
+                metric3['thursday'] = m3_string
+                metric4['thursday'] = m4_string
+            elif current_date.weekday() == 4:
+                metric1['friday'] = m1_string
+                metric2['friday'] = m2_string
+                metric3['friday'] = m3_string
+                metric4['friday'] = m4_string
 
+    return {'m1': metric1, 'm2': metric2, 'm3': metric3, 'm4': metric4, 'empty': empty}
+
+
+def past_five_days_log_strings(date, teacher):
+    today = date
+    today = today + timedelta(days=-1)
+    five_prev_days = []
+    for index in range(1,6):
+        if today.weekday() == 6:
+            today = today + timedelta(days=-2)
+        elif today.weekday() == 5:
+            today = today + timedelta(days=-1)
+        date_string = today.strftime("%A, %B %d")
+        url_date_string = today.strftime('%Y-%m-%d')
+        link = '/log/' + url_date_string
+        all_logged = True
+        for student in teacher.student_set.all():
+            if not DRC.objects.filter(teacher=teacher, date=today, student=student).exists():
+                all_logged = False
+        five_prev_days.append({'date_string': date_string, 'url': link, 'all_logged': all_logged})
+
+        today = today + timedelta(days=-1)
+    return five_prev_days
