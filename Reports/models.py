@@ -5,7 +5,6 @@ class Teacher(models.Model):
     name = models.CharField(max_length=30)
     username = models.CharField(max_length=16)
     email = models.EmailField(max_length=50, default='empty@gmail.com')
-    type = models.CharField(max_length=16, default='Teacher')
 
 
 class Student(models.Model):
@@ -24,7 +23,6 @@ class Parent(models.Model):
     username = models.CharField(max_length=16)
     email = models.EmailField(max_length=50, default='empty@gmail.com')
     student = models.OneToOneField(Student)
-    type = models.CharField(max_length=16, default='Parent')
 
 
 class MasterDRC(models.Model):
