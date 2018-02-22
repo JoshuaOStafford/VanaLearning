@@ -15,8 +15,8 @@ def home(request):
     user = get_user(request)
     if user in Teacher.objects.all():
         return redirect('/log')
-    elif user in Parent.objects.all():
-        return redirect('/day')
+    # elif user in Parent.objects.all():
+    #     return redirect('/day')
     else:
         return redirect('/')
 
@@ -24,15 +24,15 @@ def home(request):
 def day_view(request):
     child = None
     user = get_user(request)
-    if user is not None and user.type == 'Parent':
-        child = user.student
+    # if user is not None and user.type == 'Parent':
+    #     child = user.student
     return render(request, 'day.html', {'user': user, 'child': child})
 
 def landing_page_view(request):
     child = None
     user = get_user(request)
-    if user is not None and user.type == 'Parent':
-        child = user.student
+    # if user is not None and user.type == 'Parent':
+    #     child = user.student
     return render(request, 'landing_page.html', {'user': user, 'child': child, 'request': request})
 
 
@@ -126,8 +126,8 @@ def log_past_drc_view(request, date_str):
 def raw_week_view(request, student_username):
     child = None
     user = get_user(request)
-    if user is not None and user.type == 'Parent':
-        child = user.student
+    # if user is not None and user.type == 'Parent':
+    #     child = user.student
     if not Student.objects.filter(username=student_username).exists():
         return redirect('/home')
     student = Student.objects.get(username=student_username)
@@ -159,8 +159,8 @@ def raw_week_view(request, student_username):
 def graph_view(request, student_username, start_date_str, end_date_str):
     child = None
     user = get_user(request)
-    if user.type == 'Parent':
-        child = user.student
+    # if user.type == 'Parent':
+    #     child = user.student
 
     error_msg = ""
     if request.method == 'POST':
@@ -230,11 +230,11 @@ def current_week_redirect(request, student_username):
 def insights_view(request, student_username):
     child = None
     user = get_user(request)
-    if user is not None and user.type == 'Parent':
-        child = user.student
-    if user is None or not Student.objects.filter(username=student_username).exists():
-        return redirect('/home')
-    student = Student.objects.get(username=student_username)
+    # if user is not None and user.type == 'Parent':
+    #     child = user.student
+    # if user is None or not Student.objects.filter(username=student_username).exists():
+    #     return redirect('/home')
+    # student = Student.objects.get(username=student_username)
     week1_report = {}
     if student.username == 'jalen':
         week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
