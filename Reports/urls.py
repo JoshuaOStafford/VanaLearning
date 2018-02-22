@@ -5,6 +5,7 @@ urlpatterns = [
 
     # landing pages
     url(r'^$', views.landing_page_view, name='Landing Page'),
+    url(r'^home$', views.home, name='Home'),
     url(r'^schedule_demo$', views.schedule_demo, name='Schedule demo'),
 
     # parent pages
