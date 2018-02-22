@@ -7,8 +7,10 @@ urlpatterns = [
     url(r'^$', views.landing_page_view, name='Landing Page'),
     url(r'^schedule_demo$', views.schedule_demo, name='Schedule demo'),
 
-    # teacher logging pages
+    # parent pages
     url(r'^day', views.day_view, name='day'),
+
+    # teacher logging pages
     url(r'^log', views.log_drc_view, name='log daily reports'),
     url(r'^log/([0-9_-]{9,11})', views.log_past_drc_view, name='log past reports'),
 
@@ -22,5 +24,6 @@ urlpatterns = [
 
     # helper pages
     url(r'^current_wr_redirect/([a-zA-z0-9_-]{3,16})$', views.current_week_redirect, name='week redirect'),
+    url(r'^home', views.home, name='home'),
 ]
 
