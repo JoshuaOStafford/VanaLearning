@@ -8,8 +8,8 @@ def get_user(request):
     user = request.user
     if Teacher.objects.filter(username=user.get_username()).exists():
         return Teacher.objects.get(username=user.get_username())
-    elif Parent.objects.filter(username=user.get_username()).exists():
-        return Parent.objects.get(username=user.get_username())
+    # elif Parent.objects.filter(username=user.get_username()).exists():
+    #     return Parent.objects.get(username=user.get_username())
     else:
         return None
 

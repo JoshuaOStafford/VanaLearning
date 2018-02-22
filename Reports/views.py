@@ -137,7 +137,7 @@ def raw_week_view(request, student_username):
     current_monday = this_monday
     weeks_data_array = []
     while current_monday > starting_date:
-        if user in Teacher.objects.all():
+        if user in Teacher.objects.all() and user != Teacher.objects.get(username='lhorich'):
             metrics = get_raw_week_data_single(current_monday, student, (current_monday == this_monday), user)
         else:
             metrics = get_raw_week_data_total(current_monday, student, (current_monday == this_monday))
@@ -234,7 +234,7 @@ def insights_view(request, student_username):
     #     child = user.student
     # if user is None or not Student.objects.filter(username=student_username).exists():
     #     return redirect('/home')
-    # student = Student.objects.get(username=student_username)
+    student = Student.objects.get(username=student_username)
     week1_report = {}
     if student.username == 'jalen':
         week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
@@ -272,9 +272,9 @@ def insights_view(request, student_username):
     if user.type == 'Teacher':
         if student not in user.student_set.all():
             return redirect('/home')
-    elif user.type == 'Parent':
-        if student != user.student:
-            return redirect('/home')
+    # elif user.type == 'Parent':
+    #     if student != user.student:
+    #         return redirect('/home')
     return render(request, 'weekly_reports.html', {'user': user, 'child': child, 'student': student, 'wr1': week1_report})
 
 
