@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^day', views.day_view, name='day'),
 
     # teacher logging pages
-    url(r'^log', views.log_drc_view, name='log daily reports'),
+    url(r'^log$', views.log_drc_view, name='log daily reports'),
     url(r'^log/([0-9_-]{9,11})', views.log_past_drc_view, name='log past reports'),
 
     # data representation pages
