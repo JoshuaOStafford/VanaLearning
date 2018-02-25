@@ -203,11 +203,11 @@ def graph_view(request, student_username, start_date_str, end_date_str):
                 yaxis_m2_values.append(master_drc.get_m5_charted())
                 yaxis_m3_values.append(master_drc.get_m3_charted())
                 yaxis_m4_values.append(master_drc.get_m2_charted())
-            else:
-                yaxis_m1_values.append(-1)
-                yaxis_m2_values.append(-1)
-                yaxis_m3_values.append(-1)
-                yaxis_m4_values.append(-1)
+            # else:
+            #     yaxis_m1_values.append(-1)
+            #     yaxis_m2_values.append(-1)
+            #     yaxis_m3_values.append(-1)
+            #     yaxis_m4_values.append(-1)
         current_date = current_date + timedelta(days=1)
 
     return render(request, "line_graph.html", {'xaxis_dates': xaxis_dates, 'yaxis_m1_data': yaxis_m1_values,
