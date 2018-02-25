@@ -117,9 +117,12 @@ class MasterDRC(models.Model):
                     return self.get_m1_charted()
                 if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
                     current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
-                    yeses += current_master.get_m1_charted()
-                    days -= 1
-                    lookup_date = lookup_date + timedelta(days=-1)
+                    if current_master.absent:
+                        lookup_date = lookup_date + timedelta(days=-1)
+                    else:
+                        yeses += current_master.get_m1_charted()
+                        days -= 1
+                        lookup_date = lookup_date + timedelta(days=-1)
                 else:
                     lookup_date = lookup_date + timedelta(days=-1)
         return float(yeses/total_days)
@@ -137,9 +140,12 @@ class MasterDRC(models.Model):
                     return self.get_m2_charted()
                 if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
                     current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
-                    yeses += current_master.get_m2_charted()
-                    days -= 1
-                    lookup_date = lookup_date + timedelta(days=-1)
+                    if current_master.absent:
+                        lookup_date = lookup_date + timedelta(days=-1)
+                    else:
+                        yeses += current_master.get_m2_charted()
+                        days -= 1
+                        lookup_date = lookup_date + timedelta(days=-1)
                 else:
                     lookup_date = lookup_date + timedelta(days=-1)
         return float(yeses/total_days)
@@ -161,9 +167,12 @@ class MasterDRC(models.Model):
                     return self.get_m4_charted()
                 if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
                     current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
-                    yeses += current_master.get_m4_charted()
-                    days -= 1
-                    lookup_date = lookup_date + timedelta(days=-1)
+                    if current_master.absent:
+                        lookup_date = lookup_date + timedelta(days=-1)
+                    else:
+                        yeses += current_master.get_m4_charted()
+                        days -= 1
+                        lookup_date = lookup_date + timedelta(days=-1)
                 else:
                     lookup_date = lookup_date + timedelta(days=-1)
         return float(yeses/total_days)
@@ -180,9 +189,12 @@ class MasterDRC(models.Model):
                     return self.get_m5_charted()
                 if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
                     current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
-                    yeses += current_master.get_m5_charted()
-                    days -= 1
-                    lookup_date = lookup_date + timedelta(days=-1)
+                    if current_master.absent:
+                        lookup_date = lookup_date + timedelta(days=-1)
+                    else:
+                        yeses += current_master.get_m5_charted()
+                        days -= 1
+                        lookup_date = lookup_date + timedelta(days=-1)
                 else:
                     lookup_date = lookup_date + timedelta(days=-1)
         return float(yeses/total_days)
