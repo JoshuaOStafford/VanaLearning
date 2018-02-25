@@ -199,10 +199,10 @@ def graph_view(request, student_username, start_date_str, end_date_str):
             if MasterDRC.objects.filter(student=student, date=current_date).exists():
                 xaxis_dates.append(current_date_string)
                 master_drc = MasterDRC.objects.get(student=student, date=current_date)
-                yaxis_m1_values.append(master_drc.get_m1_history_charted(5))
-                yaxis_m2_values.append(master_drc.get_m5_history_charted(5))
+                yaxis_m1_values.append(master_drc.get_m1_history_charted(3))
+                yaxis_m2_values.append(master_drc.get_m5_history_charted(3))
                 yaxis_m3_values.append(master_drc.get_m3_charted())
-                yaxis_m4_values.append(master_drc.get_m2_history_charted(5))
+                yaxis_m4_values.append(master_drc.get_m2_history_charted(3))
             # else:
             #     yaxis_m1_values.append(-1)
             #     yaxis_m2_values.append(-1)
