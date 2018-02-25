@@ -236,6 +236,8 @@ def insights_view(request, student_username):
     # if user is None or not Student.objects.filter(username=student_username).exists():
     #     return redirect('/home')
     student = Student.objects.get(username=student_username)
+    if student == Student.objects.get(username='max'):
+        return render(request, 'Max_Insights.html', {'user': user, 'child': child})
     week1_report = {}
     if student.username == 'jalen':
         week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
