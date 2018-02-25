@@ -107,6 +107,7 @@ class MasterDRC(models.Model):
 
     def get_m1_history_charted(self, days):
         yeses = 0.0
+        total_days = days
         start_date = self.date
         lookup_date = start_date
         while days > 0:
@@ -121,7 +122,7 @@ class MasterDRC(models.Model):
                     lookup_date = lookup_date + timedelta(days=-1)
                 else:
                     lookup_date = lookup_date + timedelta(days=-1)
-        return float(yeses/days)
+        return float(yeses/total_days)
 
 
     def get_m2_history_charted(self):
