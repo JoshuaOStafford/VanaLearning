@@ -1,4 +1,4 @@
-from Reports.models import Teacher, DRC, MasterDRC, Parent
+from Reports.models import Teacher, DRC, MasterDRC, Parent, Student
 from django.shortcuts import redirect
 import datetime
 from datetime import timedelta, datetime as datetime2, date
@@ -348,7 +348,11 @@ def past_five_days_log_strings(date, teacher):
         url_date_string = today.strftime('%Y-%m-%d')
         link = '/log/' + url_date_string
         all_logged = True
-        for student in teacher.student_set.all():
+        if teacher == Teacher.objects.get(username='lhorich'):
+            students = [Student.objects.get(username='max'), Student.objects.get(username='tuppy')]
+        else:
+            students = teacher.student_set.all()
+        for student in students:
             if not DRC.objects.filter(teacher=teacher, date=today, student=student).exists():
                 all_logged = False
         five_prev_days.append({'date_string': date_string, 'url': link, 'all_logged': all_logged})
