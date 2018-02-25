@@ -117,7 +117,7 @@ hr:before { /* Not really supposed to work, but does */
 </tr>
 
 <tr>
-    <td style="font-weight: inherit; font-size: 150%">HW Complete</td>
+    <td style="font-weight: inherit; font-size: 150%">Learned from Homework</td>
     <td>{% if week.metric3.monday == None %} No Report {% elif week.metric3.monday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.monday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.monday }} {% endif %}</td>
     <td>{% if week.metric3.tuesday == None %} No Report {% elif week.metric3.tuesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.tuesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.tuesday }} {% endif %}</td>
     <td>{% if week.metric3.wednesday == None %} No Report {% elif week.metric3.wednesday == 'Yes' %}<i class="fa fa-check fa" aria-hidden="true" style="color:green"></i> {% elif week.metric3.wednesday == 'No' %} <i class="fa fa-times fa" aria-hidden="true" style="color:red"></i> {% else %} {{ week.metric3.wednesday }} {% endif %}</td>
