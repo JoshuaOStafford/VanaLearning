@@ -125,25 +125,67 @@ class MasterDRC(models.Model):
         return float(yeses/total_days)
 
 
-    def get_m2_history_charted(self):
-        if float(self.get_m2()) - 0.5 < 0:  # if statement ensures charted value will not be negative (range 0-100)
-            return self.get_m2()
-        return float(self.get_m2()) - .5
+    def get_m2_history_charted(self, days):
+        yeses = 0.0
+        total_days = days
+        start_date = self.date
+        lookup_date = start_date
+        while days > 0:
+            current_master = None
+            while current_master is None:
+                if lookup_date < start_date + timedelta(days=-10):
+                    return self.get_m2_charted()
+                if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
+                    current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
+                    yeses += current_master.get_m2_charted()
+                    days -= 1
+                    lookup_date = lookup_date + timedelta(days=-1)
+                else:
+                    lookup_date = lookup_date + timedelta(days=-1)
+        return float(yeses/total_days)
 
     def get_m3_history_charted(self):
         if float(self.get_m3()) - 1.0 < 0:
             return self.get_m3()
         return float(self.get_m3()) - 1
 
-    def get_m4_history_charted(self):
-        if float(self.get_m4()) - 1.5 < 0:
-            return self.get_m4()
-        return float(self.get_m4()) - 1.5
+    def get_m4_history_charted(self, days):
+        yeses = 0.0
+        total_days = days
+        start_date = self.date
+        lookup_date = start_date
+        while days > 0:
+            current_master = None
+            while current_master is None:
+                if lookup_date < start_date + timedelta(days=-10):
+                    return self.get_m4_charted()
+                if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
+                    current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
+                    yeses += current_master.get_m4_charted()
+                    days -= 1
+                    lookup_date = lookup_date + timedelta(days=-1)
+                else:
+                    lookup_date = lookup_date + timedelta(days=-1)
+        return float(yeses/total_days)
 
-    def get_m5_history_charted(self):
-        if float(self.get_m5()) - 2.0 < 0:
-            return self.get_m5()
-        return float(self.get_m5()) - 2
+    def get_m5_history_charted(self, days):
+        yeses = 0.0
+        total_days = days
+        start_date = self.date
+        lookup_date = start_date
+        while days > 0:
+            current_master = None
+            while current_master is None:
+                if lookup_date < start_date + timedelta(days=-10):
+                    return self.get_m5_charted()
+                if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
+                    current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
+                    yeses += current_master.get_m5_charted()
+                    days -= 1
+                    lookup_date = lookup_date + timedelta(days=-1)
+                else:
+                    lookup_date = lookup_date + timedelta(days=-1)
+        return float(yeses/total_days)
 
 
 class DRC(models.Model):
