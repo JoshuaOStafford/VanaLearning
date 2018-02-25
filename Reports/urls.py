@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^insights/([a-zA-z0-9_-]{3,16})', views.insights_view, name='view insights'),
 
     # principal only pages
-    url(r'TeacherSubmissions', views.track_reports_view, name='view teacher submission stats'),
+    url(r'TeacherHistory', views.track_reports_view, name='view teacher submission stats'),
 
     # helper pages
     url(r'^current_wr_redirect/([a-zA-z0-9_-]{3,16})$', views.current_week_redirect, name='week redirect'),
