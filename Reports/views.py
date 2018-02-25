@@ -195,9 +195,9 @@ def graph_view(request, student_username, start_date_str, end_date_str):
         dayOfWeek = current_date.strftime('%A')
         if dayOfWeek != 'Saturday' and dayOfWeek != 'Sunday':
             current_date_string = current_date.strftime('%a, %b %d')
-            xaxis_dates.append(current_date_string)
 
             if MasterDRC.objects.filter(student=student, date=current_date).exists():
+                xaxis_dates.append(current_date_string)
                 master_drc = MasterDRC.objects.get(student=student, date=current_date)
                 yaxis_m1_values.append(master_drc.get_m1_history_charted(5))
                 yaxis_m2_values.append(master_drc.get_m5_charted())
