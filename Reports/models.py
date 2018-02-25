@@ -116,7 +116,7 @@ class MasterDRC(models.Model):
                     return self.get_m1_charted()
                 if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
                     current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
-                    yeses += self.get_m1()
+                    yeses += self.get_m1_charted()
                     days -= 1
                     lookup_date = lookup_date + timedelta(days=-1)
                 else:
