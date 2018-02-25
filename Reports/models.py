@@ -185,7 +185,7 @@ class MasterDRC(models.Model):
         while days > 0:
             current_master = None
             while current_master is None:
-                if lookup_date < start_date + timedelta(days=-10):
+                if lookup_date < start_date + timedelta(days=-28):
                     return self.get_m5_charted()
                 if MasterDRC.objects.filter(student=self.student, date=lookup_date).exists():
                     current_master = MasterDRC.objects.get(student=self.student, date=lookup_date)
