@@ -123,6 +123,7 @@ class MasterDRC(models.Model):
                     lookup_date = lookup_date + timedelta(days=-1)
                 else:
                     lookup_date = lookup_date + timedelta(days=-1)
+        1/0
         return float(yeses/total_days)
 
 
