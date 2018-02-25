@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/models.py" afterPath="$PROJECT_DIR$/Reports/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reports/views.py" afterPath="$PROJECT_DIR$/Reports/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Reports/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="201" column="74" lean-forward="false" selection-start-line="201" selection-start-column="74" selection-end-line="201" selection-end-column="74" />
+            <state relative-caret-position="222">
+              <caret line="204" column="74" lean-forward="false" selection-start-line="204" selection-start-column="74" selection-end-line="204" selection-end-column="74" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -44,7 +44,7 @@
       <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
+            <state relative-caret-position="66">
               <caret line="210" column="27" lean-forward="false" selection-start-line="210" selection-start-column="4" selection-end-line="210" selection-end-column="27" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
@@ -53,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Reports/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="166">
@@ -129,8 +129,8 @@
         <option value="$PROJECT_DIR$/templates/raw_week_data.html" />
         <option value="$PROJECT_DIR$/templates/log_reports.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/Reports/views.py" />
         <option value="$PROJECT_DIR$/Reports/models.py" />
+        <option value="$PROJECT_DIR$/Reports/views.py" />
       </list>
     </option>
   </component>
@@ -919,9 +919,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Reports/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="194" column="54" lean-forward="false" selection-start-line="194" selection-start-column="54" selection-end-line="194" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Reports/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
+        <state relative-caret-position="66">
           <caret line="210" column="27" lean-forward="false" selection-start-line="210" selection-start-column="4" selection-end-line="210" selection-end-column="27" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
@@ -931,20 +941,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Reports/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="201" column="74" lean-forward="false" selection-start-line="201" selection-start-column="74" selection-end-line="201" selection-end-column="74" />
+        <state relative-caret-position="222">
+          <caret line="204" column="74" lean-forward="false" selection-start-line="204" selection-start-column="74" selection-end-line="204" selection-end-column="74" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="194" column="54" lean-forward="false" selection-start-line="194" selection-start-column="54" selection-end-line="194" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
