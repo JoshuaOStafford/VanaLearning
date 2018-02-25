@@ -137,7 +137,7 @@ def raw_week_view(request, student_username):
     current_monday = this_monday
     weeks_data_array = []
     while current_monday > starting_date:
-        if user in Teacher.objects.all() and user != Teacher.objects.get(username='lhorich'):
+        if user in Teacher.objects.all() and (user != Teacher.objects.get(username='lhorich') or user != Teacher.objects.get(username='mdemers') or user != Teacher.objects.get(username='cmiller')):
             metrics = get_raw_week_data_single(current_monday, student, (current_monday == this_monday), user)
         else:
             metrics = get_raw_week_data_total(current_monday, student, (current_monday == this_monday))
@@ -269,9 +269,9 @@ def insights_view(request, student_username):
                         'success1': '100% homework completion, which was higher than last week\'s percentage even though he had more homeworks', 'success2': '', 'success3': '', 'aoi1': '', 'aoi2': '', 'aoi3': '',
                         'insight1': "Had better attendance than last week", 'insight2': "Teachers completed an average of 2.2 reports per day (compared with 1.33 last week)", 'insight3': '', 'attendance': 5}
 
-    if user in Teacher.objects.all():
-        if student not in user.student_set.all():
-            return redirect('/home')
+    # if user in Teacher.objects.all():
+    #     if student not in user.student_set.all():
+    #         return redirect('/home')
     # elif user.type == 'Parent':
     #     if student != user.student:
     #         return redirect('/home')

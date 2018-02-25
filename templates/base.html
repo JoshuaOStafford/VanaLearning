@@ -153,7 +153,7 @@
 
                     <li><a onclick="window.location.href='/log'"><span class="glyphicon glyphicon-pencil"></span> Log&nbsp;</a></li>
 
-                     {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith'%}
+                     {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith' or user.username == 'mdemers' or user.username == 'cmiller'%}
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-book"></span>  &nbsp;Weekly<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -167,7 +167,7 @@
                         </li>
                     {% endif %}
 
-                    {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith'%}
+                    {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith' or user.username == 'mdemers' or user.username == 'cmiller'%}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-stats"></span>  &nbsp;Graphs<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -175,13 +175,13 @@
                                 {% if forloop.counter != 1 %}
                                 <li role="separator" class="divider"></li>
                                 {% endif %}
-                            <li><a onclick="window.location.href='/current_wr_redirect/{{ student.username }}'">{{ student.name }}</a></li>
+                            <li><a onclick="window.location.href='/current_wr_redirect/{{ student.username }}' ">{{ student.name }}</a></li>
                             {% endfor %}
                             </ul>
                     </li>
                     {% endif %}
 
-                    {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith'%}
+                    {% if user.username == 'lhorich' or user.username == 'christine' or user.username == 'jsmith' or user.username == 'mdemers' or user.username == 'cmiller'%}
                         <li class="dropdown">
                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search"></span>  &nbsp;Insights<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
