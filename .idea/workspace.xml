@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d54f49-56d2-4ed7-baa1-b9606a2753a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/day.html" afterPath="$PROJECT_DIR$/templates/day.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/line_graph.html" afterPath="$PROJECT_DIR$/templates/line_graph.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/log_reports.html" afterPath="$PROJECT_DIR$/templates/log_reports.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/raw_week_data.html" afterPath="$PROJECT_DIR$/templates/raw_week_data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/teacher_submissions.html" afterPath="$PROJECT_DIR$/templates/teacher_submissions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/weekly_reports.html" afterPath="$PROJECT_DIR$/templates/weekly_reports.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/landing_page.html" afterPath="$PROJECT_DIR$/templates/landing_page.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,71 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="day.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/day.html">
+      <file leaf-file-name="landing_page.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/landing_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="line_graph.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/line_graph.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log_reports.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/log_reports.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="raw_week_data.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/raw_week_data.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schedule_demo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/schedule_demo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teacher_submissions.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/teacher_submissions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weekly_reports.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/weekly_reports.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="306">
+              <caret line="44" column="1808" lean-forward="false" selection-start-line="44" selection-start-column="1808" selection-end-line="44" selection-end-column="1808" />
               <folding />
             </state>
           </provider>
@@ -162,7 +97,6 @@
         <option value="$PROJECT_DIR$/Vana/wsgi.py" />
         <option value="$PROJECT_DIR$/templates/edit_report.html" />
         <option value="$PROJECT_DIR$/templates/past_submissions.html" />
-        <option value="$PROJECT_DIR$/templates/landing_page.html" />
         <option value="$PROJECT_DIR$/templates/schedule_demo.html" />
         <option value="$PROJECT_DIR$/templates/student_history.html" />
         <option value="$PROJECT_DIR$/templates/past_reports.html" />
@@ -182,6 +116,7 @@
         <option value="$PROJECT_DIR$/templates/raw_week_data.html" />
         <option value="$PROJECT_DIR$/templates/teacher_submissions.html" />
         <option value="$PROJECT_DIR$/templates/weekly_reports.html" />
+        <option value="$PROJECT_DIR$/templates/landing_page.html" />
       </list>
     </option>
   </component>
@@ -891,16 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3075">
-          <caret line="205" column="28" lean-forward="true" selection-start-line="205" selection-start-column="28" selection-end-line="205" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/day.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -913,14 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="36" column="3899" lean-forward="false" selection-start-line="36" selection-start-column="3899" selection-end-line="36" selection-end-column="3899" />
           <folding />
         </state>
       </provider>
@@ -969,6 +886,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reports/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="205" column="28" lean-forward="true" selection-start-line="205" selection-start-column="28" selection-end-line="205" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="44" column="1808" lean-forward="false" selection-start-line="44" selection-start-column="1808" selection-end-line="44" selection-end-column="1808" />
           <folding />
         </state>
       </provider>
