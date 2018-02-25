@@ -80,22 +80,22 @@ class MasterDRC(models.Model):
 
     def get_m2_charted(self):
         if float(self.get_m2()) - 0.5 < 0:  # if statement ensures charted value will not be negative (range 0-100)
-            return self.get_m2()
+            return float(self.get_m2())
         return float(self.get_m2()) - .5
 
     def get_m3_charted(self):
         if float(self.get_m3()) - 1.0 < 0:
-            return self.get_m3()
+            return float(self.get_m3())
         return float(self.get_m3()) - 1
 
     def get_m4_charted(self):
         if float(self.get_m4()) - 1.5 < 0:
-            return self.get_m4()
+            return float(self.get_m4())
         return float(self.get_m4()) - 1.5
 
     def get_m5_charted(self):
         if float(self.get_m5()) - 2.0 < 0:
-            return self.get_m5()
+            return float(self.get_m5())
         return float(self.get_m5()) - 2
 
     def total_count(self):
