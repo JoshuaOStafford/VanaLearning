@@ -137,7 +137,7 @@ def raw_week_view(request, student_username):
     current_monday = this_monday
     weeks_data_array = []
     while current_monday > starting_date:
-        if user in Teacher.objects.all() and (user != Teacher.objects.get(username='lhorich') or user != Teacher.objects.get(username='mdemers') or user != Teacher.objects.get(username='cmiller')):
+        if user != Teacher.objects.get(username='lhorich') or user != Teacher.objects.get(username='mdemers') or user != Teacher.objects.get(username='cmiller'):
             metrics = get_raw_week_data_single(current_monday, student, (current_monday == this_monday), user)
         else:
             metrics = get_raw_week_data_total(current_monday, student, (current_monday == this_monday))
