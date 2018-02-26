@@ -231,54 +231,21 @@ def current_week_redirect(request, student_username):
 def insights_view(request, student_username):
     child = None
     user = get_user(request)
-    # if user is not None and user.type == 'Parent':
-    #     child = user.student
-    # if user is None or not Student.objects.filter(username=student_username).exists():
-    #     return redirect('/home')
     student = Student.objects.get(username=student_username)
     if student == Student.objects.get(username='max'):
-        return render(request, 'Max_Insights.html', {'user': user, 'child': child})
-    week1_report = {}
-    if student.username == 'jalen':
-        week1_report = {'m1yes': 6, 'm2yes': 6, 'm3yes': 3, 'm4yes': 7, 'total': 9, 'hw_total': 4,
-                        'm1percent': 67, 'm2percent': 67, 'm3percent': 75, 'm4percent': 78,
-                        'success1': 'More attentive than last week', 'success2': '', 'success3': '', 'aoi1': 'Homework completion and organization fell 25% and 23% from last week, respectively. ', 'aoi2': '', 'aoi3': '',
-                        'insight1': "Teachers completed an average of 1.6 reports per day (compared with 2 per day last week)",
-                        'insight2': "", 'insight3': '', 'attendance': 5}
+        return render(request, 'insights/Max_Insights.html', {'user': user, 'child': child})
+    elif student == Student.objects.get(username='tuppy'):
+        return render(request, 'insights/Tuppy_Insights.html', {'user': user, 'child': child})
+    elif student == Student.objects.get(username='jack'):
+        return render(request, 'insights/Jack_Insights.html', {'user': user, 'child': child})
+    elif student == Student.objects.get(username='tyler'):
+        return render(request, 'insights/Tyler_Insights.html', {'user': user, 'child': child})
+    elif student == Student.objects.get(username='jalen'):
+        return render(request, 'insights/Jalen_Insights.html', {'user': user, 'child': child})
+    else:
+        return redirect('/log')
 
-    elif student.username == 'max':
-        week1_report = {'m1yes': 8, 'm2yes': 8, 'm3yes': 5, 'm4yes': 9, 'total': 9, 'hw_total': 6,
-                        'm1percent': 89, 'm2percent': 89, 'm3percent': 83, 'm4percent': 100,
-                        'success1': 'Second week in a row with an average of at least 90%', 'success2': '', 'success3': '', 'aoi1': 'Received a disproportionate amount of No\'s on Wednesday\'s for the second week in a row (50% of all his "No\'s over the past two weeks occurred on the two wednesdays)', 'aoi2': '', 'aoi3': '',
-                        'insight1': "Did not get more than one “No” on any measures", 'insight2': "Teachers completed an average of 2.25 reports per day (compared with 1.5 last week)", 'insight3': '', 'attendance': 4}
 
-    elif student.username == 'tuppy':
-        week1_report = {'m1yes': 5, 'm2yes': 5, 'm3yes': 4, 'm4yes': 6, 'total': 8, 'hw_total': 4,
-                        'm1percent': 63, 'm2percent': 63, 'm3percent': 100, 'm4percent': 75,
-                        'success1': 'Significantly more attentive than last week', 'success2': 'Performed 50% better this Wednesday than last Wednesday', 'success3': '', 'aoi1': 'Second week in a row with a combined average of Appropriate Behavior and Attentive in the low 60%',
-                        'aoi2': 'Performed 50% worse this Friday than last Friday', 'aoi3': 'Behavioral consistency. The percentage of time he received a rating of Yes, rather than No, on all tracked behaviors varied significantly each day. From Monday to Friday, respectively, he received the following proportion of yeses: 33%, 100%, 86%, 57%, and 70%. ',
-                        'insight1': "Teachers completed an average of 2 reports per day (compared with 1.25 last week)", 'insight2': "Teachers engaged rose steadily throughout the week", 'insight3': '',
-                        'attendance': 4}
-
-    elif student.username == 'tyler':
-        week1_report = {'m1yes': 4, 'm2yes': 4, 'm3yes': 0, 'm4yes': 4, 'total': 4, 'hw_total': 0,
-                        'm1percent': 100, 'm2percent': 100, 'm3percent': 100, 'm4percent': 100,
-                        'success1': '100% effectiveness on every documented measure for the second week in a row', 'success2': '', 'success3': '', 'aoi1': '', 'aoi2': '', 'aoi3': '',
-                        'insight1': "Was given 0 homework assignments all week. ", 'insight2': "Over the past two weeks, he has been given “Yes” marks 100% of them time on every tracked behavior, from 100% of his teachers. ", 'insight3': "Teachers completed an average of 2 reports per day (compared with 1.4 last week)", 'attendance': 2}
-
-    elif student.username == 'jack':
-        week1_report = {'m1yes': 11, 'm2yes': 11, 'm3yes': 6, 'm4yes': 10, 'total': 11, 'hw_total': 6,
-                        'm1percent': 100, 'm2percent': 100, 'm3percent': 100, 'm4percent': 91,
-                        'success1': '100% homework completion, which was higher than last week\'s percentage even though he had more homeworks', 'success2': '', 'success3': '', 'aoi1': '', 'aoi2': '', 'aoi3': '',
-                        'insight1': "Had better attendance than last week", 'insight2': "Teachers completed an average of 2.2 reports per day (compared with 1.33 last week)", 'insight3': '', 'attendance': 5}
-
-    # if user in Teacher.objects.all():
-    #     if student not in user.student_set.all():
-    #         return redirect('/home')
-    # elif user.type == 'Parent':
-    #     if student != user.student:
-    #         return redirect('/home')
-    return render(request, 'weekly_reports.html', {'user': user, 'child': child, 'student': student, 'wr1': week1_report})
 
 
 @login_required(login_url="/")

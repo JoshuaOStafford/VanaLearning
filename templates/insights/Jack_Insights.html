@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jacks's Insights</title>
+</head>
+<style>
+body{
+    background-color: #f0f0f0;
+    font-family: 'EB Garamond', cursive;
+}
+</style>
+<body>
+
+{% load static %}
+<div align="center">
+<br><br><br><br><br>
+<h3>Weekly Report for February 19th - 23rd</h3>
+<img src="{% static "Jack_Feb19.png" %}" height="70%" width="auto"/>
+<br>
+    <h3>Weekly Report for February 12th - 16th</h3>
+<img src="{% static "Jack_Feb12.png" %}" height="70%" width="auto"/></div>
+{% endblock %}
+</body>
+</html>
