@@ -50,6 +50,7 @@
 <br>
 <br>
 <div align="center">
+    {% if drc != None %}
 <h2>Today's Report for {{ student.name }}</h2>
     <br>
     <div id="past_drc">
@@ -77,6 +78,10 @@
             <br>
             {{ drc.m4_score }} / {{ drc.total_count }}
         </div>
+
+        {% else %}
+        {{ student.name }} does not have a report for today.
+        {% endif %}
     <div>
 
 
