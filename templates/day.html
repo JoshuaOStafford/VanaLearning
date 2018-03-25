@@ -9,10 +9,7 @@
 </head>
 
 <style>
-    body{
-        background-color: black;
-    }
-    #past_drc {
+#past_drc {
     background-color: white;
     border: 2px solid black;
     width: 80%;
@@ -46,8 +43,8 @@
     margin-right: 3%;
     font-size: 120%;
     }
-
 </style>
+
 <body>
 {% block body %}
 <br>
@@ -65,24 +62,20 @@ Testing
         <div id="m1">
             Appropriate Behavior
             <br>
-            <br>
             {{ drc.m1_score }} / {{ drc.total_count }}
         </div>
         <div id="m2">
-            Appropriate Behavior
-            <br>
+            Organized
             <br>
             {{ drc.m2_score }} / {{ drc.total_count }}
         </div>
         <div id="m3">
-            Appropriate Behavior
-            <br>
+            HW Completed
             <br>
             {{ drc.m3_score }} / {{ drc.HW_Assigned }}
         </div>
-        <div id="m4">
-            Appropriate Behavior
-            <br>
+        <div id="m5">
+            Attentive
             <br>
             {{ drc.m4_score }} / {{ drc.total_count }}
         </div>
