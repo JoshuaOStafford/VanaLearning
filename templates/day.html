@@ -49,6 +49,9 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 <div align="center">
     {% if drc != None %}
 <h2>Today's Report for {{ student.name }}</h2>
@@ -78,11 +81,9 @@
             <br>
             {{ drc.m4_score }} / {{ drc.total_count }}
         </div>
-
+    </div>
         {% else %}
         {{ student.name }} does not have a report for today.
-        {% endif %}
-    <div>
 
     <h3>View another day</h3>
 
@@ -94,6 +95,7 @@
         <input type="submit" value="View Day" class="button" />
         </form>
 
+        {% endif %}
 
 </div>
 </body>
