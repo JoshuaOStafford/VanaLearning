@@ -25,7 +25,7 @@ def day_view(request):
     user = get_user(request)
     if user != Teacher.objects.get(username='max'):
         return redirect('/')
-    student = Student.objects.get(user.username)
+    student = Student.objects.get(username=user.username)
     if request.method == 'POST':
         current_date = request.POST.get('date', False)
     else:
