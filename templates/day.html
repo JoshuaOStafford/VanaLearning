@@ -81,8 +81,9 @@ Testing
         </div>
     </div>
         {% else %}
-        {{ student.name }} does not have a report for today.
+        <h2>{{ student.name }} does not have a report for today.</h2>
 
+    {% endif %}
     <h3>View another day</h3>
 
         <form action="/day" method="post">
@@ -93,7 +94,7 @@ Testing
         <input type="submit" value="View Day" class="button" />
         </form>
 
-        {% endif %}
+
 
 </div>
 {% endblock %}
