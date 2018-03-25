@@ -58,6 +58,8 @@ def log_drc_view(request):
     teacher = get_user(request)
     if teacher not in Teacher.objects.all():
         return redirect('/home')
+    if teacher.username == 'max':
+        return redirect('/day')
     past_five_days = past_five_days_log_strings(date_raw, teacher)
     students = teacher.student_set.all()
     if teacher.username == 'lhorich':
