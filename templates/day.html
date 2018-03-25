@@ -7,7 +7,79 @@
     <meta charset="UTF-8">
     <title>Day</title>
 </head>
+
+<style>
+    #past_drc {
+    background-color: white;
+    border: 2px solid black;
+    width: 80%;
+    margin-top: 2%;
+}
+#m1 {
+    width: 22%;
+    float: left;
+    margin-left: 3%;
+    margin-right: 1%;
+    font-size: 120%;
+}
+#m2 {
+        width: 22%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m3 {
+        width: 22%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 120%;
+    }
+#m5 {
+        width: 22%;
+        float: left;
+    margin-left: 1%;
+    margin-right: 3%;
+    font-size: 120%;
+    }
+
+</style>
 <body>
-Testing
+<br>
+<br>
+<br>
+<div align="center">
+<h2>Today's Report for {{ student.name }}</h2>
+    <br>
+    <div id="past_drc">
+        <div id="m1">
+            Appropriate Behavior
+            <br>
+            <br>
+            {{ drc.m1_score }} / {{ drc.total_count }}
+        </div>
+        <div id="m2">
+            Appropriate Behavior
+            <br>
+            <br>
+            {{ drc.m2_score }} / {{ drc.total_count }}
+        </div>
+        <div id="m3">
+            Appropriate Behavior
+            <br>
+            <br>
+            {{ drc.m3_score }} / {{ drc.HW_Assigned }}
+        </div>
+        <div id="m4">
+            Appropriate Behavior
+            <br>
+            <br>
+            {{ drc.m4_score }} / {{ drc.total_count }}
+        </div>
+    <div>
+
+
+</div>
 </body>
 </html>

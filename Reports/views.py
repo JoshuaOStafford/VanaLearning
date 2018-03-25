@@ -22,18 +22,21 @@ def home(request):
 
 
 def day_view(request):
-    child = None
     user = get_user(request)
     if user != Teacher.objects.get(username='max'):
         return redirect('/')
-
-    return render(request, 'day.html', {'user': user, 'child': child})
+    student = Student.objects.get(user.username)
+    tz = pytz.timezone('US/Eastern')
+    current_date = datetime.now(tz)
+    if MasterDRC.objects.filter(date=current_date, student=student):
+        drc = MasterDRC.objects.get(date=current_date, student=student)
+    else:
+        drc = None
+    return render(request, 'day.html', {'user': user, 'drc': drc, 'student': student})
 
 def landing_page_view(request):
     child = None
     user = get_user(request)
-    # if user is not None and user.type == 'Parent':
-    #     child = user.student
     return render(request, 'landing_page.html', {'user': user, 'child': child, 'request': request})
 
 
