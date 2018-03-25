@@ -31,29 +31,41 @@ hr {
     float: left;
     margin-left: 3%;
     margin-right: 1%;
-    font-size: 200%;
+    font-size: 160%;
 }
 #m2 {
         width: 22%;
         float: left;
     margin-left: 1%;
     margin-right: 1%;
-    font-size: 200%;
+    font-size: 160%;
     }
 #m3 {
         width: 22%;
         float: left;
     margin-left: 1%;
     margin-right: 1%;
-    font-size: 200%;
+    font-size: 160%;
     }
-#m5 {
+#m4 {
         width: 22%;
         float: left;
     margin-left: 1%;
     margin-right: 3%;
-    font-size: 200%;
+    font-size: 160%;
     }
+#m1_number{
+    font-size: 250%;
+}
+#m2_number{
+    font-size: 250%;
+}
+#m3_number{
+    font-size: 250%;
+}
+#m4_number{
+    font-size: 250%;
+}
 #comments {
     clear: both;
 }
@@ -71,22 +83,22 @@ hr {
     <div id="m1">
         <b>Appropriate Behavior</b>
         <br>
-        {{ drc.get_m1 }}%
+        <div id="m1_number">{{ drc.get_m1 }}%</div>
     </div>
     <div id="m2">
         <b>Organized</b>
         <br>
-        {{ drc.get_m5 }}%
+        <div id="m2_number">{{ drc.get_m5 }}%</div>
     </div>
     <div id="m3">
         <b>HW Completed</b>
         <br>
-        {{ drc.get_m3 }}%
+        <div id="m3_number">{{ drc.get_m3 }}%</div>
     </div>
-    <div id="m5">
+    <div id="m4">
         <b>Attentive</b>
         <br>
-        {{ drc.get_m2 }}%
+        <div id="m4_number">{{ drc.get_m2 }}%</div>
     </div>
     <div id="comments"></div>
     </div>
