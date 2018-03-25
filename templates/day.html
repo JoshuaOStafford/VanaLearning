@@ -15,6 +15,9 @@
     width: 80%;
     margin-top: 2%;
 }
+hr {
+    clear: both;
+}
 #m1 {
     width: 22%;
     float: left;
@@ -64,30 +67,30 @@
 <h2>Today's Report for {{ student.name }}</h2>
     <br>
     <div id="past_drc">
-
-        <div id="m1">
-            Appropriate Behavior
-            <br>
-            {{ drc.m1_score }} / {{ drc.total_count }}
-        </div>
-        <div id="m2">
-            Organized
-            <br>
-            {{ drc.m5_score }} / {{ drc.total_count }}
-        </div>
-        <div id="m3">
-            HW Completed
-            <br>
-            {{ drc.m3_score }} / {{ drc.HW_Assigned }}
-        </div>
-        <div id="m5">
-            Attentive
-            <br>
-            {{ drc.m2_score }} / {{ drc.total_count }}
-        </div>
-
-        <div id="comments">
-        </div>
+        <hr>
+    <div id="m1">
+        Appropriate Behavior
+        <br>
+        {{ drc.m1_score }} / {{ drc.total_count }}
+    </div>
+    <div id="m2">
+        Organized
+        <br>
+        {{ drc.m5_score }} / {{ drc.total_count }}
+    </div>
+    <div id="m3">
+        HW Completed
+        <br>
+        {{ drc.m3_score }} / {{ drc.HW_Assigned }}
+    </div>
+    <div id="m5">
+        Attentive
+        <br>
+        {{ drc.m2_score }} / {{ drc.total_count }}
+    </div>
+    <hr>
+    <div id="comments">None
+    </div>
 
     </div>
         {% else %}
