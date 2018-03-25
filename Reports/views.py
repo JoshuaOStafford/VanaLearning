@@ -37,6 +37,7 @@ def day_view(request):
         drc = None
     return render(request, 'day.html', {'user': user, 'drc': drc, 'student': student})
 
+
 def landing_page_view(request):
     child = None
     user = get_user(request)
