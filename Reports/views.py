@@ -26,8 +26,11 @@ def day_view(request):
     if user != Teacher.objects.get(username='max'):
         return redirect('/')
     student = Student.objects.get(user.username)
-    tz = pytz.timezone('US/Eastern')
-    current_date = datetime.now(tz)
+    if request.method == 'POST':
+        current_date = request.POST.get('date', False)
+    else:
+        tz = pytz.timezone('US/Eastern')
+        current_date = datetime.now(tz)
     if MasterDRC.objects.filter(date=current_date, student=student):
         drc = MasterDRC.objects.get(date=current_date, student=student)
     else:

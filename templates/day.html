@@ -84,6 +84,16 @@
         {% endif %}
     <div>
 
+    <h3>View another day</h3>
+
+        <form action="/day" method="post">
+        {% csrf_token %}
+        <h3>Date of Past Report</h3>
+        <input id="date" type="date" name="date">
+        <br>
+        <input type="submit" value="View Day" class="button" />
+        </form>
+
 
 </div>
 </body>
