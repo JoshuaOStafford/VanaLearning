@@ -9,7 +9,7 @@
 </head>
 
 <style>
-#past_drc {
+#Box {
     background-color: white;
     border: 2px solid black;
     width: 80%;
@@ -66,7 +66,7 @@ hr {
     {% if drc != None %}
 <h2>Today's Report for {{ student.name }}</h2>
     <br>
-    <div id="past_drc">
+    <div id="Box">
         <hr>
     <div id="m1">
         Appropriate Behavior
@@ -89,8 +89,6 @@ hr {
         {{ drc.m2_score }} / {{ drc.total_count }}
     </div>
     <hr>
-    <div id="comments">None
-    </div>
 
     </div>
         {% else %}
