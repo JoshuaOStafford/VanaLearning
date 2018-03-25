@@ -43,6 +43,12 @@
     margin-right: 3%;
     font-size: 120%;
     }
+#comments {
+    clear: both;
+    text-align: left;
+    padding: 3%;
+    font-size: 125%;
+}
 </style>
 
 <body>
@@ -54,11 +60,11 @@
 <br>
 <br>
 <div align="center">
-Testing
     {% if drc != None %}
 <h2>Today's Report for {{ student.name }}</h2>
     <br>
     <div id="past_drc">
+
         <div id="m1">
             Appropriate Behavior
             <br>
@@ -67,7 +73,7 @@ Testing
         <div id="m2">
             Organized
             <br>
-            {{ drc.m2_score }} / {{ drc.total_count }}
+            {{ drc.m5_score }} / {{ drc.total_count }}
         </div>
         <div id="m3">
             HW Completed
@@ -77,18 +83,21 @@ Testing
         <div id="m5">
             Attentive
             <br>
-            {{ drc.m4_score }} / {{ drc.total_count }}
+            {{ drc.m2_score }} / {{ drc.total_count }}
         </div>
+
+        <div id="comments">
+        </div>
+
     </div>
         {% else %}
         <h2>{{ student.name }} does not have a report for today.</h2>
 
     {% endif %}
-    <h3>View another day</h3>
 
         <form action="/day" method="post">
         {% csrf_token %}
-        <h3>Date of Past Report</h3>
+        <h3>View Another Day</h3>
         <input id="date" type="date" name="date">
         <br>
         <input type="submit" value="View Day" class="button" />
