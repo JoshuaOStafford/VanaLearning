@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 
 
+{% block body %}
 <!DOCTYPE html>
 <html lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5bac3b535a.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Day</title>
@@ -58,13 +63,12 @@ hr {
 </style>
 
 <body>
-{% block body %}
 <br>
 <br>
 <br>
 <div align="center">
     {% if drc != None %}
-<h2>Today's Report for {{ student.name }}</h2>
+    <h2>Today's Report for {{ student.name }}</h2>
     <br>
     <div id="Box">
         <hr>
