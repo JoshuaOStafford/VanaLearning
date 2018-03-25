@@ -71,28 +71,26 @@ hr {
     <h2>Today's Report for {{ student.name }}</h2>
     <br>
     <div id="Box">
-        <hr>
     <div id="m1">
         <b>Appropriate Behavior</b>
         <br>
-        {{ drc.m1_score }} / {{ drc.total_count }}
+        {{ drc.get_m1 }}%
     </div>
     <div id="m2">
         <b>Organized</b>
         <br>
-        {{ drc.m5_score }} / {{ drc.total_count }}
+        {{ drc.get_m5 }}%
     </div>
     <div id="m3">
         <b>HW Completed</b>
         <br>
-        {{ drc.m3_score }} / {{ drc.HW_Assigned }}
+        {{ drc.get_m3 }}%
     </div>
     <div id="m5">
         <b>Attentive</b>
         <br>
-        {{ drc.m2_score }} / {{ drc.total_count }}
+        {{ drc.get_m4 }}%
     </div>
-    <hr>
 
     </div>
         {% else %}
