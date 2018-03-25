@@ -9,6 +9,9 @@
 </head>
 
 <style>
+#body {
+    background-color: whitesmoke;
+}
 #Box {
     background-color: white;
     border: 2px solid black;
@@ -66,22 +69,22 @@ hr {
     <div id="Box">
         <hr>
     <div id="m1">
-        Appropriate Behavior
+        <b>Appropriate Behavior</b>
         <br>
         {{ drc.m1_score }} / {{ drc.total_count }}
     </div>
     <div id="m2">
-        Organized
+        <b>Organized</b>
         <br>
         {{ drc.m5_score }} / {{ drc.total_count }}
     </div>
     <div id="m3">
-        HW Completed
+        <b>HW Completed</b>
         <br>
         {{ drc.m3_score }} / {{ drc.HW_Assigned }}
     </div>
     <div id="m5">
-        Attentive
+        <b>Attentive</b>
         <br>
         {{ drc.m2_score }} / {{ drc.total_count }}
     </div>
