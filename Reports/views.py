@@ -24,8 +24,9 @@ def home(request):
 def day_view(request):
     child = None
     user = get_user(request)
-    # if user is not None and user.type == 'Parent':
-    #     child = user.student
+    if user != Teacher.objects.get(username='max'):
+        return redirect('/')
+
     return render(request, 'day.html', {'user': user, 'child': child})
 
 def landing_page_view(request):
